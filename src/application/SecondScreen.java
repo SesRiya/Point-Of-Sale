@@ -14,7 +14,6 @@ public class SecondScreen extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(SecondScreen.class.getResource("SecondLayout.fxml"));
-		//primaryStage.setTitle("Sales Page FXML Application");
 		primaryStage.setScene(new Scene(root, 800, 600));
 		primaryStage.show();
 		stage = primaryStage;
