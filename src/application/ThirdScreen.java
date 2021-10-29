@@ -14,7 +14,6 @@ public class ThirdScreen extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(ThirdScreen.class.getResource("ThirdLayout.fxml"));
-		primaryStage.setTitle("Report Page");
 		primaryStage.setScene(new Scene(root, 800, 600));
 		primaryStage.show();
 		stage = primaryStage;
