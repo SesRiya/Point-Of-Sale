@@ -21,7 +21,7 @@ public class ThirdScreen extends Application {
 		
 	}
 
-//	@FXML
+	@FXML
 	public void salesPage(Event e){
         SecondScreen secondScreen = new SecondScreen();
         try {
