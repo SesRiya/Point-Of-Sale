@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class Main extends Application {
+	//store primary stage
 	private static Stage stage;
 	
 	@Override
