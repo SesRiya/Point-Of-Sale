@@ -13,7 +13,7 @@ public class FourthScreen extends Application{
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("ThirdLayout.fxml"));
+		Parent root = FXMLLoader.load(FourthScreen.class.getResource("ThirdLayout.fxml"));
 		primaryStage.setTitle("Inventory Page");
 		primaryStage.setScene(new Scene(root, 800, 600));
 		primaryStage.show();

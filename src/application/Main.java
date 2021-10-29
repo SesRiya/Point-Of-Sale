@@ -10,13 +10,11 @@ import javafx.scene.Scene;
 
 public class Main extends Application {
 	private static Stage stage;
-
 	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader loader = new FXMLLoader();
-			Parent root = loader.load(getClass().getResource("MainLayout.fxml"));
+			Parent root = FXMLLoader.load(Main.class.getResource("MainLayout.fxml"));
 			primaryStage.setTitle("Home Page");
 			primaryStage.setScene(new Scene(root, 800, 600));
 			primaryStage.show();
