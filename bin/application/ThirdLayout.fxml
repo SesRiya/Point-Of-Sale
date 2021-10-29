@@ -5,13 +5,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SecondScreen">
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ThirdScreen">
    <children>
       <HBox layoutX="-1.0" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#salesPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sellIicon.png" />
                </image>
@@ -19,7 +18,7 @@
                   <Insets left="150.0" top="25.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#reportPage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../reporticon.png" />
                </image>
@@ -40,27 +39,6 @@
       <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="50.0" layoutY="20.0" onMouseClicked="#homePage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../homeicon.png" />
-         </image>
-      </ImageView>
-      <VBox layoutX="544.0" layoutY="97.0" prefHeight="500.0" prefWidth="255.0" style="-fx-background-color: #FFFFFF;" />
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="40.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Americano.jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Cappucino.jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="280.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Caffe%20Latte.jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="400.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../Espresso.jpeg" />
          </image>
       </ImageView>
    </children>
