@@ -64,8 +64,13 @@ public class Main extends Application {
 		return i + j;
 	}
 	
+	public int add2(int i, int j) {
+		return i + j;
+	}
+	
 	
 	public static void main(String[] args) {
+		System.out.println("test");
 		launch(args);
 	}
 }
