@@ -9,14 +9,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class Main extends Application {
-	//store primary stage
 	private static Stage stage;
 	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(Main.class.getResource("MainLayout.fxml"));
-			primaryStage.setTitle("Home Page");
+			primaryStage.setTitle("Java Expresso");
 			primaryStage.setScene(new Scene(root, 800, 600));
 			primaryStage.show();
 			stage = primaryStage;
