@@ -16,6 +16,7 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(Main.class.getResource("/layout/MainLayout.fxml"));
 			primaryStage.setTitle("Java Expresso");
+			
 			primaryStage.setScene(new Scene(root, 800, 600));
 			primaryStage.show();
 			stage = primaryStage;
