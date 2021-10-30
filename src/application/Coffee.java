@@ -8,7 +8,6 @@ public class Coffee {
 		
 	
 	public Coffee(int coffeeID, String coffeeFlavour, String coffeeSize, double coffeePrice) {
-		super();
 		this.coffeeID = coffeeID;
 		this.coffeeFlavour = coffeeFlavour;
 		this.coffeeSize = coffeeSize;
