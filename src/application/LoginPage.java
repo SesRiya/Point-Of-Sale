@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 
 public class LoginPage extends Application {
 	private static Stage stage;
+	
+	
 	@FXML private TextField userName;
 	@FXML private TextField password;
 

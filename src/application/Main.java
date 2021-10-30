@@ -40,35 +40,6 @@ public class Main extends Application {
         System.out.println(add(5,10));
     }
 	
-	@FXML
-	public void salesPage(Event e){
-        SalesPage secondScreen = new SalesPage();
-        try {
-			secondScreen.start(stage);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-    }
-	
-	@FXML
-	public void reportPage(Event e){
-        InventoryPage thirdScreen = new InventoryPage();
-        try {
-			thirdScreen.start(stage);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-    }
-	
-	@FXML
-	public void inventoryPage(Event e){
-        ReportPage fourthScreen = new ReportPage();
-        try {
-			fourthScreen.start(stage);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-    }
 	
 	public int add(int i, int j) {
 		return i + j;
