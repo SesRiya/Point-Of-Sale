@@ -1,6 +1,6 @@
 package application;
 
-public class Employee {
+public class Employee extends Person {
 	private String userName;
 	private String password;
 	
