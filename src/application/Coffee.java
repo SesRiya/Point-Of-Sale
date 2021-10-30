@@ -5,8 +5,20 @@ public class Coffee {
 	private String coffeeFlavour;
 	private String coffeeSize;
 	private double coffeePrice;
-		
 	
+	public Coffee() {
+		
+	}
+	
+	
+	public Coffee(int coffeeID, String coffeeFlavour, double coffeePrice) {
+		super();
+		this.coffeeID = coffeeID;
+		this.coffeeFlavour = coffeeFlavour;
+		this.coffeePrice = coffeePrice;
+	}
+
+
 	public Coffee(int coffeeID, String coffeeFlavour, String coffeeSize, double coffeePrice) {
 		super();
 		this.coffeeID = coffeeID;

@@ -4,7 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -49,12 +50,17 @@
       </ImageView>
       <VBox layoutX="549.0" layoutY="2.0" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
          <children>
-            <TextArea fx:id="orderList" prefHeight="200.0" prefWidth="200.0">
-               <font>
-                  <Font name="Century Gothic" size="12.0" />
-               </font>
-            </TextArea>
-         </children></VBox>
+            <TableView prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="29.0" sortable="false" text="ID" />
+                <TableColumn prefWidth="122.0" text="OrderName" />
+                  <TableColumn prefWidth="97.0" text="Price" />
+              </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></VBox>
       <ImageView fitHeight="97.0" fitWidth="100.0" layoutX="40.0" layoutY="116.0" onMouseClicked="#addAmericano" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Americano.jpeg" />
@@ -127,23 +133,36 @@
                </font></Label>
          </children>
       </VBox>
-      <MenuButton fx:id="coffeeSize" layoutX="57.0" layoutY="463.0" mnemonicParsing="false" text="MenuButton">
+      <MenuButton fx:id="coffeeSize" layoutX="66.0" layoutY="444.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Size">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" onAction="#small" text="Small" />
+          <MenuItem mnemonicParsing="false" onAction="#medium" text="Medium" />
+            <MenuItem mnemonicParsing="false" onAction="#large" text="Large" />
         </items>
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
       </MenuButton>
-      <MenuButton fx:id="coffeeExtra" layoutX="211.0" layoutY="463.0" mnemonicParsing="false" text="MenuButton">
+      <MenuButton fx:id="coffeeExtra" layoutX="219.0" layoutY="444.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Extras">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" text="Espresso Shot" />
+          <MenuItem mnemonicParsing="false" text="Flavours" />
+            <MenuItem mnemonicParsing="false" text="Whipped Cream" />
         </items>
+         <font>
+            <Font size="18.0" />
+         </font>
       </MenuButton>
-      <MenuButton fx:id="coffeeMilk" layoutX="385.0" layoutY="450.0" mnemonicParsing="false" text="MenuButton">
+      <MenuButton fx:id="coffeeMilk" layoutX="355.0" layoutY="445.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Milk">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" text="Regular" />
+          <MenuItem mnemonicParsing="false" text="Skimmed" />
+            <MenuItem mnemonicParsing="false" text="Soy" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
       </MenuButton>
    </children>
    <padding>
