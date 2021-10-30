@@ -24,15 +24,6 @@ public class Main extends Application {
 		}
 	}
 	
-	@FXML
-	public void loginPage(Event e){
-        LoginPage loginPage = new LoginPage();
-        try {
-        	loginPage.start(stage);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-    }
 
 
 	@FXML
@@ -49,6 +40,16 @@ public class Main extends Application {
 		return i + j;
 	}
 	
+	@FXML
+	public void loginPage(Event e){
+        LoginPage loginPage = new LoginPage();
+        try {
+        	loginPage.start(stage);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+    }
+
 	
 	public static void main(String[] args) {
 		System.out.println("test");
