@@ -1,5 +1,8 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -13,10 +16,11 @@ public class SalesPage extends Application{
 	private static Stage stage;
 	
 	@FXML private TextArea orderList;
+	private List<String> coffeeOrder = new ArrayList<>();
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(SalesPage.class.getResource("SalesPageLayout.fxml"));
+		Parent root = FXMLLoader.load(SalesPage.class.getResource("/layout/SalesPageLayout.fxml"));
 		primaryStage.setScene(new Scene(root, 800, 600));
 		primaryStage.show();
 		stage = primaryStage;
@@ -25,7 +29,7 @@ public class SalesPage extends Application{
 	
 	@FXML
 	public void reportPage(Event e){
-        InventoryPage thirdScreen = new InventoryPage();
+        ReportPage thirdScreen = new ReportPage();
         try {
 			thirdScreen.start(stage);
 		} catch (Exception e1) {
@@ -46,7 +50,7 @@ public class SalesPage extends Application{
 	
 	@FXML
 	public void inventoryPage(Event e){
-        ReportPage fourthScreen = new ReportPage();
+        InventoryPage fourthScreen = new InventoryPage();
         try {
 			fourthScreen.start(stage);
 		} catch (Exception e1) {
@@ -57,6 +61,7 @@ public class SalesPage extends Application{
 	@FXML
 	public void addAmericano(Event e) {
 		orderList.appendText("Americano" + "\n");
+		coffeeOrder.add("Americano");
 	}
 	
 	@FXML
@@ -110,7 +115,7 @@ public class SalesPage extends Application{
 	}
 
 
-
+	
 
 
 

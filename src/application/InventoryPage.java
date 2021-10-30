@@ -8,19 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class InventoryPage extends Application {
+public class InventoryPage extends Application{
 	private static Stage stage;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(InventoryPage.class.getResource("ReportPageLayout.fxml"));
+		Parent root = FXMLLoader.load(InventoryPage.class.getResource("/layout/InventoryPageLayout.fxml"));
 		primaryStage.setScene(new Scene(root, 800, 600));
 		primaryStage.show();
 		stage = primaryStage;
 		
 	}
-
-	@FXML
+	
 	public void salesPage(Event e){
         SalesPage secondScreen = new SalesPage();
         try {
@@ -31,8 +30,17 @@ public class InventoryPage extends Application {
     }
 	
 	@FXML
-	public void homePage(Event e){
-   
+	public void reportPage(Event e){
+        ReportPage thirdScreen = new ReportPage();
+        try {
+			thirdScreen.start(stage);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+    }
+	
+	@FXML
+	public void homePage(Event e){      
         try {
 			Main main2 = new Main();
 			main2.start(stage);
@@ -40,14 +48,6 @@ public class InventoryPage extends Application {
 			e1.printStackTrace();
 		}
     }
-	
-	@FXML
-	public void inventoryPage(Event e){
-        ReportPage fourthScreen = new ReportPage();
-        try {
-			fourthScreen.start(stage);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-    }
+
+
 }
