@@ -37,10 +37,6 @@ public class LoginPage extends Application {
 
 	}
 
-	public void loginDetails() {
-
-	}
-
 	@FXML
 	public void salesPage(Event e) {
 
