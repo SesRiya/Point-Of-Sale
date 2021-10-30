@@ -23,6 +23,17 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+	public void loginPage(Event e){
+        LoginPage loginPage = new LoginPage();
+        try {
+        	loginPage.start(stage);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+    }
+
 
 	@FXML
 	public void buttonClicked(Event e){
@@ -31,7 +42,7 @@ public class Main extends Application {
 	
 	@FXML
 	public void salesPage(Event e){
-        SecondScreen secondScreen = new SecondScreen();
+        SalesPage secondScreen = new SalesPage();
         try {
 			secondScreen.start(stage);
 		} catch (Exception e1) {
@@ -41,7 +52,7 @@ public class Main extends Application {
 	
 	@FXML
 	public void reportPage(Event e){
-        ThirdScreen thirdScreen = new ThirdScreen();
+        InventoryPage thirdScreen = new InventoryPage();
         try {
 			thirdScreen.start(stage);
 		} catch (Exception e1) {
@@ -51,7 +62,7 @@ public class Main extends Application {
 	
 	@FXML
 	public void inventoryPage(Event e){
-        FourthScreen fourthScreen = new FourthScreen();
+        ReportPage fourthScreen = new ReportPage();
         try {
 			fourthScreen.start(stage);
 		} catch (Exception e1) {
