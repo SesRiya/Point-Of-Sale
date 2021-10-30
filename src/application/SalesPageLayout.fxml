@@ -3,15 +3,17 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="801.0" style="-fx-background-color: #D8D8D8; -fx-border-color: #00FFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SalesPage">
    <children>
-      <HBox layoutX="-1.0" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
+      <HBox layoutX="-1.0" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
          <children>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -44,61 +46,65 @@
             <Image url="@../../homeicon.png" />
          </image>
       </ImageView>
-      <VBox layoutX="549.0" layoutY="102.0" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
+      <VBox layoutX="549.0" layoutY="2.0" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
          <children>
-            <Label text="Label" />
+            <TextArea fx:id="orderList" prefHeight="200.0" prefWidth="200.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextArea>
          </children></VBox>
-      <ImageView fitHeight="97.0" fitWidth="100.0" layoutX="40.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="97.0" fitWidth="100.0" layoutX="40.0" layoutY="116.0" onMouseClicked="#addAmericano" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Americano.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="115.0" onMouseClicked="#addCappuccino" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Cappucino.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="280.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="280.0" layoutY="115.0" onMouseClicked="#addLatte" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Caffe%20Latte.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="400.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="400.0" layoutY="115.0" onMouseClicked="#addEspresso" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Espresso.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="40.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="40.0" layoutY="220.0" onMouseClicked="#addDoubleEspresso" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../D%20Espresso.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="220.0" onMouseClicked="#addEspressoMacchiato" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../E%20Macchiato.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="280.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="280.0" layoutY="220.0" onMouseClicked="#addRistreto" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Ristreto.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="400.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="400.0" layoutY="220.0" onMouseClicked="#addLatteMacchiato" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Macchiato.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="40.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="40.0" layoutY="325.0" onMouseClicked="#addCafeMocha" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Mocha.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="325.0" onMouseClicked="#addIrishCoffee" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../irish%20coffee.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="280.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="280.0" layoutY="325.0" onMouseClicked="#addFrappe" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Frappe.jpeg" />
          </image>
@@ -110,7 +116,7 @@
       </ImageView>
       <Spinner layoutX="46.0" layoutY="442.0" prefHeight="33.0" prefWidth="149.0" />
       <Spinner layoutX="222.0" layoutY="442.0" prefHeight="32.0" prefWidth="149.0" />
-      <VBox layoutX="548.0" layoutY="348.0" prefHeight="249.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
+      <VBox layoutX="550.0" layoutY="303.0" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
          <children>
             <Label prefHeight="40.0" prefWidth="250.0" text="Subtotal" />
             <Label prefHeight="40.0" prefWidth="250.0" text="DIscount" />

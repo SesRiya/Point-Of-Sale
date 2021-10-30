@@ -6,10 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 public class SalesPage extends Application{
 	private static Stage stage;
+	
+	@FXML private TextArea orderList;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -50,5 +53,69 @@ public class SalesPage extends Application{
 			e1.printStackTrace();
 		}
     }
+	
+	@FXML
+	public void addAmericano(Event e) {
+		orderList.appendText("Americano" + "\n");
+	}
+	
+	@FXML
+	public void addCappuccino(Event e) {
+		orderList.appendText("Cappuccino" + "\n");
+	}
+	
+	@FXML
+	public void addLatte(Event e) {
+		orderList.appendText("Latte" + "\n");
+	}
+	
+	@FXML
+	public void addEspresso(Event e) {
+		orderList.appendText("Espresso" + "\n");
+	}
+	
+	@FXML
+	public void addDoubleEspresso(Event e) {
+		orderList.appendText("Double Espresso" + "\n");
+	}
+	
+	@FXML
+	public void addEspressoMacchiato(Event e) {
+		orderList.appendText("Espresso Macchiato" + "\n");
+	}
+	
+	@FXML
+	public void addRistreto(Event e) {
+		orderList.appendText("Ristretp" + "\n");
+	}
+	
+	@FXML
+	public void addLatteMacchiato(Event e) {
+		orderList.appendText("Latte Macchiato" + "\n");
+	}
+
+	@FXML
+	public void addCafeMocha(Event e) {
+		orderList.appendText("Cafe Mocha" + "\n");
+	}
+	
+	@FXML
+	public void addIrishCoffee(Event e) {
+		orderList.appendText("Irish Coffee" + "\n");
+	}
+	
+	@FXML
+	public void addFrappe(Event e) {
+		orderList.appendText("Frappe" + "\n");
+	}
+
+
+
+
+
+
+
+
+
 
 }
