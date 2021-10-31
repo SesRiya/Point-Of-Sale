@@ -50,11 +50,11 @@
       </ImageView>
       <VBox layoutX="549.0" layoutY="2.0" prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
          <children>
-            <TableView prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="orderTableView" editable="true" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="29.0" sortable="false" text="ID" />
-                <TableColumn prefWidth="122.0" text="OrderName" />
-                  <TableColumn prefWidth="97.0" text="Price" />
+                <TableColumn fx:id="coffeeIDColumn" prefWidth="29.0" sortable="false" text="ID" />
+                <TableColumn fx:id="coffeeFlavourColumn" prefWidth="122.0" text="OrderName" />
+                  <TableColumn fx:id="coffeePriceColumn" prefWidth="97.0" sortable="false" text="Price" />
               </columns>
             </TableView>
          </children>

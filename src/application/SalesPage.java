@@ -1,71 +1,52 @@
 package application;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Spinner;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class SalesPage extends Application{
+public class SalesPage extends Application implements Initializable {
 	private static Stage stage;
 
-	private List<Coffee> coffeeTypes = new ArrayList<>();
 	@FXML
-	private TableView<Coffee> order = new TableView<Coffee>();
-	
-	Coffee coffee = new Coffee();
-	
-	TableColumn<Coffee, Integer>column1 = new TableColumn<>("ID");
+	private TableView<Coffee> orderTableView;
+	@FXML
+	private TableColumn<Coffee, Integer> coffeeIDColumn;
+	@FXML
+	TableColumn<Coffee, String> coffeeFlavourColumn;
+	@FXML
+	TableColumn<Coffee, Double> coffeePriceColumn;
 
-	TableColumn<Coffee, String>column2 = new TableColumn<>("Coffe Flavour");
-	TableColumn<Coffee, Double>column3 = new TableColumn<>("Price");
-	
-	
-	
-	
+	ObservableList<Coffee> coffee = FXCollections.observableArrayList();
+
+	private Event e;
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		coffeeIDColumn.setCellValueFactory(new PropertyValueFactory<Coffee, Integer>("coffeeID"));
+		coffeeFlavourColumn.setCellValueFactory(new PropertyValueFactory<Coffee, String>("coffeeFlavour"));
+		coffeePriceColumn.setCellValueFactory(new PropertyValueFactory<Coffee, Double>("coffeePrice"));
+		orderTableView.setItems(coffee);
+
+	}
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		createCoffee();
-		Parent root = FXMLLoader.load(SalesPage.class.getResource("/layout/SalesPageLayout.fxml"));		
-		
-				
+		Parent root = FXMLLoader.load(SalesPage.class.getResource("/layout/SalesPageLayout.fxml"));
 		primaryStage.setScene(new Scene(root, 800, 600));
-		primaryStage.show();	
+		primaryStage.show();
 		stage = primaryStage;
-	}
-	
-	private void createCoffee() {
-		Scanner scan = null;
-		try {
-			scan = new Scanner(new File("Coffee.txt"));
-			while (scan.hasNext()) {
-				int ID = scan.nextInt();
-				String coffeeFlavour = scan.next();
-				String coffeeSize = scan.next();
-				double coffeePrice = scan.nextDouble();
-				scan.nextLine();
-				coffeeTypes.add(new Coffee(ID, coffeeFlavour, coffeeSize, coffeePrice));
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Error: " + e.getMessage());
-		}
-		if (scan != null) {
-			scan.close();
-		}
 	}
 
 	@FXML
@@ -99,86 +80,85 @@ public class SalesPage extends Application{
 		}
 	}
 
-	
 	@FXML
 	public void addAmericano(Event e) {
-		order.getItems().add(new Coffee(1, "Americano", 4.50));
-		
+		Coffee americano = new Coffee(1, "Americano", 4.50);
+		coffee.add(americano);
 	}
 
 	@FXML
 	public void addCappuccino(Event e) {
-		coffee.setCoffeeFlavour("Cappuccino");
-		coffee.setCoffeeID(2);
+		Coffee cappuccino = new Coffee(2, "Cappuccino", 4.50);
+		coffee.add(cappuccino);
 	}
 
 	@FXML
 	public void addLatte(Event e) {
-		coffee.setCoffeeFlavour("Latte");
-		coffee.setCoffeeID(3);
+		Coffee latte = new Coffee(3, "Latte", 4.50);
+		coffee.add(latte);
 	}
 
 	@FXML
 	public void addEspresso(Event e) {
-		coffee.setCoffeeFlavour("Espresso");
-		coffee.setCoffeeID(4);
+		Coffee espresso = new Coffee(4, "Espresso", 4.50);
+		coffee.add(espresso);
 	}
 
 	@FXML
 	public void addDoubleEspresso(Event e) {
-		coffee.setCoffeeFlavour("Espresso");
-		coffee.setCoffeeID(5);
+		Coffee doubleEspresso = new Coffee(5, "Double Espresso", 4.50);
+		coffee.add(doubleEspresso);
 	}
 
 	@FXML
 	public void addEspressoMacchiato(Event e) {
-		coffee.setCoffeeFlavour("EspressoMacchiato");
-		coffee.setCoffeeID(6);
+		Coffee espressoMacchiato = new Coffee(6, "Espresso Macchiato", 4.50);
+		coffee.add(espressoMacchiato);
 	}
 
 	@FXML
 	public void addRistreto(Event e) {
-		coffee.setCoffeeFlavour("Ristreto");
-		coffee.setCoffeeID(7);
+		Coffee espressoRistreto = new Coffee(7, "Espresso Ristreto", 4.50);
+		coffee.add(espressoRistreto);
 	}
 
 	@FXML
 	public void addLatteMacchiato(Event e) {
-		coffee.setCoffeeFlavour("LatteMacchiato");
-		coffee.setCoffeeID(8);
+		Coffee latteMacchiato = new Coffee(8, "Latte Macchiato", 4.50);
+		coffee.add(latteMacchiato);
 	}
 
 	@FXML
 	public void addCafeMocha(Event e) {
-		coffee.setCoffeeFlavour("CafeMocha");
-		coffee.setCoffeeID(9);
+		Coffee cafeMocha = new Coffee(9, "Cafe Mocha", 4.50);
+		coffee.add(cafeMocha);
 	}
 
 	@FXML
 	public void addIrishCoffee(Event e) {
-		coffee.setCoffeeFlavour("IrishCoffee");
-		coffee.setCoffeeID(10);
+		Coffee irishCoffee = new Coffee(10, "Irish Coffee", 4.50);
+		coffee.add(irishCoffee);
 	}
 
 	@FXML
 	public void addFrappe(Event e) {
-		coffee.setCoffeeFlavour("Frappe");
-		coffee.setCoffeeID(11);
+		Coffee frappe = new Coffee(11, "Frappe", 4.50);
+		coffee.add(frappe);
 	}
 
 	@FXML
 	public void small(Event e) {
-		coffee.setCoffeeSize("small");
+
 	}
-	
+
 	@FXML
 	public void medium(Event e) {
-		coffee.setCoffeeSize("medium");
+
 	}
-	
+
 	@FXML
 	public void large(Event e) {
-		coffee.setCoffeeSize("large");
+
 	}
 
 }
