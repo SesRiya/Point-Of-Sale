@@ -357,6 +357,7 @@ public class SalesPage extends Application implements Initializable {
 		for (int i = 0; i < coffee.size(); i++) {
 			Coffee cof = coffee.get(i);
 			String record = cof.getCoffeeID() + " : " + cof.getCoffeeFlavour() + " : " + cof.getCoffeeSize() + " : "
+					+cof.getCoffeeMilk() + " : " + cof.getCoffeeExtra() + " : " 
 					+ cof.getCoffeePrice() + "\n";
 			br.write(record);
 		}
