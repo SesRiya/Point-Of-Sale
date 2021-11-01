@@ -43,7 +43,7 @@ public class ReportPage extends Application implements Initializable{
     private ToggleButton monthButton;
 
     @FXML
-    private ToggleButton yearButton;
+    private ToggleButton weekButton;
     
     //switch toggle button
     @FXML
@@ -56,26 +56,49 @@ public class ReportPage extends Application implements Initializable{
     		//add implementation
     		
     	}
-    	if(event.getSource()==yearButton) {
+    	if(event.getSource()==weekButton) {
     		//add implementation
     		
     	}
     }
     
 
-
 //add data into line chart
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		XYChart.Series series= new XYChart.Series<>();
-		series.getData().add(new XYChart.Data("1",23));
-		series.getData().add(new XYChart.Data("3",13));
-		series.getData().add(new XYChart.Data("4",40));
-		series.getData().add(new XYChart.Data("5",67));
-		series.getData().add(new XYChart.Data("6",12));
-		series.getData().add(new XYChart.Data("7",10));
+
+		XYChart.Series income= new XYChart.Series<>();
+		income.setName("Income");
+		income.getData().add(new XYChart.Data("1st Jan",230));
+		income.getData().add(new XYChart.Data("2nd Jan",200));
+		income.getData().add(new XYChart.Data("3rd jan",130));
+		income.getData().add(new XYChart.Data("4th Jan",400));
+		income.getData().add(new XYChart.Data("5th Jan",120));
+		income.getData().add(new XYChart.Data("6th Jan",100));
+		income.getData().add(new XYChart.Data("7th Jan",670));
 		
-		lineChart.getData().addAll(series);
+		XYChart.Series cost= new XYChart.Series<>();
+		cost.setName("Cost");
+		cost.getData().add(new XYChart.Data("1st Jan",130));
+		cost.getData().add(new XYChart.Data("2nd Jan",100));
+		cost.getData().add(new XYChart.Data("3rd jan",50));
+		cost.getData().add(new XYChart.Data("4th Jan",150));
+		cost.getData().add(new XYChart.Data("5th Jan",70));
+		cost.getData().add(new XYChart.Data("6th Jan",60));
+		cost.getData().add(new XYChart.Data("7th Jan",300));
+		
+		
+		XYChart.Series profit= new XYChart.Series<>();
+		profit.setName("Profit");
+		profit.getData().add(new XYChart.Data("1st Jan",100));
+		profit.getData().add(new XYChart.Data("2nd Jan",100));
+		profit.getData().add(new XYChart.Data("3rd jan",70));
+		profit.getData().add(new XYChart.Data("4th Jan",151));
+		profit.getData().add(new XYChart.Data("5th Jan",30));
+		profit.getData().add(new XYChart.Data("6th Jan",40));
+		profit.getData().add(new XYChart.Data("7th Jan",370));
+		
+		lineChart.getData().addAll(income,cost,profit);
 	}
 	
 	@Override
