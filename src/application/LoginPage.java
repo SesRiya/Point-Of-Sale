@@ -12,6 +12,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+/**
+ * 
+ * @author crdgo
+ *
+ */
 public class LoginPage extends Application {
 	private static Stage stage;
 
@@ -23,6 +28,9 @@ public class LoginPage extends Application {
 	Manager manager = new Manager("admin", "123");
 	Cashier cashier = new Cashier("cashier", "456");
 
+	/**
+	 * 
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
@@ -38,6 +46,10 @@ public class LoginPage extends Application {
 
 	}
 
+	/**
+	 * 
+	 * @param e
+	 */
 	@FXML
 	public void salesPage(Event e) {
 
@@ -54,6 +66,10 @@ public class LoginPage extends Application {
 		}
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean loginAuthentication() {
 		String name = userName.getText().toString();
 		String pass = password.getText().toString();
@@ -66,14 +82,20 @@ public class LoginPage extends Application {
 		}
 	}
 
+	/**
+	 * 
+	 * @param alertType
+	 * @param owner
+	 * @param message
+	 * @param title
+	 */
 	public static void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
 		Alert alert = new Alert(alertType);
 		alert.setContentText(message);
 		alert.setTitle(title);
 		alert.setHeaderText(null);
 		alert.initOwner(owner);
-		alert.show();
-		
+		alert.show();		
 	}
 
 }

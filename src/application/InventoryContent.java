@@ -12,7 +12,7 @@ public class InventoryContent {
 	 * @param iName
 	 */
 	public InventoryContent(int id, int pQuatity, int uQuatity, double price, String iName) {
-		super();
+		
 		this.id = id;
 		this.pQuatity = pQuatity;
 		this.uQuatity = uQuatity;
