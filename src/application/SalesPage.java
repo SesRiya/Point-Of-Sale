@@ -1,5 +1,7 @@
 package application;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -349,14 +351,17 @@ public class SalesPage extends Application implements Initializable {
 	
 	@FXML
 	public void complete(Event e) throws IOException {
-		Writer wr = new FileWriter("sales_data.txt");
+		File file = new File("sales_data.txt");
+		FileWriter wr = new FileWriter(file, true);
+		BufferedWriter br = new BufferedWriter(wr);
 		for (int i = 0; i < coffee.size(); i++) {
 			Coffee cof = coffee.get(i);
 			String record = cof.getCoffeeID() + " : " + cof.getCoffeeFlavour() + " : " + cof.getCoffeeSize() + " : "
-					+ cof.getCoffeePrice();
-			wr.write(record);
+					+ cof.getCoffeePrice() + "\n";
+			br.write(record);
 		}
 		wr.flush();
+		br.close();
 		wr.close();
 	}
 
