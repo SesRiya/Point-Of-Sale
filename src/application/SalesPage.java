@@ -169,7 +169,7 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void small(Event e) {
 		if (selectedCoffee != null) {
-			selectedCoffee.setCoffeeSize("Small");
+			selectedCoffee.setCoffeeSize("S");
 			orderTableView.refresh();
 		} else {
 			System.out.println("Please select a coffee first.");
@@ -178,12 +178,42 @@ public class SalesPage extends Application implements Initializable {
 
 	@FXML
 	public void medium(Event e) {
-
+		if (selectedCoffee != null) {
+			selectedCoffee.setCoffeeSize("M");
+			orderTableView.refresh();
+		} else {
+			System.out.println("Please select a coffee first.");
+		}
 	}
 
 	@FXML
 	public void large(Event e) {
-
+		if (selectedCoffee != null) {
+			selectedCoffee.setCoffeeSize("L");
+			orderTableView.refresh();
+		} else {
+			System.out.println("Please select a coffee first.");
+		}
+	}
+	
+	@FXML
+	public void onRegular(Event e) {
+		
+	}
+	
+	@FXML
+	public void onSkimmed(Event e) {
+		
+	}
+	
+	@FXML
+	public void onSoy(Event e) {
+		
+	}
+	
+	@FXML
+	public void onAlmond(Event e) {
+		
 	}
 
 }
