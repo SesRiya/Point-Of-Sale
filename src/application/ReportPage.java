@@ -120,4 +120,14 @@ public class ReportPage extends Application implements Initializable{
 		}
     }
 
+	@FXML
+	public void ReportPage(Event e){
+        InventoryPage fourthScreen = new InventoryPage();
+        try {
+			fourthScreen.start(stage);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+    }
+
 }
