@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -16,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
@@ -49,6 +52,10 @@ public class SalesPage extends Application implements Initializable {
 	private MenuButton coffeeMilk;
 	@FXML
 	private MenuButton coffeeExtra;
+	@FXML
+	private Label totalPayment;
+	@FXML
+	private Label gst;
 
 	ObservableList<Coffee> coffee = FXCollections.observableArrayList();
 
@@ -351,6 +358,10 @@ public class SalesPage extends Application implements Initializable {
 	
 	@FXML
 	public void complete(Event e) throws IOException {
+		
+		totalPayment.setText(String.valueOf(totalPayment()));
+		gst.setText(String.valueOf(gst()));
+		
 		File file = new File("sales_data.txt");
 		FileWriter wr = new FileWriter(file, true);
 		BufferedWriter br = new BufferedWriter(wr);
@@ -364,7 +375,27 @@ public class SalesPage extends Application implements Initializable {
 		wr.flush();
 		br.close();
 		wr.close();
+	
 	}
+	
+	private double totalPayment() {
+		TableColumn<Coffee, Double> column = coffeePriceColumn ; // column you want
 
+		List<Double> columnPriceData = new ArrayList<>();
+		for (Coffee item : orderTableView.getItems()) {
+			columnPriceData.add(column.getCellObservableValue(item).getValue());
+		}
+		double totalPrice = 0;
+		for (Double coffePrice : columnPriceData) {
+			totalPrice += coffePrice;
+		}
+		return totalPrice;
+	}
+	
+	private double gst() {
+		 double gst = totalPayment() * 0.15;
+		 return gst;
+	}
+	
 
 }

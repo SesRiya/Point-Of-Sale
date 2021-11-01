@@ -50,7 +50,7 @@
 				<Image url="@../../homeicon.png" />
 			</image>
 		</ImageView>
-		<VBox layoutX="459.0" layoutY="2.0" prefHeight="331.0" prefWidth="442.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
+		<VBox layoutX="459.0" layoutY="2.0" prefHeight="331.0" prefWidth="440.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
 			<children>
 				<TableView fx:id="orderTableView" editable="true" maxWidth="428.0" prefHeight="216.0" prefWidth="428.0">
 					<columns>
@@ -127,16 +127,38 @@
 				<Image url="@../../Takeaway.jpeg" />
 			</image>
 		</ImageView>
-		<VBox layoutX="456.0" layoutY="331.0" prefHeight="266.0" prefWidth="444.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
+		<VBox layoutX="457.0" layoutY="384.0" prefHeight="210.0" prefWidth="440.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
 			<children>
-				<Label prefHeight="40.0" prefWidth="69.0" text="DIscount" />
-				<Label prefHeight="40.0" prefWidth="46.0" text="GST" />
-				<Label prefHeight="40.0" prefWidth="53.0" text="Total" />
-				<Label prefHeight="60.0" prefWidth="355.0" style="-fx-background-color: #00FFFF;" text="Pay" translateY="30.0">
-					<font>
-						<Font name="System Bold" size="18.0" />
-					</font>
-				</Label>
+				<Label prefHeight="40.0" prefWidth="70.0" text="DIscount">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font></Label>
+            <Label fx:id="discount" prefHeight="40.0" prefWidth="70.0" text="Label">
+               <VBox.margin>
+                  <Insets left="350.0" top="-40.0" />
+               </VBox.margin>
+            </Label>
+				<Label prefHeight="40.0" prefWidth="46.0" text="GST">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font></Label>
+            <Label fx:id="gst" prefHeight="40.0" prefWidth="70.0" text="Label">
+               <VBox.margin>
+                  <Insets left="350.0" top="-40.0" />
+               </VBox.margin>
+            </Label>
+				<Label prefHeight="40.0" prefWidth="53.0" text="Total">
+               <font>
+                  <Font name="Century Gothic" size="18.0" />
+               </font></Label>
+            <Label fx:id="totalPayment" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #90caff;" text="Label" textFill="#040404">
+               <VBox.margin>
+                  <Insets left="350.0" top="-40.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Century Gothic Bold" size="24.0" />
+               </font>
+            </Label>
 			</children>
 		</VBox>
 		<MenuButton fx:id="coffeeSize" layoutX="15.0" layoutY="451.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Size">
