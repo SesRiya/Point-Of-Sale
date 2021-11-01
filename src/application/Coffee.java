@@ -13,9 +13,6 @@ public class Coffee {
 		this.coffeeFlavour = coffeeFlavour;
 	}
 	
-	
-	
-
 	public Coffee(int coffeeID, String coffeeFlavour, String coffeeSize, String coffeeMilk, String coffeeExtra,
 			double coffeePrice) {
 		super();
@@ -26,8 +23,6 @@ public class Coffee {
 		this.coffeeExtra = coffeeExtra;
 		this.coffeePrice = coffeePrice;
 	}
-
-
 
 
 	public int getCoffeeID() {

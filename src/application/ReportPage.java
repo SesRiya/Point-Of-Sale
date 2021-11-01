@@ -110,23 +110,13 @@ public class ReportPage extends Application implements Initializable{
     }
 	
 	@FXML
-	public void inventoryPage(Event e){
-        InventoryPage fourthScreen = new InventoryPage();
-        try {
+	public void inventoryPage(Event e) {
+		InventoryPage fourthScreen = new InventoryPage();
+		try {
 			fourthScreen.start(stage);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-    }
-
-	@FXML
-	public void ReportPage(Event e){
-        InventoryPage fourthScreen = new InventoryPage();
-        try {
-			fourthScreen.start(stage);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-    }
+	}
 
 }

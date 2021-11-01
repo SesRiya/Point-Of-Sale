@@ -1,5 +1,8 @@
 package application;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Application;
@@ -28,14 +31,15 @@ public class SalesPage extends Application implements Initializable {
 	private TableColumn<Coffee, Integer> coffeeIDColumn;
 	@FXML
 	private TableColumn<Coffee, String> coffeeFlavourColumn;
-	@FXML
-	private TableColumn<Coffee, Double> coffeePriceColumn;
+
 	@FXML
 	private TableColumn<Coffee, String> coffeeSizeColumn;
 	@FXML
 	private TableColumn<Coffee, String> coffeeMilkColumn;
 	@FXML
 	private TableColumn<Coffee, String> coffeeExtrasColumn;
+	@FXML
+	private TableColumn<Coffee, Double> coffeePriceColumn;
 
 	@FXML
 	private MenuButton coffeeSize;
@@ -245,7 +249,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	@FXML
-	public void onEspressoShot(Event e){
+	public void onEspressoShot(Event e) {
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeExtra("Espresso");
 			orderTableView.refresh();
@@ -253,9 +257,9 @@ public class SalesPage extends Application implements Initializable {
 			System.out.println("Please select a coffee first.");
 		}
 	}
-	
+
 	@FXML
-	public void onExtraFlavour(Event e){
+	public void onExtraFlavour(Event e) {
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeExtra("Flavour");
 			orderTableView.refresh();
@@ -263,14 +267,62 @@ public class SalesPage extends Application implements Initializable {
 			System.out.println("Please select a coffee first.");
 		}
 	}
-	
+
 	@FXML
-	public void onWhippedCream(Event e){
+	public void onWhippedCream(Event e) {
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeExtra("Cream");
 			orderTableView.refresh();
 		} else {
 			System.out.println("Please select a coffee first.");
+		}
+	}
+
+	@FXML
+	public void complete(Event e) throws IOException {
+		Writer wr = new FileWriter("sales_data.txt");
+		for (int i = 0; i < coffee.size(); i++) {
+			Coffee cof = coffee.get(i);
+			String record = cof.getCoffeeID() + " : " + cof.getCoffeeFlavour() + " : " + cof.getCoffeeSize() + " : "
+					+ cof.getCoffeePrice();
+			wr.write(record);
+		}
+		wr.flush();
+		wr.close();
+	}
+
+	@FXML
+	public void pricePerCoffee(Event e) {
+		double priceFlavour = 0, priceMilk = 0, priceSize = 0, priceExtra = 0;
+
+		if (selectedCoffee != null) {
+			if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino")
+					|| (selectedCoffee.getCoffeeFlavour().equals("Latte"))) {
+				priceFlavour = 4.50;
+			} else if (selectedCoffee.getCoffeeFlavour().equals("Espresso")) {
+				priceFlavour = 3.00;
+			}
+
+			if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
+				priceMilk = 0.00;
+			} else if (selectedCoffee.getCoffeeMilk().equals("Soy")) {
+				priceMilk = 0.50;
+			}
+
+			if (selectedCoffee.getCoffeeSize().equals("Small")) {
+				priceSize = 0.00;
+			} else if (selectedCoffee.getCoffeeSize().equals("Medium")) {
+				priceSize = 0.50;
+			}
+
+			if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
+				priceExtra = 0.80;
+			}
+
+			double priceCoffee = priceFlavour + priceMilk + priceSize + priceExtra;
+
+			selectedCoffee.setCoffeePrice(priceCoffee);
+			orderTableView.refresh();
 		}
 	}
 }
