@@ -7,6 +7,7 @@ import javafx.event.Event;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 public class Main extends Application {
 	private static Stage stage;
@@ -15,8 +16,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(Main.class.getResource("/layout/MainLayout.fxml"));
-			primaryStage.setTitle("Java Expresso");
-			
+			primaryStage.setTitle(" Java Espresso");
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("coffeeBeanWindowIcon.png")));
 			primaryStage.setScene(new Scene(root, 900, 600));
 			primaryStage.show();
 			stage = primaryStage;

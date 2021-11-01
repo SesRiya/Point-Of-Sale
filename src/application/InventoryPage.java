@@ -60,7 +60,7 @@ public class InventoryPage extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(InventoryPage.class.getResource("/layout/InventoryPageLayout.fxml"));
-		primaryStage.setScene(new Scene(root, 800, 600));
+		primaryStage.setScene(new Scene(root, 900, 600));
 		primaryStage.show();
 		stage = primaryStage;
 		
