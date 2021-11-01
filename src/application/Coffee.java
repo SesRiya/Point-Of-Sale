@@ -3,25 +3,32 @@ package application;
 public class Coffee {
 	private int coffeeID;
 	private String coffeeFlavour;
-	private double coffeePrice;
 	private String coffeeSize;
 	private String coffeeMilk;
+	private String coffeeExtra;
+	private double coffeePrice;
 
-	public Coffee(int coffeeID, String coffeeFlavour, double coffeePrice) {
+	public Coffee(int coffeeID, String coffeeFlavour) {
 		this.coffeeID = coffeeID;
 		this.coffeeFlavour = coffeeFlavour;
-		this.coffeePrice = coffeePrice;
 	}
 	
+	
+	
 
-	public Coffee(int coffeeID, String coffeeFlavour, double coffeePrice, String coffeeSize, String coffeeMilk) {
+	public Coffee(int coffeeID, String coffeeFlavour, String coffeeSize, String coffeeMilk, String coffeeExtra,
+			double coffeePrice) {
 		super();
 		this.coffeeID = coffeeID;
 		this.coffeeFlavour = coffeeFlavour;
-		this.coffeePrice = coffeePrice;
 		this.coffeeSize = coffeeSize;
 		this.coffeeMilk = coffeeMilk;
+		this.coffeeExtra = coffeeExtra;
+		this.coffeePrice = coffeePrice;
 	}
+
+
+
 
 	public int getCoffeeID() {
 		return coffeeID;
@@ -62,6 +69,21 @@ public class Coffee {
 	public void setCoffeeMilk(String coffeeMilk) {
 		this.coffeeMilk = coffeeMilk;
 	}
+
+
+
+
+	public String getCoffeeExtra() {
+		return coffeeExtra;
+	}
+
+
+
+
+	public void setCoffeeExtra(String coffeeExtra) {
+		this.coffeeExtra = coffeeExtra;
+	}
+	
 	
 
 }

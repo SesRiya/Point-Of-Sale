@@ -56,7 +56,7 @@
                 <TableColumn fx:id="coffeeFlavourColumn" prefWidth="85.77777481079102" text="OrderName" />
                   <TableColumn fx:id="coffeeMilkColumn" prefWidth="60.22222900390625" sortable="false" text="Milk" />
                   <TableColumn fx:id="coffeeSizeColumn" prefWidth="55.55560302734375" sortable="false" text="Size" />
-                  <TableColumn fx:id="coffeeExtraColumn" prefWidth="55.55560302734375" sortable="false" text="Extras" />
+                  <TableColumn fx:id="coffeeExtrasColumn" prefWidth="55.55560302734375" sortable="false" text="Extras" />
                   <TableColumn fx:id="coffeePriceColumn" prefWidth="141.11106872558594" sortable="false" text="Price" />
               </columns>
             </TableView>
@@ -148,9 +148,9 @@
       </MenuButton>
       <MenuButton fx:id="coffeeExtra" layoutX="352.0" layoutY="448.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Extras">
         <items>
-          <MenuItem mnemonicParsing="false" text="Espresso Shot" />
-          <MenuItem mnemonicParsing="false" text="Flavours" />
-            <MenuItem mnemonicParsing="false" text="Whipped Cream" />
+          <MenuItem mnemonicParsing="false" onAction="#onEspressoShot" text="Espresso Shot" />
+          <MenuItem mnemonicParsing="false" onAction="#onExtraFlavour" text="Flavours" />
+            <MenuItem mnemonicParsing="false" onAction="#onWhippedCream" text="Whipped Cream" />
         </items>
          <font>
             <Font size="18.0" />
