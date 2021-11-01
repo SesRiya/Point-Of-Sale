@@ -279,6 +279,75 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	@FXML
+	public void none(Event e) {
+		if (selectedCoffee != null) {
+			selectedCoffee.setCoffeeExtra("None");
+			orderTableView.refresh();
+		} else {
+			System.out.println("Please select a coffee first.");
+		}
+	}
+
+	@FXML
+	public void pricePerCoffee(Event e) {
+		double priceCoffee = priceCoffeeFlavour() + priceCoffeeMilk() + priceCoffeeSize() + priceCoffeeExtra();
+		selectedCoffee.setCoffeePrice(priceCoffee);
+		orderTableView.refresh();
+	}
+
+	private double priceCoffeeFlavour() {
+		double priceFlavour = 0;
+		if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino") || (selectedCoffee.getCoffeeFlavour().equals("Latte")
+				|| (selectedCoffee.getCoffeeFlavour().equals("Espresso Macchiato")
+						|| (selectedCoffee.getCoffeeFlavour().equals("Americano"))))) {
+			priceFlavour = 4.50;
+		} else if (selectedCoffee.getCoffeeFlavour().equals("Espresso")
+				|| (selectedCoffee.getCoffeeFlavour().equals("Double Espresso")
+						|| (selectedCoffee.getCoffeeFlavour().equals("Ristreto")))) {
+			priceFlavour = 3.00;
+		} else {
+			priceFlavour = 5.50;
+		}
+		return priceFlavour;
+	}
+
+	private double priceCoffeeMilk() {
+		double priceMilk = 0;
+		if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
+			priceMilk = 0.00;
+		} else if (selectedCoffee.getCoffeeMilk().equals("Soy") || (selectedCoffee.getCoffeeMilk().equals("Almond"))) {
+			priceMilk = 0.50;
+		} else {
+			priceMilk = 0.20;
+		}
+		return priceMilk;
+	}
+
+	private double priceCoffeeSize() {
+		double priceSize;
+		if (selectedCoffee.getCoffeeSize().equals("S")) {
+			priceSize = 0.00;
+		} else if (selectedCoffee.getCoffeeSize().equals("M")) {
+			priceSize = 0.30;
+		} else {
+			priceSize = 0.50;
+		}
+		return priceSize;
+	}
+
+	private double priceCoffeeExtra() {
+		double priceExtra;
+		if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
+			priceExtra = 0.80;
+		} else if (selectedCoffee.getCoffeeExtra().equals("Espresso")) {
+			priceExtra = 0.80;
+		} else {
+			priceExtra = 0.00;
+		}
+		return priceExtra;
+	}
+	
+	@FXML
 	public void complete(Event e) throws IOException {
 		Writer wr = new FileWriter("sales_data.txt");
 		for (int i = 0; i < coffee.size(); i++) {
@@ -291,38 +360,5 @@ public class SalesPage extends Application implements Initializable {
 		wr.close();
 	}
 
-	@FXML
-	public void pricePerCoffee(Event e) {
-		double priceFlavour = 0, priceMilk = 0, priceSize = 0, priceExtra = 0;
 
-		if (selectedCoffee != null) {
-			if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino")
-					|| (selectedCoffee.getCoffeeFlavour().equals("Latte"))) {
-				priceFlavour = 4.50;
-			} else if (selectedCoffee.getCoffeeFlavour().equals("Espresso")) {
-				priceFlavour = 3.00;
-			}
-
-			if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
-				priceMilk = 0.00;
-			} else if (selectedCoffee.getCoffeeMilk().equals("Soy")) {
-				priceMilk = 0.50;
-			}
-
-			if (selectedCoffee.getCoffeeSize().equals("Small")) {
-				priceSize = 0.00;
-			} else if (selectedCoffee.getCoffeeSize().equals("Medium")) {
-				priceSize = 0.50;
-			}
-
-			if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
-				priceExtra = 0.80;
-			}
-
-			double priceCoffee = priceFlavour + priceMilk + priceSize + priceExtra;
-
-			selectedCoffee.setCoffeePrice(priceCoffee);
-			orderTableView.refresh();
-		}
-	}
 }

@@ -1,1 +1,1 @@
-2 : Cappuccino : null : 0.03 : Latte : null : 0.0
+2 : Cappuccino : M : 5.8
