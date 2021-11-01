@@ -21,7 +21,7 @@
                   <Insets left="150.0" top="25.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#reportPage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../reporticon.png" />
                </image>
@@ -29,7 +29,7 @@
                   <Insets left="50.0" top="25.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="70.0" fitWidth="70.0" onMouseClicked="#reportPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../inventory%20icon.png" />
                </image>
