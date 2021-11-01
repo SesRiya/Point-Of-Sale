@@ -17,7 +17,6 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -578,7 +577,7 @@ public class SalesPage extends Application implements Initializable {
 		return gst;
 	}
 
-	public static void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
+	public void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
 		Alert alert = new Alert(alertType);
 		alert.setContentText(message);
 		alert.setTitle(title);

@@ -17,22 +17,22 @@ public class InventoryPage extends Application{
 	private static Stage stage;
 
     @FXML
-    private TableView<InventoryContent> table;
+    private TableView<InventoryContent> tableInventory;
 
     @FXML
-    private TableColumn<InventoryContent, Integer> id;
+    private TableColumn<InventoryContent, Integer> idItem;
 
     @FXML
-    private TableColumn<InventoryContent, String> iName;
+    private TableColumn<InventoryContent, String> itemName;
 
     @FXML
-    private TableColumn<InventoryContent, Integer> pQuatity;
+    private TableColumn<InventoryContent, Integer> purchasedQuantity;
 
     @FXML
-    private TableColumn<InventoryContent, Integer> uQuatity;
+    private TableColumn<InventoryContent, Integer> usedQuantity;
 
     @FXML
-    private TableColumn<InventoryContent, Double> price;
+    private TableColumn<InventoryContent, Double> priceItem;
     
     ObservableList<InventoryContent>list = FXCollections.observableArrayList(
     		
@@ -43,12 +43,9 @@ public class InventoryPage extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(InventoryPage.class.getResource("/layout/InventoryPageLayout.fxml"));
-		primaryStage.setScene(new Scene(root, 900, 600));
+		primaryStage.setScene(new Scene(root, 530, 500));
 		primaryStage.show();
-		stage = primaryStage;
-		
-		
-		
+		stage = primaryStage;	
 	}
 	
 	@FXML

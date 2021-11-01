@@ -51,21 +51,21 @@
 			</image>
 		</ImageView>
 		<VBox layoutX="459.0" layoutY="2.0" prefHeight="331.0" prefWidth="440.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
-			<children>
-				<TableView fx:id="orderTableView" editable="true" maxWidth="428.0" prefHeight="216.0" prefWidth="428.0">
-					<columns>
-						<TableColumn fx:id="coffeeIDColumn" prefWidth="33.333375334739685" sortable="false" text="ID" />
-						<TableColumn fx:id="coffeeFlavourColumn" prefWidth="137.99994277954102" text="OrderName" />
-						<TableColumn fx:id="coffeeSizeColumn" minWidth="1.77777099609375" prefWidth="30.2222900390625" sortable="false" text="Size" />
-						<TableColumn fx:id="coffeeMilkColumn" prefWidth="63.11106872558594" sortable="false" text="Milk" />
-						<TableColumn fx:id="coffeeExtrasColumn" prefWidth="88.22222900390625" sortable="false" text="Extras" />
-						<TableColumn fx:id="coffeePriceColumn" prefWidth="104.4444580078125" sortable="false" text="Price" />
-					</columns>
-				</TableView>
-			</children>
 			<padding>
 				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
 			</padding>
+         <children>
+      				<TableView fx:id="orderTableView" editable="true" maxWidth="600.0" prefHeight="276.0" prefWidth="559.0">
+      					<columns>
+      						<TableColumn fx:id="coffeeIDColumn" prefWidth="26.888856291770935" sortable="false" text="ID" />
+      						<TableColumn fx:id="coffeeFlavourColumn" prefWidth="145.11114883422852" text="OrderName" />
+      						<TableColumn fx:id="coffeeSizeColumn" minWidth="1.77777099609375" prefWidth="30.2222900390625" sortable="false" text="Size" />
+      						<TableColumn fx:id="coffeeMilkColumn" prefWidth="63.11106872558594" sortable="false" text="Milk" />
+      						<TableColumn fx:id="coffeeExtrasColumn" prefWidth="71.55548095703125" sortable="false" text="Extras" />
+      						<TableColumn fx:id="coffeePriceColumn" prefWidth="77.33336385091144" sortable="false" text="Price" />
+      					</columns>
+      				</TableView>
+         </children>
 		</VBox>
 		<ImageView fitHeight="97.0" fitWidth="100.0" layoutX="8.0" layoutY="115.0" onMouseClicked="#addAmericano" pickOnBounds="true" preserveRatio="true">
 			<image>
@@ -127,13 +127,13 @@
 				<Image url="@../../Takeaway.jpeg" />
 			</image>
 		</ImageView>
-		<VBox layoutX="457.0" layoutY="384.0" prefHeight="210.0" prefWidth="440.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
+		<VBox layoutX="461.0" layoutY="349.0" prefHeight="145.0" prefWidth="440.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
 			<children>
-				<Label prefHeight="40.0" prefWidth="70.0" text="DIscount">
+				<Label prefHeight="40.0" prefWidth="70.0" text="Discount">
                <font>
                   <Font name="Century Gothic" size="14.0" />
                </font></Label>
-            <Label fx:id="discount" prefHeight="40.0" prefWidth="70.0" text="Label">
+            <Label fx:id="discount" prefHeight="40.0" prefWidth="70.0">
                <VBox.margin>
                   <Insets left="350.0" top="-40.0" />
                </VBox.margin>
@@ -142,7 +142,7 @@
                <font>
                   <Font name="Century Gothic" size="14.0" />
                </font></Label>
-            <Label fx:id="gst" prefHeight="40.0" prefWidth="70.0" text="Label">
+            <Label fx:id="gst" prefHeight="40.0" prefWidth="70.0">
                <VBox.margin>
                   <Insets left="350.0" top="-40.0" />
                </VBox.margin>
@@ -151,7 +151,7 @@
                <font>
                   <Font name="Century Gothic" size="18.0" />
                </font></Label>
-            <Label fx:id="totalPayment" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #90caff;" text="Label" textFill="#040404">
+            <Label fx:id="totalPayment" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #90caff;" textFill="#040404">
                <VBox.margin>
                   <Insets left="350.0" top="-40.0" />
                </VBox.margin>
@@ -193,7 +193,7 @@
 				<Font name="Century Gothic" size="18.0" />
 			</font>
 		</MenuButton>
-		<Button fx:id="pricePerCoffee" alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="512.0" mnemonicParsing="false" onAction="#pricePerCoffee" onMouseClicked="#pricePerCoffee" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #FFFFFF;" text="Price" textAlignment="CENTER">
+		<Button fx:id="pricePerCoffee" alignment="CENTER" contentDisplay="CENTER" layoutX="532.0" layoutY="522.0" mnemonicParsing="false" onAction="#pricePerCoffee" onMouseClicked="#pricePerCoffee" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #FFFFFF;" text="Price" textAlignment="CENTER">
 			<font>
 				<Font name="Century Gothic" size="16.0" />
 			</font>
@@ -201,7 +201,7 @@
 				<InnerShadow />
 			</effect>
 		</Button>
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="246.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#complete" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #FFFFFF;" text="Total Price" textAlignment="CENTER">
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="722.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#complete" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #FFFFFF;" text="Total Price" textAlignment="CENTER">
 			<font>
 				<Font name="Century Gothic" size="16.0" />
 			</font>

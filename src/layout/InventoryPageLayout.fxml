@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="690.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventoryPage">
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="530.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventoryPage">
    <children>
-      <HBox layoutX="-1.0" prefHeight="101.0" prefWidth="690.0" style="-fx-background-color: #FFFFFF;">
+      <HBox layoutX="-1.0" prefHeight="101.0" prefWidth="530.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#salesPage" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,13 +45,13 @@
          </image>
       </ImageView>
       <Accordion layoutX="14.0" layoutY="107.0" />
-      <TableView fx:id="table" layoutY="100.0" prefHeight="415.0" prefWidth="690.0">
+      <TableView fx:id="table" layoutY="100.0" maxHeight="400.0" maxWidth="530.0" prefHeight="400.0" prefWidth="530.0">
         <columns>
-          <TableColumn fx:id="id" prefWidth="145.0" text="ID" />
-          <TableColumn fx:id="iName" prefWidth="140.0" text="ItemName" />
-            <TableColumn fx:id="pQuatity" minWidth="0.0" prefWidth="132.0" text="PurchasedQuatity" />
-            <TableColumn fx:id="uQuatity" prefWidth="128.6666259765625" text="UsedQuatity" />
-            <TableColumn fx:id="price" prefWidth="134.0" text="Price" />
+          <TableColumn fx:id="id" prefWidth="44.666685700416565" text="ID" />
+          <TableColumn fx:id="iName" prefWidth="135.99999618530273" text="ItemName" />
+            <TableColumn fx:id="pQuatity" minWidth="0.0" prefWidth="155.33335876464844" text="PurchasedQuantity" />
+            <TableColumn fx:id="uQuatity" prefWidth="95.33331298828125" text="UsedQuantity" />
+            <TableColumn fx:id="price" prefWidth="97.33328247070312" text="Price" />
         </columns>
       </TableView>
    </children>

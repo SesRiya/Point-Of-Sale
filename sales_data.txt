@@ -3,3 +3,4 @@
 2 : Cappuccino : M : Regular : Cream : 5.6
 3 : Latte : S : Soy : None : 5.0
 2 : Cappuccino : L : Almond : Espresso : 6.3
+2 : Cappuccino : S : Skimmed : Espresso : 5.5

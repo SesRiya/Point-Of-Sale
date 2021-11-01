@@ -1,23 +1,23 @@
 package application;
 
 public class InventoryContent {
-	int id,pQuatity,uQuatity;
-	double price;
-	String iName;
+	int id,purchasedQuantity,usedQuantity;
+	double priceItem;
+	String itemName;
 	/**
 	 * @param id
-	 * @param pQuatity
-	 * @param uQuatity
+	 * @param pQuantity
+	 * @param uQuantity
 	 * @param price
-	 * @param iName
+	 * @param itemName
 	 */
-	public InventoryContent(int id, int pQuatity, int uQuatity, double price, String iName) {
+	public InventoryContent(int id, int pQuantity, int uQuantity, double price, String itemName) {
 		
 		this.id = id;
-		this.pQuatity = pQuatity;
-		this.uQuatity = uQuatity;
-		this.price = price;
-		this.iName = iName;
+		this.purchasedQuantity = pQuantity;
+		this.usedQuantity = uQuantity;
+		this.priceItem = price;
+		this.itemName = itemName;
 	}
 	public int getId() {
 		return id;
@@ -26,28 +26,28 @@ public class InventoryContent {
 		this.id = id;
 	}
 	public int getpQuatity() {
-		return pQuatity;
+		return purchasedQuantity;
 	}
-	public void setpQuatity(int pQuatity) {
-		this.pQuatity = pQuatity;
+	public void setpQuatity(int pQuantity) {
+		this.purchasedQuantity = pQuantity;
 	}
 	public int getuQuatity() {
-		return uQuatity;
+		return usedQuantity;
 	}
-	public void setuQuatity(int uQuatity) {
-		this.uQuatity = uQuatity;
+	public void setuQuatity(int uQuantity) {
+		this.usedQuantity = uQuantity;
 	}
 	public double getPrice() {
-		return price;
+		return priceItem;
 	}
 	public void setPrice(double price) {
-		this.price = price;
+		this.priceItem = price;
 	}
 	public String getiName() {
-		return iName;
+		return itemName;
 	}
-	public void setiName(String iName) {
-		this.iName = iName;
+	public void setiName(String itemName) {
+		this.itemName = itemName;
 	}
 	
 	

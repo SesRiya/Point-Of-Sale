@@ -89,7 +89,7 @@ public class LoginPage extends Application {
 	 * @param message
 	 * @param title
 	 */
-	public static void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
+	public void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
 		Alert alert = new Alert(alertType);
 		alert.setContentText(message);
 		alert.setTitle(title);
