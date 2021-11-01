@@ -48,13 +48,15 @@
             <Image url="@../../homeicon.png" />
          </image>
       </ImageView>
-      <VBox layoutX="549.0" layoutY="2.0" prefHeight="331.0" prefWidth="353.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
+      <VBox layoutX="549.0" layoutY="2.0" prefHeight="331.0" prefWidth="352.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
          <children>
-            <TableView fx:id="orderTableView" editable="true" prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="orderTableView" editable="true" maxWidth="328.0" prefHeight="161.0" prefWidth="328.0">
               <columns>
-                <TableColumn fx:id="coffeeIDColumn" prefWidth="29.0" sortable="false" text="ID" />
-                <TableColumn fx:id="coffeeFlavourColumn" prefWidth="122.0" text="OrderName" />
-                  <TableColumn fx:id="coffeePriceColumn" prefWidth="97.0" sortable="false" text="Price" />
+                <TableColumn fx:id="coffeeIDColumn" prefWidth="48.00000127156454" sortable="false" text="ID" />
+                <TableColumn fx:id="coffeeFlavourColumn" prefWidth="85.77777481079102" text="OrderName" />
+                  <TableColumn fx:id="coffeeSizeColumn1" prefWidth="60.22222900390625" sortable="false" text="Milk" />
+                  <TableColumn fx:id="coffeeSizeColumn" prefWidth="49.5555419921875" sortable="false" text="Size" />
+                  <TableColumn fx:id="coffeePriceColumn" prefWidth="145.33335876464844" sortable="false" text="Price" />
               </columns>
             </TableView>
          </children>
@@ -127,7 +129,7 @@
             <Label prefHeight="40.0" prefWidth="250.0" text="DIscount" />
             <Label prefHeight="40.0" prefWidth="250.0" text="GST" />
             <Label prefHeight="40.0" prefWidth="250.0" text="Total" />
-            <Label prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #00FFFF;" text="Pay" translateY="30.0">
+            <Label prefHeight="60.0" prefWidth="355.0" style="-fx-background-color: #00FFFF;" text="Pay" translateY="30.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
@@ -143,7 +145,7 @@
             <Font name="Century Gothic" size="18.0" />
          </font>
       </MenuButton>
-      <MenuButton fx:id="coffeeExtra" layoutX="219.0" layoutY="444.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Extras">
+      <MenuButton fx:id="coffeeExtra" layoutX="352.0" layoutY="448.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Extras">
         <items>
           <MenuItem mnemonicParsing="false" text="Espresso Shot" />
           <MenuItem mnemonicParsing="false" text="Flavours" />
@@ -153,12 +155,12 @@
             <Font size="18.0" />
          </font>
       </MenuButton>
-      <MenuButton fx:id="coffeeMilk" layoutX="355.0" layoutY="445.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Milk">
+      <MenuButton fx:id="coffeeMilk" layoutX="183.0" layoutY="446.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Milk">
         <items>
-          <MenuItem mnemonicParsing="false" text="Regular" />
-          <MenuItem mnemonicParsing="false" text="Skimmed" />
-            <MenuItem mnemonicParsing="false" text="Soy" />
-            <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" onAction="#onRegular" text="Regular" />
+          <MenuItem mnemonicParsing="false" onAction="#onSkimmed" text="Skimmed" />
+            <MenuItem mnemonicParsing="false" onAction="#onSoy" text="Soy" />
+            <MenuItem mnemonicParsing="false" onAction="#onAlmond" text="Almond" />
         </items>
          <font>
             <Font name="Century Gothic" size="18.0" />

@@ -3,41 +3,60 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class SalesPage extends Application implements Initializable {
 	private static Stage stage;
+	private Coffee selectedCoffee;
 
 	@FXML
 	private TableView<Coffee> orderTableView;
 	@FXML
 	private TableColumn<Coffee, Integer> coffeeIDColumn;
 	@FXML
-	TableColumn<Coffee, String> coffeeFlavourColumn;
+	private TableColumn<Coffee, String> coffeeFlavourColumn;
 	@FXML
-	TableColumn<Coffee, Double> coffeePriceColumn;
+	private TableColumn<Coffee, Double> coffeePriceColumn;
+	@FXML
+	private TableColumn<Coffee, String> coffeeSizeColumn;
+	@FXML
+	private MenuButton coffeeSize;
 
 	ObservableList<Coffee> coffee = FXCollections.observableArrayList();
-
-	private Event e;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		coffeeIDColumn.setCellValueFactory(new PropertyValueFactory<Coffee, Integer>("coffeeID"));
 		coffeeFlavourColumn.setCellValueFactory(new PropertyValueFactory<Coffee, String>("coffeeFlavour"));
 		coffeePriceColumn.setCellValueFactory(new PropertyValueFactory<Coffee, Double>("coffeePrice"));
+		coffeeSizeColumn.setCellValueFactory(new PropertyValueFactory<Coffee, String>("coffeeSize"));
 		orderTableView.setItems(coffee);
+
+		orderTableView.setRowFactory(tv -> {
+			TableRow<Coffee> row = new TableRow<>();
+			row.setOnMouseClicked(event -> {
+				if (!row.isEmpty()) {
+					selectedCoffee = row.getItem();
+				}
+			});
+			return row;
+		});
 
 	}
 
@@ -47,6 +66,7 @@ public class SalesPage extends Application implements Initializable {
 		primaryStage.setScene(new Scene(root, 800, 600));
 		primaryStage.show();
 		stage = primaryStage;
+
 	}
 
 	@FXML
@@ -148,7 +168,12 @@ public class SalesPage extends Application implements Initializable {
 
 	@FXML
 	public void small(Event e) {
-
+		if (selectedCoffee != null) {
+			selectedCoffee.setCoffeeSize("Small");
+			orderTableView.refresh();
+		} else {
+			System.out.println("Please select a coffee first.");
+		}
 	}
 
 	@FXML

@@ -1,14 +1,33 @@
 package application;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Coffee {
 	private int coffeeID;
 	private String coffeeFlavour;
 	private double coffeePrice;
+	private String coffeeSize;
 
 	public Coffee(int coffeeID, String coffeeFlavour, double coffeePrice) {
 		this.coffeeID = coffeeID;
 		this.coffeeFlavour = coffeeFlavour;
 		this.coffeePrice = coffeePrice;
+	}
+
+	public Coffee(int coffeeID, String coffeeFlavour, double coffeePrice, String coffeeSize) {
+		super();
+		this.coffeeID = coffeeID;
+		this.coffeeFlavour = coffeeFlavour;
+		this.coffeePrice = coffeePrice;
+		this.coffeeSize = coffeeSize;
+	}
+
+	public String getCoffeeSize() {
+		return coffeeSize;
+	}
+
+	public void setCoffeeSize(String coffeeSize) {
+		this.coffeeSize = coffeeSize;
 	}
 
 	public int getCoffeeID() {
