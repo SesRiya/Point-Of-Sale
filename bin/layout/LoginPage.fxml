@@ -13,44 +13,36 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #90caff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginPage">
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #90caff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginPage">
    <children>
-      <Circle fill="WHITE" layoutX="181.0" layoutY="282.0" radius="107.0" stroke="TRANSPARENT" strokeType="INSIDE">
+      <Circle fill="WHITE" layoutX="251.0" layoutY="325.0" radius="107.0" stroke="TRANSPARENT" strokeType="INSIDE">
          <effect>
             <InnerShadow />
          </effect>
       </Circle>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="77.0" prefHeight="46.0" prefWidth="501.0" text="welcome to java espresso">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="212.0" layoutY="82.0" prefHeight="46.0" prefWidth="501.0" text="welcome to java espresso">
          <font>
             <Font name="Century Gothic Bold" size="36.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="104.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="178.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../coffeeCupLogoIcon.png" />
          </image>
       </ImageView>
-      <Label layoutX="364.0" layoutY="149.0" prefHeight="23.0" prefWidth="121.0" text="User Name">
+      <Label layoutX="430.0" layoutY="245.0" prefHeight="23.0" prefWidth="121.0" text="User Name">
          <font>
             <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="userName" layoutX="340.0" layoutY="181.0" prefHeight="45.0" prefWidth="205.0" promptText="enter username" />
-      <Label layoutX="375.0" layoutY="240.0" text="Password">
+      <TextField fx:id="userName" layoutX="567.0" layoutY="232.0" prefHeight="45.0" prefWidth="205.0" promptText="enter username" />
+      <Label layoutX="433.0" layoutY="314.0" text="Password">
          <font>
-            <Font name="Century Gothic" size="16.0" />
+            <Font name="Century Gothic" size="18.0" />
          </font>
       </Label>
-      <PasswordField fx:id="password" layoutX="341.0" layoutY="269.0" prefHeight="45.0" prefWidth="206.0" promptText="enter password" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="356.0" layoutY="333.0" mnemonicParsing="false" onAction="#salesPage" prefHeight="40.0" prefWidth="153.0" style="-fx-background-color: #FFFFFF;" text="Login" textAlignment="CENTER">
-         <font>
-            <Font name="Century Gothic" size="16.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="357.0" layoutY="403.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="153.0" style="-fx-background-color: #FFFFFF;" text="Exit" textAlignment="CENTER">
+      <PasswordField fx:id="password" layoutX="567.0" layoutY="303.0" prefHeight="45.0" prefWidth="206.0" promptText="enter password" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="567.0" layoutY="382.0" mnemonicParsing="false" onAction="#salesPage" prefHeight="40.0" prefWidth="204.0" style="-fx-background-color: #FFFFFF;" text="Login" textAlignment="CENTER">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>
