@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -15,7 +14,7 @@
 <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ReportPage">
    <children>
       <HBox layoutX="-1.0" prefHeight="100.0" prefWidth="513.0" style="-fx-background-color: #FFFFFF;">
-         <children>
+         <children>"src/layout/SalesPageLayout.fxml"
             <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#salesPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sellIicon.png" />
@@ -56,16 +55,6 @@
         </yAxis>
       </LineChart>
       <DatePicker fx:id="calendar" layoutX="137.0" layoutY="173.0" prefHeight="34.0" prefWidth="268.0" />
-      <ToggleButtonGroup fx:id="toggleGroup" layoutX="137.0" layoutY="129.0" selectionType="SINGLE">
-          <toggles>
-              <ToggleButton fx:id="dayButton" prefHeight="23.0" prefWidth="84.0" text="DAY" />
-              <ToggleButton fx:id="monthButton" prefWidth="100.0" selected="true" text="MONTH" />
-              <ToggleButton fx:id="yearButton" prefHeight="44.0" prefWidth="87.0" text="YEAR" />
-          </toggles>
-         <opaqueInsets>
-            <Insets top="10.0" />
-         </opaqueInsets>
-      </ToggleButtonGroup>
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
