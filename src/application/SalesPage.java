@@ -3,7 +3,6 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Application;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,7 +35,11 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	private TableColumn<Coffee, String> coffeeSizeColumn;
 	@FXML
+	private TableColumn<Coffee, String> coffeeMilkColumn;
+	@FXML
 	private MenuButton coffeeSize;
+	@FXML
+	private MenuButton coffeeMilk;
 
 	ObservableList<Coffee> coffee = FXCollections.observableArrayList();
 
@@ -46,6 +49,7 @@ public class SalesPage extends Application implements Initializable {
 		coffeeFlavourColumn.setCellValueFactory(new PropertyValueFactory<Coffee, String>("coffeeFlavour"));
 		coffeePriceColumn.setCellValueFactory(new PropertyValueFactory<Coffee, Double>("coffeePrice"));
 		coffeeSizeColumn.setCellValueFactory(new PropertyValueFactory<Coffee, String>("coffeeSize"));
+		coffeeMilkColumn.setCellValueFactory(new PropertyValueFactory<Coffee, String>("coffeeMilk"));
 		orderTableView.setItems(coffee);
 
 		orderTableView.setRowFactory(tv -> {
@@ -198,7 +202,12 @@ public class SalesPage extends Application implements Initializable {
 	
 	@FXML
 	public void onRegular(Event e) {
-		
+		if (selectedCoffee != null) {
+			selectedCoffee.setCoffeeMilk("Regular");
+			orderTableView.refresh();
+		} else {
+			System.out.println("Please select a coffee first.");
+		}
 	}
 	
 	@FXML

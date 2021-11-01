@@ -70,6 +70,5 @@ public class Coffee {
 		this.coffeeMilk = coffeeMilk;
 	}
 	
-	
 
 }

@@ -54,7 +54,7 @@
               <columns>
                 <TableColumn fx:id="coffeeIDColumn" prefWidth="48.00000127156454" sortable="false" text="ID" />
                 <TableColumn fx:id="coffeeFlavourColumn" prefWidth="85.77777481079102" text="OrderName" />
-                  <TableColumn fx:id="coffeeSizeColumn1" prefWidth="60.22222900390625" sortable="false" text="Milk" />
+                  <TableColumn fx:id="coffeeMilkColumn" prefWidth="60.22222900390625" sortable="false" text="Milk" />
                   <TableColumn fx:id="coffeeSizeColumn" prefWidth="49.5555419921875" sortable="false" text="Size" />
                   <TableColumn fx:id="coffeePriceColumn" prefWidth="145.33335876464844" sortable="false" text="Price" />
               </columns>
