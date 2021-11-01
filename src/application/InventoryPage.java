@@ -1,22 +1,70 @@
 package application;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class InventoryPage extends Application{
 	private static Stage stage;
+
+    @FXML
+    private TableView<InventoryContent> table;
+
+    @FXML
+    private TableColumn<InventoryContent, Integer> id;
+
+    @FXML
+    private TableColumn<InventoryContent, String> iName;
+
+    @FXML
+    private TableColumn<InventoryContent, Integer> pQuatity;
+
+    @FXML
+    private TableColumn<InventoryContent, Integer> uQuatity;
+
+    @FXML
+    private TableColumn<InventoryContent, Double> price;
+    
+    ObservableList<InventoryContent>list = FXCollections.observableArrayList(
+    		
+    		
+    		);
+    
+
+    @FXML
+    void homePage(MouseEvent event) {
+
+    }
+
+    @FXML
+    void reportPage(MouseEvent event) {
+
+    }
+
+    @FXML
+    void salesPage(MouseEvent event) {
+
+    }
+    
+    
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(InventoryPage.class.getResource("/layout/InventoryPageLayout.fxml"));
-		primaryStage.setScene(new Scene(root, 800, 600));
+		primaryStage.setScene(new Scene(root, 900, 600));
 		primaryStage.show();
 		stage = primaryStage;
+		
+		
 		
 	}
 	

@@ -17,7 +17,7 @@
             <InnerShadow />
          </effect>
       </Circle>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="392.0" layoutY="482.0" mnemonicParsing="false" onAction="#loginPage" prefHeight="40.0" prefWidth="153.0" style="-fx-background-color: #FFFFFF;" text="Login" textAlignment="CENTER">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="392.0" layoutY="482.0" mnemonicParsing="false" onAction="#loginPage" prefHeight="40.0" prefWidth="153.0" style="-fx-background-color: #FFFFFF;" text="Enter" textAlignment="CENTER">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>
@@ -27,7 +27,7 @@
       </Button>
       <Label layoutX="378.0" layoutY="58.0" text="POS System">
          <font>
-            <Font name="Century Gothic Bold" size="36.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" layoutY="136.0" prefHeight="46.0" prefWidth="501.0" text="welcome to java espresso">

@@ -14,7 +14,7 @@ public class ReportPage extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(ReportPage.class.getResource("/layout/ReportPageLayout.fxml"));
-		primaryStage.setScene(new Scene(root, 800, 600));
+		primaryStage.setScene(new Scene(root, 900, 600));
 		primaryStage.show();
 		stage = primaryStage;
 		
