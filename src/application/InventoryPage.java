@@ -38,24 +38,7 @@ public class InventoryPage extends Application{
     		
     		
     		);
-    
-
-    @FXML
-    void homePage(MouseEvent event) {
-
-    }
-
-    @FXML
-    void reportPage(MouseEvent event) {
-
-    }
-
-    @FXML
-    void salesPage(MouseEvent event) {
-
-    }
-    
-    
+        
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -68,6 +51,7 @@ public class InventoryPage extends Application{
 		
 	}
 	
+	@FXML
 	public void salesPage(Event e){
         SalesPage secondScreen = new SalesPage();
         try {

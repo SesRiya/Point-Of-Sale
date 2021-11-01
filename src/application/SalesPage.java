@@ -5,9 +5,7 @@ import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -37,9 +35,14 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	private TableColumn<Coffee, String> coffeeMilkColumn;
 	@FXML
+	private TableColumn<Coffee, String> coffeeExtrasColumn;
+	
+	@FXML
 	private MenuButton coffeeSize;
 	@FXML
 	private MenuButton coffeeMilk;
+	@FXML
+	private MenuButton coffeeExtras;
 
 	ObservableList<Coffee> coffee = FXCollections.observableArrayList();
 
@@ -74,14 +77,14 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	@FXML
-	public void reportPage(Event e) {
-		ReportPage thirdScreen = new ReportPage();
-		try {
+	public void reportPage(Event e){
+        ReportPage thirdScreen = new ReportPage();
+        try {
 			thirdScreen.start(stage);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-	}
+    }
 
 	@FXML
 	public void homePage(Event e) {
@@ -212,17 +215,33 @@ public class SalesPage extends Application implements Initializable {
 	
 	@FXML
 	public void onSkimmed(Event e) {
-		
+		if (selectedCoffee != null) {
+			selectedCoffee.setCoffeeMilk("Skimmed");
+			orderTableView.refresh();
+		} else {
+			System.out.println("Please select a coffee first.");
+		}
 	}
 	
 	@FXML
 	public void onSoy(Event e) {
-		
+		if (selectedCoffee != null) {
+			selectedCoffee.setCoffeeMilk("Soy");
+			orderTableView.refresh();
+		} else {
+			System.out.println("Please select a coffee first.");
+		}
 	}
 	
 	@FXML
 	public void onAlmond(Event e) {
-		
+		if (selectedCoffee != null) {
+			selectedCoffee.setCoffeeMilk("Almond");
+			orderTableView.refresh();
+		} else {
+			System.out.println("Please select a coffee first.");
+		}
 	}
 
+	
 }

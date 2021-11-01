@@ -1,7 +1,5 @@
 package application;
 
-import javafx.beans.property.SimpleStringProperty;
-
 public class Coffee {
 	private int coffeeID;
 	private String coffeeFlavour;
@@ -14,8 +12,6 @@ public class Coffee {
 		this.coffeeFlavour = coffeeFlavour;
 		this.coffeePrice = coffeePrice;
 	}
-
-
 	
 
 	public Coffee(int coffeeID, String coffeeFlavour, double coffeePrice, String coffeeSize, String coffeeMilk) {
@@ -26,9 +22,6 @@ public class Coffee {
 		this.coffeeSize = coffeeSize;
 		this.coffeeMilk = coffeeMilk;
 	}
-
-
-
 
 	public int getCoffeeID() {
 		return coffeeID;
