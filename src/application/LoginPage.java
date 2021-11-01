@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -72,6 +73,7 @@ public class LoginPage extends Application {
 		alert.setHeaderText(null);
 		alert.initOwner(owner);
 		alert.show();
+		
 	}
 
 }

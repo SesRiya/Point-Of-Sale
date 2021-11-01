@@ -17,7 +17,7 @@
             <InnerShadow />
          </effect>
       </Circle>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="392.0" layoutY="482.0" mnemonicParsing="false" onAction="#loginPage" prefHeight="40.0" prefWidth="153.0" style="-fx-background-color: #FFFFFF;" text="Enter" textAlignment="CENTER">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="383.0" layoutY="478.0" mnemonicParsing="false" onAction="#loginPage" prefHeight="40.0" prefWidth="153.0" style="-fx-background-color: #FFFFFF;" text="Enter" textAlignment="CENTER">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>
@@ -25,7 +25,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Label layoutX="378.0" layoutY="58.0" text="POS System">
+      <Label layoutX="393.0" layoutY="57.0" text="POS System">
          <font>
             <Font name="Century Gothic Bold" size="24.0" />
          </font>
