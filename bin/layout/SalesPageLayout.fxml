@@ -150,7 +150,7 @@
 				<Image url="@../../Takeaway.jpeg" />
 			</image>
 		</ImageView>
-		<VBox layoutX="461.0" layoutY="349.0" prefHeight="145.0" prefWidth="440.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
+		<VBox layoutX="461.0" layoutY="349.0" prefHeight="125.0" prefWidth="440.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #00FFFF;">
 			<children>
 				<Label prefHeight="40.0" prefWidth="70.0" text="Discount">
                <font>
@@ -165,16 +165,16 @@
                <font>
                   <Font name="Century Gothic" size="14.0" />
                </font></Label>
-            <Label fx:id="gst" prefHeight="40.0" prefWidth="70.0">
+            <Label fx:id="gstLabel" prefHeight="40.0" prefWidth="70.0">
                <VBox.margin>
                   <Insets left="350.0" top="-40.0" />
                </VBox.margin>
             </Label>
-				<Label prefHeight="40.0" prefWidth="53.0" text="Total">
+				<Label prefHeight="40.0" prefWidth="350.0" style="-fx-background-color: #90caff;" text="Total">
                <font>
                   <Font name="Century Gothic" size="18.0" />
                </font></Label>
-            <Label fx:id="totalPayment" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: #90caff;" textFill="#040404">
+            <Label fx:id="totalPayment" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #90caff;" textFill="#040404">
                <VBox.margin>
                   <Insets left="350.0" top="-40.0" />
                </VBox.margin>
@@ -216,7 +216,7 @@
 				<Font name="Century Gothic" size="18.0" />
 			</font>
 		</MenuButton>
-		<Button fx:id="pricePerCoffee" alignment="CENTER" contentDisplay="CENTER" layoutX="532.0" layoutY="522.0" mnemonicParsing="false" onAction="#pricePerCoffee" onMouseClicked="#pricePerCoffee" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #FFFFFF;" text="Price" textAlignment="CENTER">
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="502.0" layoutY="479.0" mnemonicParsing="false" onAction="#pricePerCoffee" onMouseClicked="#pricePerCoffee" prefHeight="38.0" prefWidth="131.0" style="-fx-background-color: #FFFFFF;" text="Price/Coffee" textAlignment="CENTER">
 			<font>
 				<Font name="Century Gothic" size="16.0" />
 			</font>
@@ -224,14 +224,38 @@
 				<InnerShadow />
 			</effect>
 		</Button>
-		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="722.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#complete" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #FFFFFF;" text="Total Price" textAlignment="CENTER">
+		<Button alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="537.0" mnemonicParsing="false" onMouseClicked="#complete" prefHeight="47.0" prefWidth="213.0" style="-fx-background-color: #90caff;" text="TRANSACTION COMPLETE" textAlignment="CENTER" textFill="#e033ac">
 			<font>
-				<Font name="Century Gothic" size="16.0" />
+				<Font name="Century Gothic" size="14.0" />
 			</font>
 			<effect>
 				<InnerShadow />
 			</effect>
 		</Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="246.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#cancelOrder" prefHeight="38.0" prefWidth="151.0" style="-fx-background-color: #FFFFFF;" text="Cancel Order" textAlignment="CENTER">
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="42.0" layoutY="509.0" mnemonicParsing="false" onMouseClicked="#newOrder" prefHeight="38.0" prefWidth="170.0" style="-fx-background-color: #ffff;" text="New Order" textAlignment="CENTER" textFill="#383237">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="712.0" layoutY="478.0" mnemonicParsing="false" onAction="#pricePerCoffee" onMouseClicked="#totalPriceButton" prefHeight="38.0" prefWidth="131.0" style="-fx-background-color: #FFFFFF;" text="TotalPrice" textAlignment="CENTER">
+         <font>
+            <Font name="Century Gothic" size="16.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
 	</children>
 	<padding>
 		<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

@@ -38,8 +38,9 @@ import javafx.stage.Window;
 public class SalesPage extends Application implements Initializable {
 	private static Stage stage;
 	private Coffee selectedCoffee;
-	private List<Double> columnPriceData = new ArrayList<>();
+	private ArrayList<Double> columnPriceData = new ArrayList<>();
 	private double totalPrice = 0;
+	private double gst = 0;
 
 	@FXML
 	private TableView<Coffee> orderTableView;
@@ -66,7 +67,7 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	private Label totalPayment;
 	@FXML
-	private Label gst;
+	private Label gstLabel;
 
 	private ObservableList<Coffee> coffee = FXCollections.observableArrayList();
 
@@ -538,12 +539,58 @@ public class SalesPage extends Application implements Initializable {
 	 * @param e
 	 * @throws IOException
 	 */
+
+	
+	/**
+	 * Get coffee Prices from table column
+	 * @return
+	 */
+	public void cancelOrder() {
+		totalPrice = 0;
+		totalPayment.setText("");
+		coffee.clear();
+		orderTableView.getItems().clear();
+	}
+	
+	public void newOrder() {
+		totalPrice = 0;
+		totalPayment.setText("");
+		coffee.clear();
+		orderTableView.getItems().clear();
+	}
+
+	
+	public double totalPrice(ObservableList<Coffee> coffee) {
+		totalPrice = 0;
+		for (Coffee coffeePrice : coffee) {
+			totalPrice += coffeePrice.getCoffeePrice();
+		}
+		return totalPrice;
+	}
+
 	@FXML
-	public void complete(Event e) throws IOException {
-
+	public void totalPriceButton(Event e) {
+		totalPrice(coffee);
 		totalPayment.setText(String.valueOf(totalPrice));
-		gst.setText(String.valueOf(gst));
+	}
 
+	
+	/**
+	 * 
+	 * @return
+	 */
+	private double gst(double totalPrice) {
+		gst = totalPrice * 0.15;
+		return gst;
+	}
+
+	@FXML
+	public void complete(Event e) throws IOException {	
+	
+		Window owner = orderTableView.getScene().getWindow();
+		gst(totalPrice);
+		
+//		gstLabel.setText(String.valueOf(gst(totalPrice)));
 		File file = new File("sales_data.txt");
 		FileWriter wr = new FileWriter(file, true);
 		BufferedWriter br = new BufferedWriter(wr);
@@ -556,41 +603,7 @@ public class SalesPage extends Application implements Initializable {
 		wr.flush();
 		br.close();
 		wr.close();
-
-	}
-
-	//###Method testing
-	/**
-	 * 
-	 * @return
-	 */
-	private void totalP() {
-		TableColumn<Coffee, Double> column = coffeePriceColumn; // column you want
-
-//		List<Double> columnPriceData = new ArrayList<>();
-		for (Coffee item : orderTableView.getItems()) {
-			columnPriceData.add(column.getCellObservableValue(item).getValue());
-		}
-		
-	}
-
-	public double totalPayment(ArrayList<Double> columnPriceData) {
-	
-		
-		for (Double coffePrice : columnPriceData) {
-			totalPrice += coffePrice;
-		}
-		return totalPrice;
-		
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	private double gst(double totalPrice) {
-		double gst = totalPrice * 0.15;
-		return gst;
+		showAlert(Alert.AlertType.ERROR, owner, "Transaction Complete", "Thank You!");
 	}
 
 	public void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
@@ -609,6 +622,5 @@ public class SalesPage extends Application implements Initializable {
 	public void setSelectedCoffee(Coffee selectedCoffee) {
 		this.selectedCoffee = selectedCoffee;
 	}
-	
-	
+
 }
