@@ -4,6 +4,8 @@ public class InventoryContent {
 	int id,purchasedQuantity,usedQuantity;
 	double priceItem;
 	String itemName;
+	
+	
 	/**
 	 * @param id
 	 * @param pQuantity
@@ -19,38 +21,38 @@ public class InventoryContent {
 		this.priceItem = price;
 		this.itemName = itemName;
 	}
+	
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getpQuatity() {
+	public int getPurchasedQuantity() {
 		return purchasedQuantity;
 	}
-	public void setpQuatity(int pQuantity) {
-		this.purchasedQuantity = pQuantity;
+	public void setPurchasedQuantity(int purchasedQuantity) {
+		this.purchasedQuantity = purchasedQuantity;
 	}
-	public int getuQuatity() {
+	public int getUsedQuantity() {
 		return usedQuantity;
 	}
-	public void setuQuatity(int uQuantity) {
-		this.usedQuantity = uQuantity;
+	public void setUsedQuantity(int usedQuantity) {
+		this.usedQuantity = usedQuantity;
 	}
-	public double getPrice() {
+	public double getPriceItem() {
 		return priceItem;
 	}
-	public void setPrice(double price) {
-		this.priceItem = price;
+	public void setPriceItem(double priceItem) {
+		this.priceItem = priceItem;
 	}
-	public String getiName() {
+	public String getItemName() {
 		return itemName;
 	}
-	public void setiName(String itemName) {
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-	
-	
-	
 
+	
 }
