@@ -486,12 +486,15 @@ public class SalesPage extends Application implements Initializable {
 		Window owner = orderTableView.getScene().getWindow();
 		if (selectedCoffee == null) {
 			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
-		} else if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
-			priceMilk = 0.00;
-		} else if (selectedCoffee.getCoffeeMilk().equals("Soy") || (selectedCoffee.getCoffeeMilk().equals("Almond"))) {
-			priceMilk = 0.50;
 		} else {
-			priceMilk = 0.20;
+			if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
+				priceMilk = 0.00;
+			} else if (selectedCoffee.getCoffeeMilk().equals("Soy")
+					|| (selectedCoffee.getCoffeeMilk().equals("Almond"))) {
+				priceMilk = 0.50;
+			} else {
+				priceMilk = 0.20;
+			}
 		}
 		return priceMilk;
 	}
@@ -505,12 +508,14 @@ public class SalesPage extends Application implements Initializable {
 		Window owner = orderTableView.getScene().getWindow();
 		if (selectedCoffee == null) {
 			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
-		} else if (selectedCoffee.getCoffeeSize().equals("S")) {
-			priceSize = 0.00;
-		} else if (selectedCoffee.getCoffeeSize().equals("M")) {
-			priceSize = 0.30;
 		} else {
-			priceSize = 0.50;
+			if (selectedCoffee.getCoffeeSize().equals("S")) {
+				priceSize = 0.00;
+			} else if (selectedCoffee.getCoffeeSize().equals("M")) {
+				priceSize = 0.30;
+			} else {
+				priceSize = 0.50;
+			}
 		}
 		return priceSize;
 	}
@@ -524,12 +529,16 @@ public class SalesPage extends Application implements Initializable {
 		Window owner = orderTableView.getScene().getWindow();
 		if (selectedCoffee == null) {
 			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
-		} else if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
-			priceExtra = 0.80;
-		} else if (selectedCoffee.getCoffeeExtra().equals("Espresso")) {
-			priceExtra = 0.80;
 		} else {
-			priceExtra = 0.00;
+			if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
+				priceExtra = 0.80;
+			} else if (selectedCoffee.getCoffeeExtra().equals("Espresso")) {
+				priceExtra = 0.80;
+			} else if (selectedCoffee.getCoffeeExtra().equals("Flavour")) {
+				priceExtra = 0.30;
+			} else {
+				priceExtra = 0.00;
+			}
 		}
 		return priceExtra;
 	}
@@ -540,26 +549,27 @@ public class SalesPage extends Application implements Initializable {
 	 * @throws IOException
 	 */
 
-	
 	/**
 	 * Get coffee Prices from table column
+	 * 
 	 * @return
 	 */
 	public void cancelOrder() {
 		totalPrice = 0;
 		totalPayment.setText("");
-		coffee.clear();
-		orderTableView.getItems().clear();
-	}
-	
-	public void newOrder() {
-		totalPrice = 0;
-		totalPayment.setText("");
+		gstLabel.setText("");
 		coffee.clear();
 		orderTableView.getItems().clear();
 	}
 
-	
+	public void newOrder() {
+		totalPrice = 0;
+		totalPayment.setText("");
+		gstLabel.setText("");
+		coffee.clear();
+		orderTableView.getItems().clear();
+	}
+
 	public double totalPrice(ObservableList<Coffee> coffee) {
 		totalPrice = 0;
 		for (Coffee coffeePrice : coffee) {
@@ -572,25 +582,26 @@ public class SalesPage extends Application implements Initializable {
 	public void totalPriceButton(Event e) {
 		totalPrice(coffee);
 		totalPayment.setText(String.valueOf(totalPrice));
+		gstLabel.setText(String.valueOf(gst(totalPrice)));
 	}
 
-	
 	/**
 	 * 
 	 * @return
 	 */
-	private double gst(double totalPrice) {
+	public double gst(double totalPrice) {
 		gst = totalPrice * 0.15;
 		return gst;
 	}
 
 	@FXML
-	public void complete(Event e) throws IOException {	
-	
+	public void complete(Event e) throws IOException {
 		Window owner = orderTableView.getScene().getWindow();
-		gst(totalPrice);
-		
-//		gstLabel.setText(String.valueOf(gst(totalPrice)));
+		saveDataToFile();
+		showAlert(Alert.AlertType.INFORMATION, owner, "Transaction Complete", "Thank You!");
+	}
+
+	public void saveDataToFile() throws IOException {
 		File file = new File("sales_data.txt");
 		FileWriter wr = new FileWriter(file, true);
 		BufferedWriter br = new BufferedWriter(wr);
@@ -603,9 +614,9 @@ public class SalesPage extends Application implements Initializable {
 		wr.flush();
 		br.close();
 		wr.close();
-		showAlert(Alert.AlertType.ERROR, owner, "Transaction Complete", "Thank You!");
 	}
 
+	
 	public void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
 		Alert alert = new Alert(alertType);
 		alert.setContentText(message);

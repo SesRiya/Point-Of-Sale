@@ -110,3 +110,7 @@
 4 : Espresso : S : Regular : None : 3.0
 8 : Latte Macchiato : S : Regular : None : 5.5
 11 : Frappe : S : Regular : None : 5.5
+3 : Latte : S : Regular : None : 4.5
+8 : Latte Macchiato : S : Regular : None : 5.5
+3 : Latte : S : Regular : None : 4.5
+4 : Espresso : S : Regular : None : 3.0
