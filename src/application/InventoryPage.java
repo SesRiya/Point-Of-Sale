@@ -1,20 +1,37 @@
 package application;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class InventoryPage extends Application {
+public class InventoryPage extends Application implements Initializable {
 	private static Stage stage;
+	private InventoryContent selectedInventory;
+
+	private List<String> coffeeFlavourList = new ArrayList<>();
+	private List<String> coffeeMilkList = new ArrayList<>();
+	private List<String> coffeeExtraList = new ArrayList<>();
+	private List<String> coffeeSizeList = new ArrayList<>();
 
 	@FXML
 	private TableView<InventoryContent> tableInventory;
@@ -24,18 +41,43 @@ public class InventoryPage extends Application {
 	@FXML
 	private TableColumn<InventoryContent, String> itemNameColumn;
 	@FXML
-	private TableColumn<InventoryContent, Integer> purchasedQuantityColumn;
-	@FXML
-	private TableColumn<InventoryContent, Integer> usedQuantityColumn;
-	@FXML
 	private TableColumn<InventoryContent, Double> priceItemColumn;
+	@FXML
+	private TableColumn<InventoryContent, Double> purchasedQuantityColumn;
+	@FXML
+	private TableColumn<InventoryContent, Double> usedQuantityColumn;
 
-	ObservableList<InventoryContent> list = FXCollections.observableArrayList();
+	ObservableList<InventoryContent> listIngredients = FXCollections.observableArrayList();
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		loadSalesData();
+		idItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Integer>("itemID"));
+		itemNameColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, String>("itemName"));
+		priceItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("priceItem"));
+		purchasedQuantityColumn
+				.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("purchasedQuantity"));
+		usedQuantityColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("usedQuantity"));
+		tableInventory.setItems(listIngredients);
+		// add your data here from any source
+		inventoryList();
+		tableInventory.setRowFactory(tv -> {
+			TableRow<InventoryContent> row = new TableRow<>();
+			row.setOnMouseClicked(event -> {
+				if (!row.isEmpty()) {
+					selectedInventory = row.getItem();
+				}
+			});
+			return row;
+		});
+
+	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+
 		Parent root = FXMLLoader.load(InventoryPage.class.getResource("/layout/InventoryPageLayout.fxml"));
-		primaryStage.setScene(new Scene(root, 530, 500));
+		primaryStage.setScene(new Scene(root, 530, 550));
 		primaryStage.show();
 		stage = primaryStage;
 	}
@@ -70,4 +112,39 @@ public class InventoryPage extends Application {
 		}
 	}
 
+	public void loadSalesData() {
+		try {
+			Scanner scanner = new Scanner(new File("sales_data.txt"));
+			while (scanner.hasNextLine()) {
+				String[] contents = scanner.nextLine().split(" : ");
+				String coffeeFlavour = (contents[1]);
+				coffeeFlavourList.add(coffeeFlavour);
+				String coffeeMilk = (contents[3]);
+				coffeeMilkList.add(coffeeMilk);
+				String coffeeExtra = (contents[3]);
+				coffeeExtraList.add(coffeeExtra);
+				String coffeeSize = (contents[2]);
+				coffeeSizeList.add(coffeeSize);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void inventoryList() {
+		InventoryContent coffeeBeans = new InventoryContent(1, "Coffee Beans", 1000, 10000, 300);
+		listIngredients.add(coffeeBeans);
+		InventoryContent milkRegular = new InventoryContent(2, "Regular Milk", 50, 10, 1);
+		listIngredients.add(milkRegular);
+		InventoryContent milkSkimmed = new InventoryContent(3, "Skimmed Milk", 50, 5, 1);
+		listIngredients.add(milkSkimmed);
+		InventoryContent milkSoy = new InventoryContent(4, "Soy Milk", 50, 5, 1);
+		listIngredients.add(milkSoy);
+		InventoryContent milkAlmond = new InventoryContent(5, "Almond Milk", 50, 5, 1);
+		listIngredients.add(milkAlmond);
+		InventoryContent whippedCream = new InventoryContent(6, "Whipped Cream", 50, 5, 1);
+		listIngredients.add(whippedCream);
+		InventoryContent flavour = new InventoryContent(6, "Flavour", 50, 5, 1);
+		listIngredients.add(flavour);
+	}
 }

@@ -1,58 +1,73 @@
 package application;
 
 public class InventoryContent {
-	int id,purchasedQuantity,usedQuantity;
-	double priceItem;
-	String itemName;
+	private int itemID;
+	private String itemName;
+	private double priceItem;
+	private double purchasedQuantity;	
+	private double usedQuantity;
 	
 	
-	/**
-	 * @param id
-	 * @param pQuantity
-	 * @param uQuantity
-	 * @param price
-	 * @param itemName
-	 */
-	public InventoryContent(int id, int pQuantity, int uQuantity, double price, String itemName) {
-		
-		this.id = id;
-		this.purchasedQuantity = pQuantity;
-		this.usedQuantity = uQuantity;
-		this.priceItem = price;
+	public InventoryContent(int itemID, String itemName, double priceItem, double purchasedQuantity,
+			double usedQuantity) {
+		super();
+		this.itemID = itemID;
 		this.itemName = itemName;
-	}
-	
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getPurchasedQuantity() {
-		return purchasedQuantity;
-	}
-	public void setPurchasedQuantity(int purchasedQuantity) {
+		this.priceItem = priceItem;
 		this.purchasedQuantity = purchasedQuantity;
-	}
-	public int getUsedQuantity() {
-		return usedQuantity;
-	}
-	public void setUsedQuantity(int usedQuantity) {
 		this.usedQuantity = usedQuantity;
 	}
-	public double getPriceItem() {
-		return priceItem;
+
+
+	public int getItemID() {
+		return itemID;
 	}
-	public void setPriceItem(double priceItem) {
-		this.priceItem = priceItem;
+
+
+	public void setItemID(int itemID) {
+		this.itemID = itemID;
 	}
+
+
 	public String getItemName() {
 		return itemName;
 	}
+
+
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
+
+	public double getPriceItem() {
+		return priceItem;
+	}
+
+
+	public void setPriceItem(double priceItem) {
+		this.priceItem = priceItem;
+	}
+
+
+	public double getPurchasedQuantity() {
+		return purchasedQuantity;
+	}
+
+
+	public void setPurchasedQuantity(double purchasedQuantity) {
+		this.purchasedQuantity = purchasedQuantity;
+	}
+
+
+	public double getUsedQuantity() {
+		return usedQuantity;
+	}
+
+
+	public void setUsedQuantity(double usedQuantity) {
+		this.usedQuantity = usedQuantity;
+	}
+
 	
+
 }
