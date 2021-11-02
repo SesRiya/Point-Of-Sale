@@ -45,13 +45,13 @@
          </image>
       </ImageView>
       <Accordion layoutX="14.0" layoutY="107.0" />
-      <TableView fx:id="table" layoutY="100.0" maxHeight="400.0" maxWidth="530.0" prefHeight="400.0" prefWidth="530.0">
+      <TableView fx:id="tableInventory" layoutY="100.0" maxHeight="400.0" maxWidth="530.0" prefHeight="400.0" prefWidth="530.0">
         <columns>
-          <TableColumn fx:id="id" prefWidth="44.666685700416565" text="ID" />
-          <TableColumn fx:id="iName" prefWidth="135.99999618530273" text="ItemName" />
-            <TableColumn fx:id="pQuatity" minWidth="0.0" prefWidth="155.33335876464844" text="PurchasedQuantity" />
-            <TableColumn fx:id="uQuatity" prefWidth="95.33331298828125" text="UsedQuantity" />
-            <TableColumn fx:id="price" prefWidth="97.33328247070312" text="Price" />
+          <TableColumn fx:id="idItemColumn" prefWidth="44.666685700416565" text="ID" />
+          <TableColumn fx:id="itemNameColumn" prefWidth="135.99999618530273" text="ItemName" />
+            <TableColumn fx:id="priceItemColumn" prefWidth="97.33328247070312" text="Price" />
+            <TableColumn fx:id="purchasedQuantityColumn" minWidth="0.0" prefWidth="155.33335876464844" text="PurchasedQuantity" />
+            <TableColumn fx:id="usedQuantityColumn" prefWidth="95.33331298828125" text="UsedQuantity" />
         </columns>
       </TableView>
    </children>

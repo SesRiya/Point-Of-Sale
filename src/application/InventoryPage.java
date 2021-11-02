@@ -35,7 +35,6 @@ public class InventoryPage extends Application implements Initializable {
 
 	@FXML
 	private TableView<InventoryContent> tableInventory;
-
 	@FXML
 	private TableColumn<InventoryContent, Integer> idItemColumn;
 	@FXML
@@ -52,6 +51,7 @@ public class InventoryPage extends Application implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		loadSalesData();
+		inventoryList();
 		idItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Integer>("itemID"));
 		itemNameColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, String>("itemName"));
 		priceItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("priceItem"));
@@ -60,7 +60,7 @@ public class InventoryPage extends Application implements Initializable {
 		usedQuantityColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("usedQuantity"));
 		tableInventory.setItems(listIngredients);
 		// add your data here from any source
-		inventoryList();
+		
 		tableInventory.setRowFactory(tv -> {
 			TableRow<InventoryContent> row = new TableRow<>();
 			row.setOnMouseClicked(event -> {
