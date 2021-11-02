@@ -27,12 +27,14 @@ import javafx.stage.Stage;
 public class InventoryPage extends Application implements Initializable {
 	private static Stage stage;
 	private InventoryContent selectedInventory;
+	private int numberOfCups;
+	
 
 	private List<String> coffeeFlavourList = new ArrayList<>();
 	private List<String> coffeeMilkList = new ArrayList<>();
 	private List<String> coffeeExtraList = new ArrayList<>();
 	private List<String> coffeeSizeList = new ArrayList<>();
-	
+
 	private InventoryContent coffeeBeans;
 
 	@FXML
@@ -65,7 +67,7 @@ public class InventoryPage extends Application implements Initializable {
 		quantityLeftColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("quantityLeft"));
 		tableInventory.setItems(listIngredients);
 		// add your data here from any source
-		
+
 		tableInventory.setRowFactory(tv -> {
 			TableRow<InventoryContent> row = new TableRow<>();
 			row.setOnMouseClicked(event -> {
@@ -134,6 +136,9 @@ public class InventoryPage extends Application implements Initializable {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		numberOfCups = coffeeFlavourList.size();
+		
+		
 	}
 
 	public void inventoryList() {
@@ -152,21 +157,33 @@ public class InventoryPage extends Application implements Initializable {
 		InventoryContent flavour = new InventoryContent(6, "Flavour", 50, 5, 1);
 		listIngredients.add(flavour);
 	}
+
+	public double updateCoffeeBeans(int numberOfCups) {
 	
-	
-	
-	public void updateCoffeeBeans() {
-		int numberOfCups = coffeeFlavourList.size();
+		// assumption 1 cup of coffee uses 18g of beans
 		int gramsBeansUsed = numberOfCups * 18;
+
+		double usedQuantity = coffeeBeans.getUsedQuantity() + gramsBeansUsed;
+		coffeeBeans.setUsedQuantity(usedQuantity);
+
+		double quantityLeft = coffeeBeans.getPurchasedQuantity() - coffeeBeans.getUsedQuantity();
+		coffeeBeans.setQuantityLeft(quantityLeft);
 		
-	 coffeeBeans.setUsedQuantity(coffeeBeans.getUsedQuantity() + gramsBeansUsed);
-	
+		return quantityLeft;
 	}
+
+//	public double updateCream(int numberOfCups) {
+//		
+//		//assumption extra whipped cream uses 10ml of cream
+//		
+//		
+//	
+//	}
 	
-	@FXML 
+	@FXML
 	public void updateInventory(Event e) {
 		coffeeBeans.getUsedQuantity();
-		coffeeBeans.setQuantityLeft(coffeeBeans.getPurchasedQuantity()-coffeeBeans.getUsedQuantity());
+		coffeeBeans.getQuantityLeft();
 		tableInventory.refresh();
 	}
 

@@ -13,3 +13,10 @@
 10 : Irish Coffee : S : Regular : None : 5.5
 8 : Latte Macchiato : S : Regular : None : 5.5
 7 : Espresso Ristreto : S : Regular : None : 5.5
+4 : Espresso : S : Regular : None : 3.0
+7 : Espresso Ristreto : S : Regular : None : 3.0
+7 : Espresso Ristreto : S : Regular : None : 3.0
+6 : Espresso Macchiato : S : Regular : None : 5.5
+5 : Double Espresso : S : Regular : None : 3.0
+1 : Americano : S : Regular : None : 4.5
+3 : Latte : S : Regular : None : 4.5
