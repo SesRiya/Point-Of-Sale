@@ -66,7 +66,7 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	private Label gst;
 
-	ObservableList<Coffee> coffee = FXCollections.observableArrayList();
+	private ObservableList<Coffee> coffee = FXCollections.observableArrayList();
 
 	/**
 	 * 
@@ -550,6 +550,7 @@ public class SalesPage extends Application implements Initializable {
 
 	}
 
+	//###Method testing
 	/**
 	 * 
 	 * @return
@@ -567,6 +568,7 @@ public class SalesPage extends Application implements Initializable {
 		}
 		return totalPrice;
 	}
+	
 
 	/**
 	 * 
@@ -585,4 +587,14 @@ public class SalesPage extends Application implements Initializable {
 		alert.initOwner(owner);
 		alert.show();
 	}
+
+	public Coffee getSelectedCoffee() {
+		return selectedCoffee;
+	}
+
+	public void setSelectedCoffee(Coffee selectedCoffee) {
+		this.selectedCoffee = selectedCoffee;
+	}
+	
+	
 }

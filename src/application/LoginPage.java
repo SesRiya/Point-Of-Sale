@@ -54,7 +54,10 @@ public class LoginPage extends Application {
 	public void salesPage(Event e) {
 
 		Window owner = userName.getScene().getWindow();
-		if (loginAuthentication()) {
+
+		String name = userName.getText().toString();
+		String pass = password.getText().toString();
+		if (loginAuthentication(name, pass)) {
 			SalesPage secondScreen = new SalesPage();
 			try {
 				secondScreen.start(stage);
@@ -70,9 +73,7 @@ public class LoginPage extends Application {
 	 * 
 	 * @return
 	 */
-	public boolean loginAuthentication() {
-		String name = userName.getText().toString();
-		String pass = password.getText().toString();
+	public boolean loginAuthentication(String name, String pass) {
 
 		if ((name.equals(manager.getUserName()) && pass.equals(manager.getPassword()))
 				|| (name.equals(cashier.getUserName()) && (pass.equals(cashier.getPassword())))) {
@@ -95,7 +96,7 @@ public class LoginPage extends Application {
 		alert.setTitle(title);
 		alert.setHeaderText(null);
 		alert.initOwner(owner);
-		alert.show();		
+		alert.show();
 	}
 
 }

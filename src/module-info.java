@@ -4,6 +4,7 @@ module TestSceneBuilder {
 	requires javafx.fxml;
 	requires javafx.base;
 	requires org.junit.jupiter.api;
+	requires org.junit.jupiter.params;
 	
 	opens application to javafx.graphics, javafx.fxml, javafx.base;
 }

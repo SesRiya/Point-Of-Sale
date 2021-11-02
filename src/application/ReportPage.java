@@ -68,7 +68,6 @@ public class ReportPage extends Application implements Initializable {
 //add data into line chart
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
 		XYChart.Series income = new XYChart.Series<>();
 		income.setName("Income");
 		income.getData().add(new XYChart.Data("1st Jan", 23));
@@ -115,10 +114,10 @@ public class ReportPage extends Application implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-System.out.println(sum);
 		return sum;
-
 	}
+	
+	
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
