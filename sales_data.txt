@@ -20,3 +20,4 @@
 5 : Double Espresso : S : Regular : None : 3.0
 1 : Americano : S : Regular : None : 4.5
 3 : Latte : S : Regular : None : 4.5
+3 : Latte : S : Regular : None : 4.5
