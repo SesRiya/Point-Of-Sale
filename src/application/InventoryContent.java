@@ -6,6 +6,7 @@ public class InventoryContent {
 	private double priceItem;
 	private double purchasedQuantity;	
 	private double usedQuantity;
+	private double quantityLeft;
 	
 	
 	public InventoryContent(int itemID, String itemName, double priceItem, double purchasedQuantity,
@@ -17,6 +18,22 @@ public class InventoryContent {
 		this.purchasedQuantity = purchasedQuantity;
 		this.usedQuantity = usedQuantity;
 	}
+
+	
+	
+
+	public InventoryContent(int itemID, String itemName, double priceItem, double purchasedQuantity,
+			double usedQuantity, double quantityLeft) {
+		super();
+		this.itemID = itemID;
+		this.itemName = itemName;
+		this.priceItem = priceItem;
+		this.purchasedQuantity = purchasedQuantity;
+		this.usedQuantity = usedQuantity;
+		this.quantityLeft = quantityLeft;
+	}
+
+
 
 
 	public int getItemID() {
@@ -66,6 +83,15 @@ public class InventoryContent {
 
 	public void setUsedQuantity(double usedQuantity) {
 		this.usedQuantity = usedQuantity;
+	}
+
+	public double getQuantityLeft() {
+		return quantityLeft;
+	}
+
+
+	public void setQuantityLeft(double quantityLeft) {
+		this.quantityLeft = quantityLeft;
 	}
 
 	

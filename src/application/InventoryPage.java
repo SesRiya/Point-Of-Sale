@@ -32,6 +32,8 @@ public class InventoryPage extends Application implements Initializable {
 	private List<String> coffeeMilkList = new ArrayList<>();
 	private List<String> coffeeExtraList = new ArrayList<>();
 	private List<String> coffeeSizeList = new ArrayList<>();
+	
+	private InventoryContent coffeeBeans;
 
 	@FXML
 	private TableView<InventoryContent> tableInventory;
@@ -45,6 +47,8 @@ public class InventoryPage extends Application implements Initializable {
 	private TableColumn<InventoryContent, Double> purchasedQuantityColumn;
 	@FXML
 	private TableColumn<InventoryContent, Double> usedQuantityColumn;
+	@FXML
+	private TableColumn<InventoryContent, Double> quantityLeftColumn;
 
 	ObservableList<InventoryContent> listIngredients = FXCollections.observableArrayList();
 
@@ -58,6 +62,7 @@ public class InventoryPage extends Application implements Initializable {
 		purchasedQuantityColumn
 				.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("purchasedQuantity"));
 		usedQuantityColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("usedQuantity"));
+		quantityLeftColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("quantityLeft"));
 		tableInventory.setItems(listIngredients);
 		// add your data here from any source
 		
@@ -77,7 +82,7 @@ public class InventoryPage extends Application implements Initializable {
 	public void start(Stage primaryStage) throws Exception {
 
 		Parent root = FXMLLoader.load(InventoryPage.class.getResource("/layout/InventoryPageLayout.fxml"));
-		primaryStage.setScene(new Scene(root, 530, 550));
+		primaryStage.setScene(new Scene(root, 550, 600));
 		primaryStage.show();
 		stage = primaryStage;
 	}
@@ -132,7 +137,7 @@ public class InventoryPage extends Application implements Initializable {
 	}
 
 	public void inventoryList() {
-		InventoryContent coffeeBeans = new InventoryContent(1, "Coffee Beans", 1000, 10000, 300);
+		coffeeBeans = new InventoryContent(1, "Coffee Beans", 1000, 10000, 300);
 		listIngredients.add(coffeeBeans);
 		InventoryContent milkRegular = new InventoryContent(2, "Regular Milk", 50, 10, 1);
 		listIngredients.add(milkRegular);
@@ -147,4 +152,22 @@ public class InventoryPage extends Application implements Initializable {
 		InventoryContent flavour = new InventoryContent(6, "Flavour", 50, 5, 1);
 		listIngredients.add(flavour);
 	}
+	
+	
+	
+	public void updateCoffeeBeans() {
+		int numberOfCups = coffeeFlavourList.size();
+		int gramsBeansUsed = numberOfCups * 18;
+		
+	 coffeeBeans.setUsedQuantity(coffeeBeans.getUsedQuantity() + gramsBeansUsed);
+	
+	}
+	
+	@FXML 
+	public void updateInventory(Event e) {
+		coffeeBeans.getUsedQuantity();
+		coffeeBeans.setQuantityLeft(coffeeBeans.getPurchasedQuantity()-coffeeBeans.getUsedQuantity());
+		tableInventory.refresh();
+	}
+
 }
