@@ -38,7 +38,6 @@ import javafx.stage.Window;
 public class SalesPage extends Application implements Initializable {
 	private static Stage stage;
 	private Coffee selectedCoffee;
-	private ArrayList<Double> columnPriceData = new ArrayList<>();
 	private double totalPrice = 0;
 	private double gst = 0;
 
@@ -616,7 +615,6 @@ public class SalesPage extends Application implements Initializable {
 		wr.close();
 	}
 
-	
 	public void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
 		Alert alert = new Alert(alertType);
 		alert.setContentText(message);
@@ -624,14 +622,6 @@ public class SalesPage extends Application implements Initializable {
 		alert.setHeaderText(null);
 		alert.initOwner(owner);
 		alert.show();
-	}
-
-	public Coffee getSelectedCoffee() {
-		return selectedCoffee;
-	}
-
-	public void setSelectedCoffee(Coffee selectedCoffee) {
-		this.selectedCoffee = selectedCoffee;
 	}
 
 }
