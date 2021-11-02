@@ -38,6 +38,8 @@ import javafx.stage.Window;
 public class SalesPage extends Application implements Initializable {
 	private static Stage stage;
 	private Coffee selectedCoffee;
+	private List<Double> columnPriceData = new ArrayList<>();
+	private double totalPrice = 0;
 
 	@FXML
 	private TableView<Coffee> orderTableView;
@@ -265,13 +267,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void small(Event e) {
 		Window owner = coffeeSize.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeSize("S");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -282,13 +283,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void medium(Event e) {
 		Window owner = coffeeSize.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeSize("M");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -299,13 +299,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void large(Event e) {
 		Window owner = coffeeSize.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeSize("L");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -316,13 +315,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void onRegular(Event e) {
 		Window owner = coffeeMilk.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeMilk("Regular");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -333,13 +331,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void onSkimmed(Event e) {
 		Window owner = coffeeMilk.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeMilk("Skimmed");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -350,13 +347,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void onSoy(Event e) {
 		Window owner = coffeeMilk.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeMilk("Soy");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -367,13 +363,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void onAlmond(Event e) {
 		Window owner = coffeeMilk.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeMilk("Almond");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -384,13 +379,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void onEspressoShot(Event e) {
 		Window owner = coffeeExtra.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeExtra("Espresso");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -401,13 +395,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void onExtraFlavour(Event e) {
 		Window owner = coffeeExtra.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeExtra("Flavour");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -418,13 +411,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void onWhippedCream(Event e) {
 		Window owner = coffeeExtra.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeExtra("Cream");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -435,13 +427,12 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void none(Event e) {
 		Window owner = coffeeExtra.getScene().getWindow();
-		
+
 		if (selectedCoffee != null) {
 			selectedCoffee.setCoffeeExtra("None");
 			orderTableView.refresh();
 		} else {
-			showAlert(Alert.AlertType.ERROR, owner, 
-					"Please select from table row first", "Form error!");
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		}
 	}
 
@@ -451,9 +442,14 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void pricePerCoffee(Event e) {
-		double priceCoffee = priceCoffeeFlavour() + priceCoffeeMilk() + priceCoffeeSize() + priceCoffeeExtra();
-		selectedCoffee.setCoffeePrice(priceCoffee);
-		orderTableView.refresh();
+		Window owner = orderTableView.getScene().getWindow();
+		if (selectedCoffee == null) {
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
+		} else {
+			double priceCoffee = priceCoffeeFlavour() + priceCoffeeMilk() + priceCoffeeSize() + priceCoffeeExtra();
+			selectedCoffee.setCoffeePrice(priceCoffee);
+			orderTableView.refresh();
+		}
 	}
 
 	/**
@@ -462,9 +458,13 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	private double priceCoffeeFlavour() {
 		double priceFlavour = 0;
-		if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino") || (selectedCoffee.getCoffeeFlavour().equals("Latte")
-				|| (selectedCoffee.getCoffeeFlavour().equals("Espresso Macchiato")
-						|| (selectedCoffee.getCoffeeFlavour().equals("Americano"))))) {
+		Window owner = orderTableView.getScene().getWindow();
+		if (selectedCoffee == null) {
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
+		} else if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino")
+				|| (selectedCoffee.getCoffeeFlavour().equals("Latte")
+						|| (selectedCoffee.getCoffeeFlavour().equals("Espresso Macchiato")
+								|| (selectedCoffee.getCoffeeFlavour().equals("Americano"))))) {
 			priceFlavour = 4.50;
 		} else if (selectedCoffee.getCoffeeFlavour().equals("Espresso")
 				|| (selectedCoffee.getCoffeeFlavour().equals("Double Espresso")
@@ -482,7 +482,10 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	private double priceCoffeeMilk() {
 		double priceMilk = 0;
-		if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
+		Window owner = orderTableView.getScene().getWindow();
+		if (selectedCoffee == null) {
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
+		} else if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
 			priceMilk = 0.00;
 		} else if (selectedCoffee.getCoffeeMilk().equals("Soy") || (selectedCoffee.getCoffeeMilk().equals("Almond"))) {
 			priceMilk = 0.50;
@@ -497,8 +500,11 @@ public class SalesPage extends Application implements Initializable {
 	 * @return
 	 */
 	private double priceCoffeeSize() {
-		double priceSize;
-		if (selectedCoffee.getCoffeeSize().equals("S")) {
+		double priceSize = 0;
+		Window owner = orderTableView.getScene().getWindow();
+		if (selectedCoffee == null) {
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
+		} else if (selectedCoffee.getCoffeeSize().equals("S")) {
 			priceSize = 0.00;
 		} else if (selectedCoffee.getCoffeeSize().equals("M")) {
 			priceSize = 0.30;
@@ -513,8 +519,11 @@ public class SalesPage extends Application implements Initializable {
 	 * @return
 	 */
 	private double priceCoffeeExtra() {
-		double priceExtra;
-		if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
+		double priceExtra = 0;
+		Window owner = orderTableView.getScene().getWindow();
+		if (selectedCoffee == null) {
+			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
+		} else if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
 			priceExtra = 0.80;
 		} else if (selectedCoffee.getCoffeeExtra().equals("Espresso")) {
 			priceExtra = 0.80;
@@ -532,8 +541,8 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void complete(Event e) throws IOException {
 
-		totalPayment.setText(String.valueOf(totalPayment()));
-		gst.setText(String.valueOf(gst()));
+		totalPayment.setText(String.valueOf(totalPrice));
+		gst.setText(String.valueOf(gst));
 
 		File file = new File("sales_data.txt");
 		FileWriter wr = new FileWriter(file, true);
@@ -555,27 +564,32 @@ public class SalesPage extends Application implements Initializable {
 	 * 
 	 * @return
 	 */
-	private double totalPayment() {
+	private void totalP() {
 		TableColumn<Coffee, Double> column = coffeePriceColumn; // column you want
 
-		List<Double> columnPriceData = new ArrayList<>();
+//		List<Double> columnPriceData = new ArrayList<>();
 		for (Coffee item : orderTableView.getItems()) {
 			columnPriceData.add(column.getCellObservableValue(item).getValue());
 		}
-		double totalPrice = 0;
+		
+	}
+
+	public double totalPayment(ArrayList<Double> columnPriceData) {
+	
+		
 		for (Double coffePrice : columnPriceData) {
 			totalPrice += coffePrice;
 		}
 		return totalPrice;
+		
 	}
-	
 
 	/**
 	 * 
 	 * @return
 	 */
-	private double gst() {
-		double gst = totalPayment() * 0.15;
+	private double gst(double totalPrice) {
+		double gst = totalPrice * 0.15;
 		return gst;
 	}
 
