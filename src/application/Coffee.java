@@ -65,20 +65,12 @@ public class Coffee {
 		this.coffeeMilk = coffeeMilk;
 	}
 
-
-
-
 	public String getCoffeeExtra() {
 		return coffeeExtra;
 	}
-
-
-
 
 	public void setCoffeeExtra(String coffeeExtra) {
 		this.coffeeExtra = coffeeExtra;
 	}
 	
-	
-
 }

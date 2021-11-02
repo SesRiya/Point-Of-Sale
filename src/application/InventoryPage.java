@@ -18,7 +18,7 @@ public class InventoryPage extends Application {
 
 	@FXML
 	private TableView<InventoryContent> tableInventory;
-	
+
 	@FXML
 	private TableColumn<InventoryContent, Integer> idItemColumn;
 	@FXML
