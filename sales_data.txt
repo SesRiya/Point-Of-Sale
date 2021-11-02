@@ -4,3 +4,6 @@
 3 : Latte : S : Soy : None : 5.0
 2 : Cappuccino : L : Almond : Espresso : 6.3
 2 : Cappuccino : S : Skimmed : Espresso : 5.5
+3 : Latte : M : Skimmed : Espresso : 5.8
+2 : Cappuccino : S : Skimmed : Flavour : 4.7
+10 : Irish Coffee : S : Regular : None : 5.5

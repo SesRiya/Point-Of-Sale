@@ -154,7 +154,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addAmericano(Event e) {
-		Coffee americano = new Coffee(1, "Americano");
+		Coffee americano = new Coffee(1, "Americano", "S", "Regular", "None", 4.50);
 		coffee.add(americano);
 	}
 
@@ -164,7 +164,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addCappuccino(Event e) {
-		Coffee cappuccino = new Coffee(2, "Cappuccino");
+		Coffee cappuccino = new Coffee(2, "Cappuccino", "S", "Regular", "None", 4.50);
 		coffee.add(cappuccino);
 	}
 
@@ -174,7 +174,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addLatte(Event e) {
-		Coffee latte = new Coffee(3, "Latte");
+		Coffee latte = new Coffee(3, "Latte", "S", "Regular", "None", 4.50);
 		coffee.add(latte);
 	}
 
@@ -184,7 +184,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addEspresso(Event e) {
-		Coffee espresso = new Coffee(4, "Espresso");
+		Coffee espresso = new Coffee(4, "Espresso", "S", "Regular", "None", 3.00);
 		coffee.add(espresso);
 	}
 
@@ -194,7 +194,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addDoubleEspresso(Event e) {
-		Coffee doubleEspresso = new Coffee(5, "Double Espresso");
+		Coffee doubleEspresso = new Coffee(5, "Double Espresso", "S", "Regular", "None", 3.00);
 		coffee.add(doubleEspresso);
 	}
 
@@ -204,7 +204,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addEspressoMacchiato(Event e) {
-		Coffee espressoMacchiato = new Coffee(6, "Espresso Macchiato");
+		Coffee espressoMacchiato = new Coffee(6, "Espresso Macchiato", "S", "Regular", "None", 5.50);
 		coffee.add(espressoMacchiato);
 	}
 
@@ -214,7 +214,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addRistreto(Event e) {
-		Coffee espressoRistreto = new Coffee(7, "Espresso Ristreto");
+		Coffee espressoRistreto = new Coffee(7, "Espresso Ristreto", "S", "Regular", "None", 3.00);
 		coffee.add(espressoRistreto);
 	}
 
@@ -224,7 +224,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addLatteMacchiato(Event e) {
-		Coffee latteMacchiato = new Coffee(8, "Latte Macchiato");
+		Coffee latteMacchiato = new Coffee(8, "Latte Macchiato", "S", "Regular", "None", 5.50);
 		coffee.add(latteMacchiato);
 	}
 
@@ -234,7 +234,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addCafeMocha(Event e) {
-		Coffee cafeMocha = new Coffee(9, "Cafe Mocha");
+		Coffee cafeMocha = new Coffee(9, "Cafe Mocha", "S", "Regular", "None", 5.50);
 		coffee.add(cafeMocha);
 	}
 
@@ -244,7 +244,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addIrishCoffee(Event e) {
-		Coffee irishCoffee = new Coffee(10, "Irish Coffee");
+		Coffee irishCoffee = new Coffee(10, "Irish Coffee", "S", "Regular", "None", 5.50);
 		coffee.add(irishCoffee);
 	}
 
@@ -254,7 +254,7 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	@FXML
 	public void addFrappe(Event e) {
-		Coffee frappe = new Coffee(11, "Frappe");
+		Coffee frappe = new Coffee(11, "Frappe", "S", "Regular", "None", 5.50);
 		coffee.add(frappe);
 	}
 

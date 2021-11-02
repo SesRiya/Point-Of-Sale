@@ -11,7 +11,7 @@ import javafx.scene.image.Image;
 
 public class Main extends Application {
 	private static Stage stage;
-	
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -25,36 +25,17 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
-
 
 	@FXML
-	public void buttonClicked(Event e){
-        System.out.println(add(5,10));
-    }
-	
-	
-	public int add(int i, int j) {
-		return i + j;
-	}
-	
-	public int add2(int i, int j) {
-		return i + j;
-	}
-	
-	@FXML
-	public void loginPage(Event e){
-        LoginPage loginPage = new LoginPage();
-        try {
-        	loginPage.start(stage);
+	public void loginPage(Event e) {
+		LoginPage loginPage = new LoginPage();
+		try {
+			loginPage.start(stage);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-    }
-	
-	
+	}
 
-	
 	public static void main(String[] args) {
 		System.out.println("test");
 		launch(args);
