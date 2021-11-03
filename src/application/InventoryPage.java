@@ -28,7 +28,6 @@ public class InventoryPage extends Application implements Initializable {
 	private static Stage stage;
 	private InventoryContent selectedInventory;
 	private int numberOfCups;
-	
 
 	private List<String> coffeeFlavourList = new ArrayList<>();
 	private List<String> coffeeMilkList = new ArrayList<>();
@@ -56,7 +55,7 @@ public class InventoryPage extends Application implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		loadSalesData();
+		loadSalesData("sales_data.txt");
 		inventoryList();
 		updateCoffeeBeans(numberOfCups);
 		idItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Integer>("itemID"));
@@ -120,9 +119,9 @@ public class InventoryPage extends Application implements Initializable {
 		}
 	}
 
-	public void loadSalesData() {
+	public void loadSalesData(String fileName) {
 		try {
-			Scanner scanner = new Scanner(new File("sales_data.txt"));
+			Scanner scanner = new Scanner(new File(fileName));
 			while (scanner.hasNextLine()) {
 				String[] contents = scanner.nextLine().split(" : ");
 				String coffeeFlavour = (contents[1]);
@@ -135,12 +134,11 @@ public class InventoryPage extends Application implements Initializable {
 				coffeeSizeList.add(coffeeSize);
 			}
 		} catch (FileNotFoundException e) {
-			
+
 			e.printStackTrace();
 		}
 		numberOfCups = coffeeFlavourList.size();
-		
-		
+
 	}
 
 	public void inventoryList() {
@@ -169,7 +167,7 @@ public class InventoryPage extends Application implements Initializable {
 
 		double quantityLeft = coffeeBeans.getPurchasedQuantity() - coffeeBeans.getUsedQuantity();
 		coffeeBeans.setQuantityLeft(quantityLeft);
-		
+
 		return quantityLeft;
 	}
 
@@ -180,7 +178,7 @@ public class InventoryPage extends Application implements Initializable {
 //		
 //	
 //	}
-	
+
 	@FXML
 	public void updateInventory(Event e) {
 		coffeeBeans.getUsedQuantity();
@@ -191,7 +189,25 @@ public class InventoryPage extends Application implements Initializable {
 	public void setCoffeeBeans(InventoryContent coffeeBeans) {
 		this.coffeeBeans = coffeeBeans;
 	}
-	
-	
+
+	public int getNumberOfCups() {
+		return numberOfCups;
+	}
+
+	public List<String> getCoffeeFlavourList() {
+		return coffeeFlavourList;
+	}
+
+	public List<String> getCoffeeMilkList() {
+		return coffeeMilkList;
+	}
+
+	public List<String> getCoffeeExtraList() {
+		return coffeeExtraList;
+	}
+
+	public List<String> getCoffeeSizeList() {
+		return coffeeSizeList;
+	}
 
 }

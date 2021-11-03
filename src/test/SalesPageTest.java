@@ -2,18 +2,28 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.rules.TemporaryFolder;
 
 import application.Coffee;
+import application.InventoryPage;
 import application.SalesPage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -99,19 +109,49 @@ class SalesPageTest {
 	}
 
 	public static Stream<Arguments> coffeeExtraProvider() {
-		return Stream.of(Arguments.of("Cream", 0.80), Arguments.of("Espresso", 0.80), Arguments.of("Flavour", 0.30)
-
-		);
+		return Stream.of(Arguments.of("Cream", 0.80), Arguments.of("Espresso", 0.80), Arguments.of("Flavour", 0.30));
 	}
-	
+
 	@ParameterizedTest
 	@MethodSource("gstProvider")
 	public void gstTest(double totalPrice, double gst) {
 		assertEquals(salesPage.gst(totalPrice), gst);
 	}
 
-	public static Stream<Arguments> gstProvider(){
+	public static Stream<Arguments> gstProvider() {
 		return Stream.of(Arguments.of(10, 1.5), Arguments.of(20, 3.0));
+
+	}
+
+	
+	@ParameterizedTest
+	@MethodSource("coffeeSaveDataProvider")
+	public void saveDataToFile(String fileName, List<Coffee> coffees) throws IOException {
+		//Test writing to file
+		ObservableList<Coffee> coffeesOL = FXCollections.observableArrayList();
+		coffeesOL.addAll(coffees);
+		//Create a new file always
+		Writer fileWriter = new FileWriter(fileName, false);
+		fileWriter.close();
+		salesPage.saveDataToFile(fileName, coffeesOL);
+		//Test reading from file
+		InventoryPage inventoryPage = new InventoryPage();
+		inventoryPage.loadSalesData(fileName);
+		List<String> coffeeSizeList = inventoryPage.getCoffeeSizeList();
+		assertEquals(coffeeSizeList.size(), coffees.size());
+		
+		
+		for(int i = 0; i < coffees.size(); i++) {
+			assertEquals(coffeeSizeList.get(i), coffees.get(i).getCoffeeSize());
+		}
 		
 	}
+	
+	public static Stream<Arguments> coffeeSaveDataProvider() {
+		return Stream.of(Arguments.of("sales_data_test.txt", Arrays.asList(
+			new Coffee(2, "Cappuccino", "S", "Regular", "None", 4.50),
+			new Coffee(4, "Espresso", "S", "Regular", "None", 4.00))));
+
+	}
+	
 }
