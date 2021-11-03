@@ -577,12 +577,11 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void complete(Event e) throws IOException {
 		Window owner = orderTableView.getScene().getWindow();
-		saveDataToFile(fileName, coffee);
+		saveDataToFile("sales_data.txt", coffee);
 		showAlert(Alert.AlertType.INFORMATION, owner, "Transaction Complete", "Thank You!");
 	}
 
-	public void saveDataToFile(File fileName, ObservableList<Coffee> coffee) throws IOException {
-		fileName = new File("sales_data.txt");
+	public void saveDataToFile(String fileName, ObservableList<Coffee> coffee) throws IOException {
 		FileWriter wr = new FileWriter(fileName, true);
 		BufferedWriter br = new BufferedWriter(wr);
 		for (int i = 0; i < coffee.size(); i++) {

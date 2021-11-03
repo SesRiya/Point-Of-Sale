@@ -20,6 +20,7 @@ public class Main extends Application {
 			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("coffeeBeanWindowIcon.png")));
 			primaryStage.setScene(new Scene(root, 900, 600));
 			primaryStage.show();
+			primaryStage.setResizable(false);
 			stage = primaryStage;
 		} catch (Exception e) {
 			e.printStackTrace();
