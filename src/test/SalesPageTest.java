@@ -1,13 +1,18 @@
 package test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.File;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+
 import application.Coffee;
 import application.SalesPage;
 import javafx.collections.FXCollections;
@@ -98,5 +103,15 @@ class SalesPageTest {
 
 		);
 	}
+	
+	@ParameterizedTest
+	@MethodSource("gstProvider")
+	public void gstTest(double totalPrice, double gst) {
+		assertEquals(salesPage.gst(totalPrice), gst);
+	}
 
+	public static Stream<Arguments> gstProvider(){
+		return Stream.of(Arguments.of(10, 1.5), Arguments.of(20, 3.0));
+		
+	}
 }

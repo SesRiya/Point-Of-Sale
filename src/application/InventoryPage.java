@@ -135,6 +135,7 @@ public class InventoryPage extends Application implements Initializable {
 				coffeeSizeList.add(coffeeSize);
 			}
 		} catch (FileNotFoundException e) {
+			
 			e.printStackTrace();
 		}
 		numberOfCups = coffeeFlavourList.size();
