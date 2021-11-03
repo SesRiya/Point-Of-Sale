@@ -457,7 +457,7 @@ public class SalesPage extends Application implements Initializable {
 	 * 
 	 * @return
 	 */
-	private double priceCoffeeFlavour() {
+	public double priceCoffeeFlavour() {
 		double priceFlavour = 0;
 
 		if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino") || (selectedCoffee.getCoffeeFlavour().equals("Latte")
@@ -606,5 +606,11 @@ public class SalesPage extends Application implements Initializable {
 		alert.initOwner(owner);
 		alert.show();
 	}
+
+	public void setSelectedCoffee(Coffee selectedCoffee) {
+		this.selectedCoffee = selectedCoffee;
+	}
+	
+	
 
 }
