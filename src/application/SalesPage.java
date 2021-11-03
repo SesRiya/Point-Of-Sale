@@ -37,6 +37,7 @@ import javafx.stage.Window;
  */
 public class SalesPage extends Application implements Initializable {
 	private static Stage stage;
+	private File fileName;
 	private Coffee selectedCoffee;
 	private double totalPrice = 0;
 	private double gst = 0;
@@ -458,13 +459,10 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	private double priceCoffeeFlavour() {
 		double priceFlavour = 0;
-		Window owner = orderTableView.getScene().getWindow();
-		if (selectedCoffee == null) {
-			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
-		} else if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino")
-				|| (selectedCoffee.getCoffeeFlavour().equals("Latte")
-						|| (selectedCoffee.getCoffeeFlavour().equals("Espresso Macchiato")
-								|| (selectedCoffee.getCoffeeFlavour().equals("Americano"))))) {
+
+		if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino") || (selectedCoffee.getCoffeeFlavour().equals("Latte")
+				|| (selectedCoffee.getCoffeeFlavour().equals("Espresso Macchiato")
+						|| (selectedCoffee.getCoffeeFlavour().equals("Americano"))))) {
 			priceFlavour = 4.50;
 		} else if (selectedCoffee.getCoffeeFlavour().equals("Espresso")
 				|| (selectedCoffee.getCoffeeFlavour().equals("Double Espresso")
@@ -482,18 +480,13 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	private double priceCoffeeMilk() {
 		double priceMilk = 0;
-		Window owner = orderTableView.getScene().getWindow();
-		if (selectedCoffee == null) {
-			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
+
+		if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
+			priceMilk = 0.00;
+		} else if (selectedCoffee.getCoffeeMilk().equals("Soy") || (selectedCoffee.getCoffeeMilk().equals("Almond"))) {
+			priceMilk = 0.50;
 		} else {
-			if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
-				priceMilk = 0.00;
-			} else if (selectedCoffee.getCoffeeMilk().equals("Soy")
-					|| (selectedCoffee.getCoffeeMilk().equals("Almond"))) {
-				priceMilk = 0.50;
-			} else {
-				priceMilk = 0.20;
-			}
+			priceMilk = 0.20;
 		}
 		return priceMilk;
 	}
@@ -504,17 +497,12 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	private double priceCoffeeSize() {
 		double priceSize = 0;
-		Window owner = orderTableView.getScene().getWindow();
-		if (selectedCoffee == null) {
-			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
+		if (selectedCoffee.getCoffeeSize().equals("S")) {
+			priceSize = 0.00;
+		} else if (selectedCoffee.getCoffeeSize().equals("M")) {
+			priceSize = 0.30;
 		} else {
-			if (selectedCoffee.getCoffeeSize().equals("S")) {
-				priceSize = 0.00;
-			} else if (selectedCoffee.getCoffeeSize().equals("M")) {
-				priceSize = 0.30;
-			} else {
-				priceSize = 0.50;
-			}
+			priceSize = 0.50;
 		}
 		return priceSize;
 	}
@@ -525,19 +513,14 @@ public class SalesPage extends Application implements Initializable {
 	 */
 	private double priceCoffeeExtra() {
 		double priceExtra = 0;
-		Window owner = orderTableView.getScene().getWindow();
-		if (selectedCoffee == null) {
-			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
+		if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
+			priceExtra = 0.80;
+		} else if (selectedCoffee.getCoffeeExtra().equals("Espresso")) {
+			priceExtra = 0.80;
+		} else if (selectedCoffee.getCoffeeExtra().equals("Flavour")) {
+			priceExtra = 0.30;
 		} else {
-			if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
-				priceExtra = 0.80;
-			} else if (selectedCoffee.getCoffeeExtra().equals("Espresso")) {
-				priceExtra = 0.80;
-			} else if (selectedCoffee.getCoffeeExtra().equals("Flavour")) {
-				priceExtra = 0.30;
-			} else {
-				priceExtra = 0.00;
-			}
+			priceExtra = 0.00;
 		}
 		return priceExtra;
 	}
@@ -596,13 +579,13 @@ public class SalesPage extends Application implements Initializable {
 	@FXML
 	public void complete(Event e) throws IOException {
 		Window owner = orderTableView.getScene().getWindow();
-		saveDataToFile();
+		saveDataToFile(fileName, coffee);
 		showAlert(Alert.AlertType.INFORMATION, owner, "Transaction Complete", "Thank You!");
 	}
 
-	public void saveDataToFile() throws IOException {
-		File file = new File("sales_data.txt");
-		FileWriter wr = new FileWriter(file, true);
+	public void saveDataToFile(File fileName, ObservableList<Coffee> coffee) throws IOException {
+		fileName = new File("sales_data.txt");
+		FileWriter wr = new FileWriter(fileName, true);
 		BufferedWriter br = new BufferedWriter(wr);
 		for (int i = 0; i < coffee.size(); i++) {
 			Coffee cof = coffee.get(i);

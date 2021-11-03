@@ -15,7 +15,6 @@ public class Coffee {
 	
 	public Coffee(int coffeeID, String coffeeFlavour, String coffeeSize, String coffeeMilk, String coffeeExtra,
 			double coffeePrice) {
-		super();
 		this.coffeeID = coffeeID;
 		this.coffeeFlavour = coffeeFlavour;
 		this.coffeeSize = coffeeSize;
