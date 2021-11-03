@@ -447,7 +447,7 @@ public class SalesPage extends Application implements Initializable {
 		if (selectedCoffee == null) {
 			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		} else {
-			double priceCoffee = priceCoffeeFlavour() + priceCoffeeMilk() + priceCoffeeSize() + priceCoffeeExtra();
+			double priceCoffee = priceCoffeeFlavour(selectedCoffee) + priceCoffeeMilk(selectedCoffee) + priceCoffeeSize(selectedCoffee) + priceCoffeeExtra(selectedCoffee);
 			selectedCoffee.setCoffeePrice(priceCoffee);
 			orderTableView.refresh();
 		}
@@ -457,7 +457,7 @@ public class SalesPage extends Application implements Initializable {
 	 * 
 	 * @return
 	 */
-	private double priceCoffeeFlavour() {
+	public double priceCoffeeFlavour(Coffee selectedCoffee) {
 		double priceFlavour = 0;
 
 		if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino") || (selectedCoffee.getCoffeeFlavour().equals("Latte")
@@ -478,9 +478,8 @@ public class SalesPage extends Application implements Initializable {
 	 * 
 	 * @return
 	 */
-	private double priceCoffeeMilk() {
+	public double priceCoffeeMilk(Coffee selectedCoffee) {
 		double priceMilk = 0;
-
 		if (selectedCoffee.getCoffeeMilk().equals("Regular")) {
 			priceMilk = 0.00;
 		} else if (selectedCoffee.getCoffeeMilk().equals("Soy") || (selectedCoffee.getCoffeeMilk().equals("Almond"))) {
@@ -495,7 +494,7 @@ public class SalesPage extends Application implements Initializable {
 	 * 
 	 * @return
 	 */
-	private double priceCoffeeSize() {
+	public double priceCoffeeSize(Coffee selectedCoffee) {
 		double priceSize = 0;
 		if (selectedCoffee.getCoffeeSize().equals("S")) {
 			priceSize = 0.00;
@@ -511,7 +510,7 @@ public class SalesPage extends Application implements Initializable {
 	 * 
 	 * @return
 	 */
-	private double priceCoffeeExtra() {
+	public double priceCoffeeExtra(Coffee selectedCoffee) {
 		double priceExtra = 0;
 		if (selectedCoffee.getCoffeeExtra().equals("Cream")) {
 			priceExtra = 0.80;

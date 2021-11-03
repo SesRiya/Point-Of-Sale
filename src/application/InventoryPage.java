@@ -58,6 +58,7 @@ public class InventoryPage extends Application implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		loadSalesData();
 		inventoryList();
+		updateCoffeeBeans(numberOfCups);
 		idItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Integer>("itemID"));
 		itemNameColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, String>("itemName"));
 		priceItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("priceItem"));
