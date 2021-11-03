@@ -457,7 +457,11 @@ public class SalesPage extends Application implements Initializable {
 	 * 
 	 * @return
 	 */
+<<<<<<< HEAD
 	public double priceCoffeeFlavour(Coffee selectedCoffee) {
+=======
+	public double priceCoffeeFlavour() {
+>>>>>>> branch 'master' of git@github.com:SesRiya/Point-Of-Sale.git
 		double priceFlavour = 0;
 
 		if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino") || (selectedCoffee.getCoffeeFlavour().equals("Latte")
@@ -605,5 +609,11 @@ public class SalesPage extends Application implements Initializable {
 		alert.initOwner(owner);
 		alert.show();
 	}
+
+	public void setSelectedCoffee(Coffee selectedCoffee) {
+		this.selectedCoffee = selectedCoffee;
+	}
+	
+	
 
 }

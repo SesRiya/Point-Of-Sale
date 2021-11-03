@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import application.Coffee;
@@ -54,6 +56,26 @@ class SalesPageTest {
 			}
 		});
 	}
+	
+	@ParameterizedTest
+	@MethodSource("coffeeFlavourProvider")
+	public void  priceCoffeeFlavourTest(String flavour,double price) {
+		Coffee coffee=new Coffee(1,flavour);
+		salesPage.setSelectedCoffee(coffee);
+		assertEquals(salesPage.priceCoffeeFlavour(),price);		
+	}
+	
+	
+	public static Stream<Arguments> coffeeFlavourProvider() {
+		return Stream.of(
+				Arguments.of("Cappuccino",4.50),
+				Arguments.of("Espresso",3.00),
+				Arguments.of("",5.50),
+				Arguments.of("Double Espresso",3.00),
+				Arguments.of("Espresso Macchiato",4.50)
+				);
+	}
+	
 	
 
 }

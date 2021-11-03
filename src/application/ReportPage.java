@@ -123,7 +123,7 @@ public class ReportPage extends Application implements Initializable {
 	public void start(Stage primaryStage) throws Exception {
 
 		Parent root = FXMLLoader.load(ReportPage.class.getResource("/layout/ReportPageLayout.fxml"));
-		primaryStage.setScene(new Scene(root, 550, 600));
+		primaryStage.setScene(new Scene(root, 900, 600));
 		primaryStage.show();
 		stage = primaryStage;
 
