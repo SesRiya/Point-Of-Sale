@@ -28,7 +28,7 @@ class CoffeeTest {
 		coffee.setCoffeeMilk("Soy");
 		assertEquals(coffee.getCoffeeMilk(), "Soy");
 
-		coffee.setCoffeeExtra("Shot");
+		coffee.setCoffeeExtra("Espresso Shot");
 		assertEquals(coffee.getCoffeeExtra(), "Espresso Shot");
 
 	}
