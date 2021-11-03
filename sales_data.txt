@@ -22,3 +22,5 @@
 3 : Latte : S : Regular : None : 4.5
 3 : Latte : S : Regular : None : 4.5
 2 : Cappuccino : M : Skimmed : Espresso : 5.8
+3 : Latte : M : Skimmed : Espresso : 5.8
+6 : Espresso Macchiato : S : Regular : None : 5.5
