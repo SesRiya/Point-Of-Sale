@@ -66,6 +66,7 @@ public class ReportPage extends Application implements Initializable {
 	}
 
 //add data into line chart
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		XYChart.Series income = new XYChart.Series<>();

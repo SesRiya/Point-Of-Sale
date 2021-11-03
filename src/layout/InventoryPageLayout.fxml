@@ -12,16 +12,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="550.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventoryPage">
+<Pane maxHeight="550.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventoryPage">
    <children>
-      <HBox layoutY="2.0" prefHeight="101.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;">
+      <HBox layoutY="2.0" prefHeight="101.0" prefWidth="902.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <ImageView fitHeight="60.0" fitWidth="60.0" onMouseClicked="#salesPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sellIicon.png" />
                </image>
                <HBox.margin>
-                  <Insets left="200.0" top="25.0" />
+                  <Insets left="350.0" top="25.0" />
                </HBox.margin>
             </ImageView>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
@@ -42,23 +42,23 @@
             </ImageView>
          </children>
       </HBox>
-      <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="100.0" layoutY="20.0" onMouseClicked="#homePage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="225.0" layoutY="20.0" onMouseClicked="#homePage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../homeicon.png" />
          </image>
       </ImageView>
       <Accordion layoutX="14.0" layoutY="107.0" />
-      <TableView fx:id="tableInventory" layoutY="100.0" maxHeight="400.0" maxWidth="600.0" prefHeight="337.0" prefWidth="600.0">
+      <TableView fx:id="tableInventory" layoutX="-4.0" layoutY="150.0" maxHeight="400.0" maxWidth="902.0" prefHeight="337.0" prefWidth="902.0">
         <columns>
-          <TableColumn fx:id="idItemColumn" prefWidth="32.666656494140625" text="ID" />
-          <TableColumn fx:id="itemNameColumn" prefWidth="125.99996948242188" text="ItemName" />
-            <TableColumn fx:id="priceItemColumn" prefWidth="84.0" text="Price" />
-            <TableColumn fx:id="purchasedQuantityColumn" minWidth="0.0" prefWidth="130.0" text="PurchasedQuantity" />
-            <TableColumn fx:id="usedQuantityColumn" prefWidth="114.00006103515625" text="UsedQuantity" />
-            <TableColumn fx:id="quantityLeftColumn" prefWidth="111.33331298828125" text="QuantityLeft" />
+          <TableColumn fx:id="idItemColumn" prefWidth="60.000001192092896" text="ID" />
+          <TableColumn fx:id="itemNameColumn" prefWidth="235.3334083557129" text="ItemName" />
+            <TableColumn fx:id="priceItemColumn" minWidth="9.33331298828125" prefWidth="167.9998779296875" text="Price" />
+            <TableColumn fx:id="purchasedQuantityColumn" minWidth="0.0" prefWidth="156.00003051757812" text="PurchasedQuantity" />
+            <TableColumn fx:id="usedQuantityColumn" prefWidth="143.333251953125" text="UsedQuantity" />
+            <TableColumn fx:id="quantityLeftColumn" prefWidth="140.0001220703125" text="QuantityLeft" />
         </columns>
       </TableView>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#updateInventory" prefHeight="38.0" prefWidth="243.0" style="-fx-background-color: #FFFFFF;" text="Update Inventory" textAlignment="CENTER">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="362.0" layoutY="527.0" mnemonicParsing="false" onMouseClicked="#updateInventory" prefHeight="38.0" prefWidth="243.0" style="-fx-background-color: #FFFFFF;" text="Update Inventory" textAlignment="CENTER">
          <font>
             <Font name="Century Gothic" size="16.0" />
          </font>
