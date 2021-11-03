@@ -159,9 +159,8 @@ public class InventoryPage extends Application implements Initializable {
 	}
 
 	public double updateCoffeeBeans(int numberOfCups) {
-	
 		// assumption 1 cup of coffee uses 18g of beans
-		int gramsBeansUsed = numberOfCups * 18;
+		double gramsBeansUsed = numberOfCups * 18;
 
 		double usedQuantity = coffeeBeans.getUsedQuantity() + gramsBeansUsed;
 		coffeeBeans.setUsedQuantity(usedQuantity);
@@ -186,5 +185,11 @@ public class InventoryPage extends Application implements Initializable {
 		coffeeBeans.getQuantityLeft();
 		tableInventory.refresh();
 	}
+
+	public void setCoffeeBeans(InventoryContent coffeeBeans) {
+		this.coffeeBeans = coffeeBeans;
+	}
+	
+	
 
 }
