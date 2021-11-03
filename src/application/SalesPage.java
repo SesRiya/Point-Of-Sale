@@ -29,7 +29,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 /**
- * Sales Page
+ * Sales Page for Coffee Order and Price
  * 
  * @author crdgo
  *
@@ -71,7 +71,7 @@ public class SalesPage extends Application implements Initializable {
 	private ObservableList<Coffee> coffee = FXCollections.observableArrayList();
 
 	/**
-	 * 
+	 * Initializes table columns
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -96,7 +96,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * 
+	 * display UI
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -108,6 +108,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * display report Page Ui
 	 * 
 	 * @param e
 	 */
@@ -122,6 +123,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * display homePage UI
 	 * 
 	 * @param e
 	 */
@@ -137,6 +139,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * display inventoryPage UI
 	 * 
 	 * @param e
 	 */
@@ -151,6 +154,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -161,6 +165,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -171,6 +176,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -181,6 +187,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -191,6 +198,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -201,6 +209,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -211,6 +220,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -221,6 +231,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -231,6 +242,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -241,6 +253,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -251,6 +264,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * adds Coffee Object to observable list
 	 * 
 	 * @param e
 	 */
@@ -261,6 +275,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set coffee size
 	 * 
 	 * @param e
 	 */
@@ -277,6 +292,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set coffee size
 	 * 
 	 * @param e
 	 */
@@ -293,6 +309,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set coffee size
 	 * 
 	 * @param e
 	 */
@@ -309,6 +326,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set coffee milk
 	 * 
 	 * @param e
 	 */
@@ -325,6 +343,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set coffee milk
 	 * 
 	 * @param e
 	 */
@@ -341,6 +360,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set coffee milk
 	 * 
 	 * @param e
 	 */
@@ -357,6 +377,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set coffee milk
 	 * 
 	 * @param e
 	 */
@@ -373,6 +394,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set extras on coffee
 	 * 
 	 * @param e
 	 */
@@ -389,6 +411,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set extras on coffee
 	 * 
 	 * @param e
 	 */
@@ -405,6 +428,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set extras on coffee
 	 * 
 	 * @param e
 	 */
@@ -421,6 +445,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * menu button to set extras on coffee
 	 * 
 	 * @param e
 	 */
@@ -437,6 +462,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * Calculates price Per coffee cup based on the additional menu
+	 * button/parameters clicked or added by the user
 	 * 
 	 * @param e
 	 */
@@ -446,13 +473,15 @@ public class SalesPage extends Application implements Initializable {
 		if (selectedCoffee == null) {
 			showAlert(Alert.AlertType.ERROR, owner, "Please select from table row first", "Form error!");
 		} else {
-			double priceCoffee = priceCoffeeFlavour(selectedCoffee) + priceCoffeeMilk(selectedCoffee) + priceCoffeeSize(selectedCoffee) + priceCoffeeExtra(selectedCoffee);
+			double priceCoffee = priceCoffeeFlavour(selectedCoffee) + priceCoffeeMilk(selectedCoffee)
+					+ priceCoffeeSize(selectedCoffee) + priceCoffeeExtra(selectedCoffee);
 			selectedCoffee.setCoffeePrice(priceCoffee);
 			orderTableView.refresh();
 		}
 	}
 
 	/**
+	 * Computes and returns price based on user preferred coffee flavour
 	 * 
 	 * @return
 	 */
@@ -474,6 +503,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * Computes and returns price based on user preferred coffee milk
 	 * 
 	 * @return
 	 */
@@ -490,6 +520,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * Computes and returns price based on user preferred coffee size
 	 * 
 	 * @return
 	 */
@@ -506,6 +537,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * Computes and returns price based on user preferred extras on coffee
 	 * 
 	 * @return
 	 */
@@ -524,13 +556,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * 
-	 * @param e
-	 * @throws IOException
-	 */
-
-	/**
-	 * Get coffee Prices from table column
+	 * Clears tableview and list
 	 * 
 	 * @return
 	 */
@@ -542,6 +568,9 @@ public class SalesPage extends Application implements Initializable {
 		orderTableView.getItems().clear();
 	}
 
+	/**
+	 * Clears tableView and list
+	 */
 	public void newOrder() {
 		totalPrice = 0;
 		totalPayment.setText("");
@@ -550,6 +579,12 @@ public class SalesPage extends Application implements Initializable {
 		orderTableView.getItems().clear();
 	}
 
+	/**
+	 * Computes total Price for all the coffees in the list
+	 * 
+	 * @param coffee
+	 * @return
+	 */
 	public double totalPrice(ObservableList<Coffee> coffee) {
 		totalPrice = 0;
 		for (Coffee coffeePrice : coffee) {
@@ -558,6 +593,11 @@ public class SalesPage extends Application implements Initializable {
 		return totalPrice;
 	}
 
+	/**
+	 * button for computing total price on the UI
+	 * 
+	 * @param e
+	 */
 	@FXML
 	public void totalPriceButton(Event e) {
 		totalPrice(coffee);
@@ -566,6 +606,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
+	 * Gst computation based on the totalPrice
 	 * 
 	 * @return
 	 */
@@ -574,6 +615,12 @@ public class SalesPage extends Application implements Initializable {
 		return gst;
 	}
 
+	/**
+	 * button to save/write the file to a text file
+	 * 
+	 * @param e
+	 * @throws IOException
+	 */
 	@FXML
 	public void complete(Event e) throws IOException {
 		Window owner = orderTableView.getScene().getWindow();
@@ -581,6 +628,13 @@ public class SalesPage extends Application implements Initializable {
 		showAlert(Alert.AlertType.INFORMATION, owner, "Transaction Complete", "Thank You!");
 	}
 
+	/**
+	 * method to save data to a file
+	 * 
+	 * @param fileName
+	 * @param coffee
+	 * @throws IOException
+	 */
 	public void saveDataToFile(String fileName, ObservableList<Coffee> coffee) throws IOException {
 		FileWriter wr = new FileWriter(fileName, true);
 		BufferedWriter br = new BufferedWriter(wr);
@@ -595,6 +649,14 @@ public class SalesPage extends Application implements Initializable {
 		wr.close();
 	}
 
+	/**
+	 * UI alert
+	 * 
+	 * @param alertType
+	 * @param owner
+	 * @param message
+	 * @param title
+	 */
 	public void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
 		Alert alert = new Alert(alertType);
 		alert.setContentText(message);
@@ -604,10 +666,13 @@ public class SalesPage extends Application implements Initializable {
 		alert.show();
 	}
 
+	/**
+	 * setter for selected coffee
+	 * 
+	 * @param selectedCoffee
+	 */
 	public void setSelectedCoffee(Coffee selectedCoffee) {
 		this.selectedCoffee = selectedCoffee;
 	}
-	
-	
 
 }

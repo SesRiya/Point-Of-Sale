@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 /**
+ * Class for Log in Authentication
  * 
  * @author crdgo
  *
@@ -29,7 +30,7 @@ public class LoginPage extends Application {
 	Cashier cashier = new Cashier("cashier", "456");
 
 	/**
-	 * 
+	 * Calls the UI
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -47,6 +48,7 @@ public class LoginPage extends Application {
 	}
 
 	/**
+	 * Calls the Sales Page Layout
 	 * 
 	 * @param e
 	 */
@@ -70,6 +72,7 @@ public class LoginPage extends Application {
 	}
 
 	/**
+	 * Checks is username and password is equal to the hardcoded one
 	 * 
 	 * @return
 	 */
@@ -84,7 +87,8 @@ public class LoginPage extends Application {
 	}
 
 	/**
-	 * 
+	 * alert on ui if password and username is empty or not correct
+	 *
 	 * @param alertType
 	 * @param owner
 	 * @param message
