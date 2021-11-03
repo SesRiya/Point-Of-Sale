@@ -29,7 +29,7 @@ class CoffeeTest {
 		assertEquals(coffee.getCoffeeMilk(), "Soy");
 
 		coffee.setCoffeeExtra("Shot");
-		assertEquals(coffee.getCoffeeExtra(), "Shot");
+		assertEquals(coffee.getCoffeeExtra(), "Espresso Shot");
 
 	}
 
@@ -49,13 +49,13 @@ class CoffeeTest {
 	}
 
 	public static Stream<Arguments> coffeeDataProvider() {
-		return Stream.of(Arguments.of(3, "Caramel", "M", "Soy", "Shot", 4.50
+		return Stream.of(Arguments.of(3, "Caramel", "M", "Soy", "Espresso Shot", 4.50
 
 		), Arguments.of(7, "Chocolate", "L", "Oat", "Shot", 4.75
 
 		),
 
-				Arguments.of(5, "Chai", "S", "Almond", "Shot", 3.90
+				Arguments.of(5, "Chai", "S", "Almond", "Espresso Shot", 3.90
 
 				));
 	}
