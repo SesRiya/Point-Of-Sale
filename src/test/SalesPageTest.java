@@ -95,7 +95,6 @@ class SalesPageTest {
 
 	public static Stream<Arguments> coffeeSizeProvider() {
 		return Stream.of(Arguments.of("S", 0.00), Arguments.of("M", 0.30)
-
 		);
 	}
 
@@ -120,38 +119,32 @@ class SalesPageTest {
 
 	public static Stream<Arguments> gstProvider() {
 		return Stream.of(Arguments.of(10, 1.5), Arguments.of(20, 3.0));
-
 	}
 
-	
 	@ParameterizedTest
 	@MethodSource("coffeeSaveDataProvider")
 	public void saveDataToFile(String fileName, List<Coffee> coffees) throws IOException {
-		//Test writing to file
+		// Test writing to file
 		ObservableList<Coffee> coffeesOL = FXCollections.observableArrayList();
 		coffeesOL.addAll(coffees);
-		//Create a new file always
+		// Create a new file always
 		Writer fileWriter = new FileWriter(fileName, false);
 		fileWriter.close();
 		salesPage.saveDataToFile(fileName, coffeesOL);
-		//Test reading from file
+		// Test reading from file
 		InventoryPage inventoryPage = new InventoryPage();
 		inventoryPage.loadSalesData(fileName);
 		List<String> coffeeSizeList = inventoryPage.getCoffeeSizeList();
 		assertEquals(coffeeSizeList.size(), coffees.size());
-		
-		
-		for(int i = 0; i < coffees.size(); i++) {
+
+		for (int i = 0; i < coffees.size(); i++) {
 			assertEquals(coffeeSizeList.get(i), coffees.get(i).getCoffeeSize());
 		}
-		
 	}
-	
-	public static Stream<Arguments> coffeeSaveDataProvider() {
-		return Stream.of(Arguments.of("sales_data_test.txt", Arrays.asList(
-			new Coffee(2, "Cappuccino", "S", "Regular", "None", 4.50),
-			new Coffee(4, "Espresso", "S", "Regular", "None", 4.00))));
 
+	public static Stream<Arguments> coffeeSaveDataProvider() {
+		return Stream.of(Arguments.of("sales_data_test.txt",
+				Arrays.asList(new Coffee(2, "Cappuccino", "S", "Regular", "None", 4.50),
+						new Coffee(4, "Espresso", "S", "Regular", "None", 4.00))));
 	}
-	
 }

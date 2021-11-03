@@ -171,13 +171,6 @@ public class InventoryPage extends Application implements Initializable {
 		return quantityLeft;
 	}
 
-//	public double updateCream(int numberOfCups) {
-//		
-//		//assumption extra whipped cream uses 10ml of cream
-//		
-//		
-//	
-//	}
 
 	@FXML
 	public void updateInventory(Event e) {
