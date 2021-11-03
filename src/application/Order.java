@@ -8,7 +8,6 @@ public class Order {
 	private List<Coffee> coffeeOrder;
 
 	public Order(int orderID, List<Coffee> coffeeOrder) {
-		super();
 		this.orderID = orderID;
 		this.coffeeOrder = coffeeOrder;
 	}
