@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="550.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ReportPage">
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ReportPage">
    <children>
       <HBox layoutX="-1.0" prefHeight="100.0" prefWidth="550.0" style="-fx-background-color: #FFFFFF;">
          <children>
@@ -46,7 +46,7 @@
             <Image url="@../../homeicon.png" />
          </image>
       </ImageView>
-      <LineChart fx:id="lineChart" layoutX="-1.0" layoutY="198.0" prefHeight="402.0" prefWidth="550.0" title="Sales Report">
+      <LineChart fx:id="lineChart" layoutX="-1.0" layoutY="198.0" prefHeight="383.0" prefWidth="550.0" title="Sales Report">
         <xAxis>
           <CategoryAxis fx:id="date" side="BOTTOM" />
         </xAxis>
@@ -54,7 +54,7 @@
           <NumberAxis fx:id="revenue" label="REVENUE" side="LEFT" />
         </yAxis>
       </LineChart>
-      <DatePicker fx:id="calendar" layoutX="140.0" layoutY="164.0" prefHeight="34.0" prefWidth="268.0" />
+      <DatePicker fx:id="calendar" layoutX="129.0" layoutY="155.0" prefHeight="34.0" prefWidth="268.0" />
       <ToggleButton fx:id="dayButton" layoutX="140.0" layoutY="115.0" mnemonicParsing="false" text="DAY" />
       <ToggleButton fx:id="weekButton" layoutX="236.0" layoutY="115.0" mnemonicParsing="false" text="WEEK" />
       <ToggleButton fx:id="monthButton" layoutX="332.0" layoutY="115.0" mnemonicParsing="false" text="MONTH" />
