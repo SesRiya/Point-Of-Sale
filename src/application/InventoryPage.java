@@ -26,8 +26,6 @@ import javafx.stage.Stage;
 
 public class InventoryPage extends Application implements Initializable {
 	private static Stage stage;
-	private InventoryContent selectedInventory;
-	private int numberOfCups;
 
 	private List<String> coffeeFlavourList = new ArrayList<>();
 	private List<String> coffeeMilkList = new ArrayList<>();
@@ -35,6 +33,11 @@ public class InventoryPage extends Application implements Initializable {
 	private List<String> coffeeSizeList = new ArrayList<>();
 
 	private InventoryContent coffeeBeans;
+	private InventoryContent whippedCream;
+	private InventoryContent flavour;
+	private int creamUsed;
+	private int numberOfCups;
+
 
 	@FXML
 	private TableView<InventoryContent> tableInventory;
@@ -58,6 +61,9 @@ public class InventoryPage extends Application implements Initializable {
 		loadSalesData("sales_data.txt");
 		inventoryList();
 		updateCoffeeBeans(numberOfCups);
+		updateCream(creamUsed);
+		
+		updateFlavour();
 		idItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Integer>("itemID"));
 		itemNameColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, String>("itemName"));
 		priceItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("priceItem"));
@@ -72,7 +78,7 @@ public class InventoryPage extends Application implements Initializable {
 			TableRow<InventoryContent> row = new TableRow<>();
 			row.setOnMouseClicked(event -> {
 				if (!row.isEmpty()) {
-					selectedInventory = row.getItem();
+					row.getItem();
 				}
 			});
 			return row;
@@ -82,7 +88,6 @@ public class InventoryPage extends Application implements Initializable {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-
 		Parent root = FXMLLoader.load(InventoryPage.class.getResource("/layout/InventoryPageLayout.fxml"));
 		primaryStage.setScene(new Scene(root, 900, 600));
 		primaryStage.show();
@@ -128,16 +133,16 @@ public class InventoryPage extends Application implements Initializable {
 				coffeeFlavourList.add(coffeeFlavour);
 				String coffeeMilk = (contents[3]);
 				coffeeMilkList.add(coffeeMilk);
-				String coffeeExtra = (contents[3]);
+				String coffeeExtra = (contents[4]);
 				coffeeExtraList.add(coffeeExtra);
 				String coffeeSize = (contents[2]);
 				coffeeSizeList.add(coffeeSize);
 			}
 		} catch (FileNotFoundException e) {
-
 			e.printStackTrace();
 		}
 		numberOfCups = coffeeFlavourList.size();
+		creamUsed = (int) creamUsed();
 
 	}
 
@@ -152,9 +157,9 @@ public class InventoryPage extends Application implements Initializable {
 		listIngredients.add(milkSoy);
 		InventoryContent milkAlmond = new InventoryContent(5, "Almond Milk", 50, 5, 1);
 		listIngredients.add(milkAlmond);
-		InventoryContent whippedCream = new InventoryContent(6, "Whipped Cream", 50, 5, 1);
+		whippedCream = new InventoryContent(6, "Whipped Cream", 50, 2500, 500);
 		listIngredients.add(whippedCream);
-		InventoryContent flavour = new InventoryContent(6, "Flavour", 50, 5, 1);
+		flavour = new InventoryContent(6, "Flavour", 50, 2500, 500);
 		listIngredients.add(flavour);
 	}
 
@@ -171,12 +176,60 @@ public class InventoryPage extends Application implements Initializable {
 		return quantityLeft;
 	}
 
+	public double updateCream(double creamUsed) {
+		// assumption 1 cup of coffee uses 10ml of cream
+		double usedQuantity = whippedCream.getUsedQuantity() + creamUsed;
+		whippedCream.setUsedQuantity(usedQuantity);
+
+		double quantityLeft = whippedCream.getPurchasedQuantity() - whippedCream.getUsedQuantity();
+		whippedCream.setQuantityLeft(quantityLeft);
+
+		return quantityLeft;
+	}
+
+	private double creamUsed() {
+		double creamUsed = 0;
+		int counter = 0;
+		for (int i = 0; i < coffeeExtraList.size(); i++) {
+			if (coffeeExtraList.contains("Cream")) {
+				counter++;
+			}
+			creamUsed = counter * 10;
+		}
+		return creamUsed;
+	}
+
+	public double updateFlavour() {
+		// assumption 1 cup of coffee uses 10ml of flavourings
+		double flavourUsed = 0;
+		int counter = 0;
+		for (int i = 0; i < coffeeExtraList.size(); i++) {
+			if (coffeeExtraList.contains("Flavour")) {
+				counter++;
+			}
+			flavourUsed = counter * 10;
+		}
+
+		double usedQuantity = flavour.getUsedQuantity() + flavourUsed;
+		flavour.setUsedQuantity(usedQuantity);
+
+		double quantityLeft = flavour.getPurchasedQuantity() - flavour.getUsedQuantity();
+		flavour.setQuantityLeft(quantityLeft);
+
+		return quantityLeft;
+	}
 
 	@FXML
 	public void updateInventory(Event e) {
 		updateCoffeeBeans(numberOfCups);
+		updateCream(creamUsed());
+		updateFlavour();
 		coffeeBeans.getUsedQuantity();
 		coffeeBeans.getQuantityLeft();
+		whippedCream.getUsedQuantity();
+		whippedCream.getQuantityLeft();
+		flavour.getUsedQuantity();
+		flavour.getQuantityLeft();
 		tableInventory.refresh();
 	}
 
