@@ -50,8 +50,8 @@
       <Accordion layoutX="14.0" layoutY="107.0" />
       <TableView fx:id="tableInventory" layoutX="-4.0" layoutY="150.0" maxHeight="400.0" maxWidth="902.0" prefHeight="337.0" prefWidth="902.0">
         <columns>
-          <TableColumn fx:id="idItemColumn" prefWidth="60.000001192092896" text="ID" />
-          <TableColumn fx:id="itemNameColumn" prefWidth="235.3334083557129" text="ItemName" />
+          <TableColumn fx:id="idItemColumn" prefWidth="83.33330655097961" text="ID" />
+          <TableColumn fx:id="itemNameColumn" prefWidth="213.33337020874023" text="ItemName" />
             <TableColumn fx:id="priceItemColumn" minWidth="9.33331298828125" prefWidth="167.9998779296875" text="Price" />
             <TableColumn fx:id="purchasedQuantityColumn" minWidth="0.0" prefWidth="156.00003051757812" text="PurchasedQuantity" />
             <TableColumn fx:id="usedQuantityColumn" prefWidth="143.333251953125" text="UsedQuantity" />

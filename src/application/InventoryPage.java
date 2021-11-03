@@ -33,10 +33,13 @@ public class InventoryPage extends Application implements Initializable {
 	private List<String> coffeeSizeList = new ArrayList<>();
 
 	private InventoryContent coffeeBeans;
+	private InventoryContent milkRegular;
 	private InventoryContent whippedCream;
 	private InventoryContent flavour;
 	private int creamUsed;
+	private double regularMilkUsed;
 	private int numberOfCups;
+	private int flavourUsed;
 
 
 	@FXML
@@ -62,8 +65,8 @@ public class InventoryPage extends Application implements Initializable {
 		inventoryList();
 		updateCoffeeBeans(numberOfCups);
 		updateCream(creamUsed);
-		
-		updateFlavour();
+		updateFlavour(flavourUsed);
+		updateRegularMilk(regularMilkUsed);
 		idItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Integer>("itemID"));
 		itemNameColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, String>("itemName"));
 		priceItemColumn.setCellValueFactory(new PropertyValueFactory<InventoryContent, Double>("priceItem"));
@@ -143,19 +146,21 @@ public class InventoryPage extends Application implements Initializable {
 		}
 		numberOfCups = coffeeFlavourList.size();
 		creamUsed = (int) creamUsed();
+		flavourUsed = (int) flavourUsed();
+		regularMilkUsed = regularMilkUsed();
 
 	}
 
 	public void inventoryList() {
-		coffeeBeans = new InventoryContent(1, "Coffee Beans", 1000, 10000, 300);
+		coffeeBeans = new InventoryContent(1, "Coffee Beans", 1000, 10000, 700);
 		listIngredients.add(coffeeBeans);
-		InventoryContent milkRegular = new InventoryContent(2, "Regular Milk", 50, 10, 1);
+		milkRegular = new InventoryContent(2, "Regular Milk", 5000, 10000, 1000);
 		listIngredients.add(milkRegular);
-		InventoryContent milkSkimmed = new InventoryContent(3, "Skimmed Milk", 50, 5, 1);
+		InventoryContent milkSkimmed = new InventoryContent(3, "Skimmed Milk", 5000, 5000, 100);
 		listIngredients.add(milkSkimmed);
-		InventoryContent milkSoy = new InventoryContent(4, "Soy Milk", 50, 5, 1);
+		InventoryContent milkSoy = new InventoryContent(4, "Soy Milk", 5000, 5000, 200);
 		listIngredients.add(milkSoy);
-		InventoryContent milkAlmond = new InventoryContent(5, "Almond Milk", 50, 5, 1);
+		InventoryContent milkAlmond = new InventoryContent(5, "Almond Milk", 500, 50000, 200);
 		listIngredients.add(milkAlmond);
 		whippedCream = new InventoryContent(6, "Whipped Cream", 50, 2500, 500);
 		listIngredients.add(whippedCream);
@@ -176,6 +181,29 @@ public class InventoryPage extends Application implements Initializable {
 		return quantityLeft;
 	}
 
+	public double updateRegularMilk(double regularMilkUsed) {
+		double usedQuantity = milkRegular.getUsedQuantity() + regularMilkUsed;
+		milkRegular.setUsedQuantity(usedQuantity);
+
+		double quantityLeft = milkRegular.getPurchasedQuantity() - milkRegular.getUsedQuantity();
+		milkRegular.setQuantityLeft(quantityLeft);
+
+		return quantityLeft;
+	}
+	
+	public double regularMilkUsed() {
+		double regularMilkUsed = 0;
+		int counter = 0;
+		for (int i = 0; i < coffeeMilkList.size(); i++) {
+			if (coffeeMilkList.contains("Regular")) {
+				counter++;
+			}
+			// assumption 1 cup of coffee uses 150ml of milk
+			regularMilkUsed = counter * 150;
+		}
+		return regularMilkUsed;
+
+	}
 	public double updateCream(double creamUsed) {
 		// assumption 1 cup of coffee uses 10ml of cream
 		double usedQuantity = whippedCream.getUsedQuantity() + creamUsed;
@@ -199,17 +227,9 @@ public class InventoryPage extends Application implements Initializable {
 		return creamUsed;
 	}
 
-	public double updateFlavour() {
-		// assumption 1 cup of coffee uses 10ml of flavourings
-		double flavourUsed = 0;
-		int counter = 0;
-		for (int i = 0; i < coffeeExtraList.size(); i++) {
-			if (coffeeExtraList.contains("Flavour")) {
-				counter++;
-			}
-			flavourUsed = counter * 10;
-		}
-
+	public double updateFlavour(double flavourUsed) {
+		// assumption 1 cup of coffee uses 10ml of flavorings
+		
 		double usedQuantity = flavour.getUsedQuantity() + flavourUsed;
 		flavour.setUsedQuantity(usedQuantity);
 
@@ -219,17 +239,33 @@ public class InventoryPage extends Application implements Initializable {
 		return quantityLeft;
 	}
 
+
+	private double flavourUsed() {
+		double flavourUsed = 0;
+		int counter = 0;
+		for (int i = 0; i < coffeeExtraList.size(); i++) {
+			if (coffeeExtraList.contains("Flavour")) {
+				counter++;
+			}
+			flavourUsed = counter * 5;
+		}
+		return flavourUsed;
+	}
+
 	@FXML
 	public void updateInventory(Event e) {
 		updateCoffeeBeans(numberOfCups);
-		updateCream(creamUsed());
-		updateFlavour();
+		updateCream(creamUsed);
+		updateRegularMilk(regularMilkUsed);
+		updateFlavour(flavourUsed);
 		coffeeBeans.getUsedQuantity();
 		coffeeBeans.getQuantityLeft();
 		whippedCream.getUsedQuantity();
 		whippedCream.getQuantityLeft();
 		flavour.getUsedQuantity();
 		flavour.getQuantityLeft();
+		milkRegular.getUsedQuantity();
+		milkRegular.getQuantityLeft();
 		tableInventory.refresh();
 	}
 
