@@ -174,6 +174,7 @@ public class InventoryPage extends Application implements Initializable {
 
 	@FXML
 	public void updateInventory(Event e) {
+		updateCoffeeBeans(numberOfCups);
 		coffeeBeans.getUsedQuantity();
 		coffeeBeans.getQuantityLeft();
 		tableInventory.refresh();
