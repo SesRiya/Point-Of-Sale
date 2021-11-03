@@ -5,10 +5,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
+
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -457,11 +456,7 @@ public class SalesPage extends Application implements Initializable {
 	 * 
 	 * @return
 	 */
-<<<<<<< HEAD
 	public double priceCoffeeFlavour(Coffee selectedCoffee) {
-=======
-	public double priceCoffeeFlavour() {
->>>>>>> branch 'master' of git@github.com:SesRiya/Point-Of-Sale.git
 		double priceFlavour = 0;
 
 		if (selectedCoffee.getCoffeeFlavour().equals("Cappuccino") || (selectedCoffee.getCoffeeFlavour().equals("Latte")
