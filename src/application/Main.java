@@ -27,6 +27,11 @@ public class Main extends Application {
 		}
 	}
 
+	/**
+	 * Displays loginPage UI when user clicks the Login button
+	 * 
+	 * @param e
+	 */
 	@FXML
 	public void loginPage(Event e) {
 		LoginPage loginPage = new LoginPage();

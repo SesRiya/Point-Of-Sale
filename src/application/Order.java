@@ -2,6 +2,13 @@ package application;
 
 import java.util.List;
 
+/**
+ * Class that contains the List of coffees per order and the order id per
+ * transaction
+ * 
+ * @author POS group
+ *
+ */
 public class Order {
 
 	private int orderID;

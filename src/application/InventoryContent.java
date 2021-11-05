@@ -1,14 +1,25 @@
 package application;
 
+/**
+ * Class for items in the Inventory Content
+ * 
+ * @param itemID
+ * @param itemName
+ * @param priceItem
+ * @param purchasedQuantity
+ * @param usedQuantity
+ * @param quantityLeft
+ * @author POS group
+ *
+ */
 public class InventoryContent {
 	private int itemID;
 	private String itemName;
 	private double priceItem;
-	private double purchasedQuantity;	
+	private double purchasedQuantity;
 	private double usedQuantity;
 	private double quantityLeft;
-	
-	
+
 	public InventoryContent(int itemID, String itemName, double priceItem, double purchasedQuantity,
 			double usedQuantity) {
 		super();
@@ -18,9 +29,6 @@ public class InventoryContent {
 		this.purchasedQuantity = purchasedQuantity;
 		this.usedQuantity = usedQuantity;
 	}
-
-	
-	
 
 	public InventoryContent(int itemID, String itemName, double priceItem, double purchasedQuantity,
 			double usedQuantity, double quantityLeft) {
@@ -33,53 +41,41 @@ public class InventoryContent {
 		this.quantityLeft = quantityLeft;
 	}
 
-
-
-
 	public int getItemID() {
 		return itemID;
 	}
-
 
 	public void setItemID(int itemID) {
 		this.itemID = itemID;
 	}
 
-
 	public String getItemName() {
 		return itemName;
 	}
-
 
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
-
 	public double getPriceItem() {
 		return priceItem;
 	}
-
 
 	public void setPriceItem(double priceItem) {
 		this.priceItem = priceItem;
 	}
 
-
 	public double getPurchasedQuantity() {
 		return purchasedQuantity;
 	}
-
 
 	public void setPurchasedQuantity(double purchasedQuantity) {
 		this.purchasedQuantity = purchasedQuantity;
 	}
 
-
 	public double getUsedQuantity() {
 		return usedQuantity;
 	}
-
 
 	public void setUsedQuantity(double usedQuantity) {
 		this.usedQuantity = usedQuantity;
@@ -89,11 +85,8 @@ public class InventoryContent {
 		return quantityLeft;
 	}
 
-
 	public void setQuantityLeft(double quantityLeft) {
 		this.quantityLeft = quantityLeft;
 	}
-
-	
 
 }

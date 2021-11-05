@@ -24,6 +24,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * Class for the items listed in the Inventory Page
+ * 
+ * @param coffeeFlavourList
+ * @param coffeeMilkExtraList
+ * @param coffeeSizeList
+ * @param coffeeExtraList
+ *
+ * @author POS Group
+ *
+ */
 public class InventoryPage extends Application implements Initializable {
 	private static Stage stage;
 
@@ -40,7 +51,6 @@ public class InventoryPage extends Application implements Initializable {
 	private double regularMilkUsed;
 	private int numberOfCups;
 	private int flavourUsed;
-
 
 	@FXML
 	private TableView<InventoryContent> tableInventory;
@@ -97,6 +107,11 @@ public class InventoryPage extends Application implements Initializable {
 		stage = primaryStage;
 	}
 
+	/**
+	 * Displays salesPage UI when user clicks the salesPage icon
+	 * 
+	 * @param e
+	 */
 	@FXML
 	public void salesPage(Event e) {
 		SalesPage secondScreen = new SalesPage();
@@ -107,6 +122,11 @@ public class InventoryPage extends Application implements Initializable {
 		}
 	}
 
+	/**
+	 * Displays reportPage UI when user clicks the reportPage icon
+	 * 
+	 * @param e
+	 */
 	@FXML
 	public void reportPage(Event e) {
 		ReportPage thirdScreen = new ReportPage();
@@ -117,6 +137,11 @@ public class InventoryPage extends Application implements Initializable {
 		}
 	}
 
+	/**
+	 * Displays homePage UI when user clicks the homePage icon
+	 * 
+	 * @param e
+	 */
 	@FXML
 	public void homePage(Event e) {
 		try {
@@ -127,6 +152,11 @@ public class InventoryPage extends Application implements Initializable {
 		}
 	}
 
+	/**
+	 * Reads data from the saved sales_data.txt file and loads them into variables
+	 * 
+	 * @param fileName
+	 */
 	public void loadSalesData(String fileName) {
 		try {
 			Scanner scanner = new Scanner(new File(fileName));
@@ -151,6 +181,10 @@ public class InventoryPage extends Application implements Initializable {
 
 	}
 
+	/**
+	 * Sets the hardcoded value for the inventory items:
+	 * 
+	 */
 	public void inventoryList() {
 		coffeeBeans = new InventoryContent(1, "Coffee Beans", 1000, 10000, 700);
 		listIngredients.add(coffeeBeans);
@@ -168,6 +202,13 @@ public class InventoryPage extends Application implements Initializable {
 		listIngredients.add(flavour);
 	}
 
+	/**
+	 * Returns quantity left of the coffeeBean inventory item after usedquantity is
+	 * subtracted from the loaded sales data file {@link loadSalesData()}
+	 * 
+	 * @param numberOfCups
+	 * @return quantityLeft
+	 */
 	public double updateCoffeeBeans(int numberOfCups) {
 		// assumption 1 cup of coffee uses 18g of beans
 		double gramsBeansUsed = numberOfCups * 18;
@@ -181,6 +222,14 @@ public class InventoryPage extends Application implements Initializable {
 		return quantityLeft;
 	}
 
+	/**
+	 * Returns quantityLeft for the regular milk in the inventory items after
+	 * loading the sales data file and updating the used quantity of the regular
+	 * milk
+	 * 
+	 * @param regularMilkUsed
+	 * @return quantityLeft
+	 */
 	public double updateRegularMilk(double regularMilkUsed) {
 		double usedQuantity = milkRegular.getUsedQuantity() + regularMilkUsed;
 		milkRegular.setUsedQuantity(usedQuantity);
@@ -190,7 +239,15 @@ public class InventoryPage extends Application implements Initializable {
 
 		return quantityLeft;
 	}
-	
+
+	/**
+	 * Returns the quantity of regular milk used by going thru the list of
+	 * CoffeeMilk on the sales data and checking how many coffee objects has the
+	 * regular milk used and multiplying it by 150 to get the volume of regular milk
+	 * used
+	 * 
+	 * @return regularMilkUsed
+	 */
 	public double regularMilkUsed() {
 		double regularMilkUsed = 0;
 		int counter = 0;
@@ -204,6 +261,14 @@ public class InventoryPage extends Application implements Initializable {
 		return regularMilkUsed;
 
 	}
+
+	/**
+	 * Returns quantityLeft for the cream in the inventory items after loading the
+	 * sales data file and updating the used quantity of the cream
+	 * 
+	 * @param creamUsed
+	 * @return quantityLeft
+	 */
 	public double updateCream(double creamUsed) {
 		// assumption 1 cup of coffee uses 10ml of cream
 		double usedQuantity = whippedCream.getUsedQuantity() + creamUsed;
@@ -215,6 +280,13 @@ public class InventoryPage extends Application implements Initializable {
 		return quantityLeft;
 	}
 
+	/**
+	 * Returns the quantity of cream used by going thru the list of CoffeeExtra on
+	 * the sales data and checking how many coffee objects has the cream used and
+	 * multiplying it by 10 to get the volume of cream used
+	 * 
+	 * @return creamUsed
+	 */
 	private double creamUsed() {
 		double creamUsed = 0;
 		int counter = 0;
@@ -227,9 +299,16 @@ public class InventoryPage extends Application implements Initializable {
 		return creamUsed;
 	}
 
+	/**
+	 * Returns quantityLeft for the flavour in the inventory items after loading the
+	 * sales data file and updating the used quantity of the flavour
+	 * 
+	 * @param flavourUsed
+	 * @return quantityLeft
+	 */
 	public double updateFlavour(double flavourUsed) {
 		// assumption 1 cup of coffee uses 10ml of flavorings
-		
+
 		double usedQuantity = flavour.getUsedQuantity() + flavourUsed;
 		flavour.setUsedQuantity(usedQuantity);
 
@@ -239,7 +318,13 @@ public class InventoryPage extends Application implements Initializable {
 		return quantityLeft;
 	}
 
-
+	/**
+	 * Returns the quantity of flavour used by going thru the list of CoffeeExtra on
+	 * the sales data and checking how many coffee objects has the flavour used and
+	 * multiplying it by 5 to get the volume of flavour used
+	 * 
+	 * @return flavourUsed
+	 */
 	private double flavourUsed() {
 		double flavourUsed = 0;
 		int counter = 0;
@@ -252,6 +337,12 @@ public class InventoryPage extends Application implements Initializable {
 		return flavourUsed;
 	}
 
+	/**
+	 * Updates the CoffeeBeans, Cream, Regular Milk and Flavour quantities on the
+	 * InventoryPage UI when the update Inventory Button is clicked
+	 * 
+	 * @param e
+	 */
 	@FXML
 	public void updateInventory(Event e) {
 		updateCoffeeBeans(numberOfCups);

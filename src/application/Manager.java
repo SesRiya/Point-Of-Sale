@@ -2,7 +2,7 @@ package application;
 
 /**
  * Person who has access to the system and Inventory Page
- * @author crdgo
+ * @author POS group
  *
  */
 public class Manager extends Employee {

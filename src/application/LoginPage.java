@@ -30,7 +30,7 @@ public class LoginPage extends Application {
 	Cashier cashier = new Cashier("cashier", "456");
 
 	/**
-	 * Calls the UI
+	 * Loads the UI
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -48,7 +48,8 @@ public class LoginPage extends Application {
 	}
 
 	/**
-	 * Calls the Sales Page Layout
+	 * Displays salesPage UI when user clicks the salesPage icon
+	 * 
 	 * 
 	 * @param e
 	 */
@@ -72,9 +73,10 @@ public class LoginPage extends Application {
 	}
 
 	/**
-	 * Checks is username and password is equal to the hardcoded one
+	 * Checks if username and password is equal to the values initialized by the
+	 * Manager and Cashier object
 	 * 
-	 * @return
+	 * @return boolean
 	 */
 	public boolean loginAuthentication(String name, String pass) {
 
@@ -87,7 +89,7 @@ public class LoginPage extends Application {
 	}
 
 	/**
-	 * alert on ui if password and username is empty or not correct
+	 * alert on UI page if password and username is empty or not correct
 	 *
 	 * @param alertType
 	 * @param owner

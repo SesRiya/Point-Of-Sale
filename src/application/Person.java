@@ -2,7 +2,7 @@ package application;
 
 /**
  * Person class that will be involved in the use of the system
- * @author crdgo
+ * @author POS group
  *
  */
 public class Person {

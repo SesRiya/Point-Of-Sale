@@ -1,5 +1,16 @@
 package application;
 
+/**
+ * Class for the Coffee object
+ * 
+ * @param coffeeID
+ * @param coffeeFlavour
+ * @param coffeeMilk
+ * @param coffeeExtra
+ * @param coffeePrice
+ * @author POS group
+ *
+ */
 public class Coffee {
 	private int coffeeID;
 	private String coffeeFlavour;
@@ -12,7 +23,7 @@ public class Coffee {
 		this.coffeeID = coffeeID;
 		this.coffeeFlavour = coffeeFlavour;
 	}
-	
+
 	public Coffee(int coffeeID, String coffeeFlavour, String coffeeSize, String coffeeMilk, String coffeeExtra,
 			double coffeePrice) {
 		this.coffeeID = coffeeID;
@@ -22,7 +33,6 @@ public class Coffee {
 		this.coffeeExtra = coffeeExtra;
 		this.coffeePrice = coffeePrice;
 	}
-
 
 	public int getCoffeeID() {
 		return coffeeID;
@@ -71,5 +81,5 @@ public class Coffee {
 	public void setCoffeeExtra(String coffeeExtra) {
 		this.coffeeExtra = coffeeExtra;
 	}
-	
+
 }
