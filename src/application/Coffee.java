@@ -1,7 +1,7 @@
 package application;
 
 /**
- * Class for the Coffee object
+ * Coffee object class
  * 
  * @param coffeeID
  * @param coffeeFlavour
