@@ -14,7 +14,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import application.Coffee;
 import application.Order;
 
-class OrderTest {
+class OrderTests {
 
 	/**
 	 * test order page

@@ -34,7 +34,7 @@ public class Order {
 
 	/**
 	 * 
-	 * @param orderID orderid
+	 * @param orderID order id
 	 */
 	public void setOrderID(int orderID) {
 		this.orderID = orderID;
