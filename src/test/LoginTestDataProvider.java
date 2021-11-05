@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
 public class LoginTestDataProvider {
+	
 	public static Stream<Arguments> loginAuthenticationTestDataProvider() {
 		return Stream.of(
 					Arguments.of(

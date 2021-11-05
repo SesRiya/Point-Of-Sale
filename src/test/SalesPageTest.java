@@ -28,7 +28,8 @@ import application.SalesPage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-class SalesPageTest {
+
+public class SalesPageTest {
 
 	private static SalesPage salesPage;
 

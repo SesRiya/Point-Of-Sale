@@ -29,14 +29,16 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 /**
- * Sales Page for Coffee Order and Price
+ * Sales Page for Ordering Coffee and Price. It allows for coffee objects
+ * selected by user to be added to the Observable List and have user change
+ * selected coffee object properties and then compute price per coffee and total
+ * price of all coffee object in the list
  * 
- * @author crdgo
+ * @author POS group
  *
  */
 public class SalesPage extends Application implements Initializable {
 	private static Stage stage;
-	private File fileName;
 	private Coffee selectedCoffee;
 	private double totalPrice = 0;
 	private double gst = 0;
@@ -71,7 +73,7 @@ public class SalesPage extends Application implements Initializable {
 	private ObservableList<Coffee> coffee = FXCollections.observableArrayList();
 
 	/**
-	 * Initializes table columns
+	 * Initializes table columns in the UI layout of the Sales Page
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -96,7 +98,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * display UI
+	 * Displays the UI Main Stage with shows the Coffee Button objects and price
+	 * buttons
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -108,7 +111,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * display report Page Ui
+	 * Displays reportPage UI when user clicks the reportPage icon
 	 * 
 	 * @param e
 	 */
@@ -123,7 +126,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * display homePage UI
+	 * Displays homePage Ui when user clicks on the homePage icon
 	 * 
 	 * @param e
 	 */
@@ -139,7 +142,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * display inventoryPage UI
+	 * display inventoryPage UI when user clicks on the inventoryPage icon
 	 * 
 	 * @param e
 	 */
@@ -154,7 +157,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -165,7 +169,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -176,7 +181,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -187,7 +193,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -198,7 +205,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -209,7 +217,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -220,7 +229,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -231,7 +241,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -242,7 +253,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -253,7 +265,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -264,7 +277,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * adds Coffee Object to observable list
+	 * adds Coffee Object to observable list and displays it on tableView on UI when
+	 * user clicks on the coffee icon images
 	 * 
 	 * @param e
 	 */
@@ -275,7 +289,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set coffee size
+	 * Changes coffeeSize from initial value when user clicks on the menu button and
+	 * refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -292,7 +307,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set coffee size
+	 * Changes coffeeSize from initial value when user clicks on the menu button and
+	 * refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -309,7 +325,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set coffee size
+	 * Changes coffeeSize from initial value when user clicks on the menu button and
+	 * refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -326,7 +343,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set coffee milk
+	 * Changes coffeeMilk from initial value when user clicks on the menu button and
+	 * refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -343,7 +361,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set coffee milk
+	 * Changes coffeeMilk from initial value when user clicks on the menu button and
+	 * refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -360,7 +379,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set coffee milk
+	 * Changes coffeeMilk from initial value when user clicks on the menu button and
+	 * refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -377,7 +397,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set coffee milk
+	 * Changes coffeeMilk from initial value when user clicks on the menu button and
+	 * refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -394,7 +415,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set extras on coffee
+	 * Changes coffeeExtra from initial value when user clicks on the menu button
+	 * and refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -411,7 +433,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set extras on coffee
+	 * Changes coffeeExtra from initial value when user clicks on the menu button
+	 * and refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -428,7 +451,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set extras on coffee
+	 * Changes coffeeExtra from initial value when user clicks on the menu button
+	 * and refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -445,7 +469,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * menu button to set extras on coffee
+	 * Changes coffeeExtra from initial value when user clicks on the menu button
+	 * and refreshes tableview on the UI to reflect the change
 	 * 
 	 * @param e
 	 */
@@ -463,7 +488,8 @@ public class SalesPage extends Application implements Initializable {
 
 	/**
 	 * Calculates price Per coffee cup based on the additional menu
-	 * button/parameters clicked or added by the user
+	 * button/parameters clicked or added by the user and refreshes tableview to
+	 * reflect new coffeePrice
 	 * 
 	 * @param e
 	 */
@@ -481,7 +507,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * Computes and returns price based on user preferred coffee flavour
+	 * Computes and returns price based on user preferred coffee flavour selected
+	 * from the menu button
 	 * 
 	 * @return
 	 */
@@ -503,7 +530,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * Computes and returns price based on user preferred coffee milk
+	 * Computes and returns price based on user preferred coffee milk selected from
+	 * the menu button on the UI
 	 * 
 	 * @return
 	 */
@@ -520,7 +548,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * Computes and returns price based on user preferred coffee size
+	 * Computes and returns price based on user preferred coffee size selected by
+	 * the user on the UI
 	 * 
 	 * @return
 	 */
@@ -537,7 +566,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * Computes and returns price based on user preferred extras on coffee
+	 * Computes and returns price based on user preferred extras on coffee selectde
+	 * on the UI
 	 * 
 	 * @return
 	 */
@@ -556,7 +586,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * Clears tableview and list
+	 * Clears tableview and removes all the elements in the Observable List of
+	 * coffee
 	 * 
 	 * @return
 	 */
@@ -569,7 +600,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * Clears tableView and list
+	 * Clears tableView and and removes all the elements in the Observable list of
+	 * coffee
 	 */
 	public void newOrder() {
 		totalPrice = 0;
@@ -580,10 +612,11 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * Computes total Price for all the coffees in the list
+	 * Computes and return sum of the updated coffeePrices by getting individual
+	 * coffee prices from the coffee object and summing it up.
 	 * 
 	 * @param coffee
-	 * @return
+	 * @return totalPrice
 	 */
 	public double totalPrice(ObservableList<Coffee> coffee) {
 		totalPrice = 0;
@@ -594,7 +627,8 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * button for computing total price on the UI
+	 * Sets the label for TotalPay by reflecting the computed total Price from the
+	 * method totalPrice {@link totalPrice()}
 	 * 
 	 * @param e
 	 */
@@ -606,9 +640,11 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * Gst computation based on the totalPrice
+	 * Returns the value of the gst based on the total Price percentage
 	 * 
-	 * @return
+	 * {@link totalPrice()}
+	 * 
+	 * @return gst
 	 */
 	public double gst(double totalPrice) {
 		gst = totalPrice * 0.15;
@@ -616,7 +652,9 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * button to save/write the file to a text file
+	 * Saves or writes the Observable list Coffee on a text file. When user clicks
+	 * the UI button Transaction Complete it calls the method savaDataToFile
+	 * {@link saveDataToFile()}
 	 * 
 	 * @param e
 	 * @throws IOException
@@ -629,7 +667,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * method to save data to a file
+	 * Writes the ObservableList Coffee to a file
 	 * 
 	 * @param fileName
 	 * @param coffee
@@ -650,7 +688,7 @@ public class SalesPage extends Application implements Initializable {
 	}
 
 	/**
-	 * UI alert
+	 * Alert method for the UI to give user error or confirmation messages
 	 * 
 	 * @param alertType
 	 * @param owner

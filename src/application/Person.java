@@ -1,5 +1,10 @@
 package application;
 
+/**
+ * Person class that will be involved in the use of the system
+ * @author crdgo
+ *
+ */
 public class Person {
 	private String userName;
 

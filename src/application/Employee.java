@@ -1,5 +1,10 @@
 package application;
 
+/**
+ * People who will directly use the POS application
+ * @author crdgo
+ *
+ */
 public class Employee extends Person {
 	private String userName;
 	private String password;
