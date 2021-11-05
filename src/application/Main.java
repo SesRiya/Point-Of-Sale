@@ -9,6 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 
+/**
+ * Main method
+ * @author liuziyu
+ *
+ */
 public class Main extends Application {
 	private static Stage stage;
 
@@ -30,7 +35,7 @@ public class Main extends Application {
 	/**
 	 * Displays loginPage UI when user clicks the Login button
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void loginPage(Event e) {
@@ -42,6 +47,10 @@ public class Main extends Application {
 		}
 	}
 
+	/**
+	 * Main method
+	 * @param args args
+	 */
 	public static void main(String[] args) {
 		System.out.println("test");
 		launch(args);

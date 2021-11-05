@@ -7,7 +7,10 @@ import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
 public class LoginTestDataProvider {
-	
+	/**
+	 * 
+	 * @return test data
+	 */
 	public static Stream<Arguments> loginAuthenticationTestDataProvider() {
 		return Stream.of(
 					Arguments.of(
@@ -21,6 +24,10 @@ public class LoginTestDataProvider {
 				);
 	}
 	
+	/**
+	 * 
+	 * @return test data
+	 */
 	public static Collection listAuthDataProvider() {
 		return Arrays.asList(new Object[][] {
 									{"yuri", "123", false},

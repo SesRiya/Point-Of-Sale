@@ -27,11 +27,6 @@ import javafx.stage.Stage;
 /**
  * Class for the items listed in the Inventory Page
  * 
- * @param coffeeFlavourList
- * @param coffeeMilkExtraList
- * @param coffeeSizeList
- * @param coffeeExtraList
- *
  * @author POS Group
  *
  */
@@ -67,6 +62,9 @@ public class InventoryPage extends Application implements Initializable {
 	@FXML
 	private TableColumn<InventoryContent, Double> quantityLeftColumn;
 
+	/**
+	 * creat a list of ingredients when user click the table view
+	 */
 	ObservableList<InventoryContent> listIngredients = FXCollections.observableArrayList();
 
 	@Override
@@ -110,7 +108,7 @@ public class InventoryPage extends Application implements Initializable {
 	/**
 	 * Displays salesPage UI when user clicks the salesPage icon
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void salesPage(Event e) {
@@ -125,7 +123,7 @@ public class InventoryPage extends Application implements Initializable {
 	/**
 	 * Displays reportPage UI when user clicks the reportPage icon
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void reportPage(Event e) {
@@ -140,7 +138,7 @@ public class InventoryPage extends Application implements Initializable {
 	/**
 	 * Displays homePage UI when user clicks the homePage icon
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void homePage(Event e) {
@@ -155,7 +153,7 @@ public class InventoryPage extends Application implements Initializable {
 	/**
 	 * Reads data from the saved sales_data.txt file and loads them into variables
 	 * 
-	 * @param fileName
+	 * @param fileName filename
 	 */
 	public void loadSalesData(String fileName) {
 		try {
@@ -204,10 +202,10 @@ public class InventoryPage extends Application implements Initializable {
 
 	/**
 	 * Returns quantity left of the coffeeBean inventory item after usedquantity is
-	 * subtracted from the loaded sales data file {@link loadSalesData()}
+	 * subtracted from the loaded sales data file 
 	 * 
-	 * @param numberOfCups
-	 * @return quantityLeft
+	 * @param numberOfCups number of coffee cups
+	 * @return quantityLeft quantity of coffee left
 	 */
 	public double updateCoffeeBeans(int numberOfCups) {
 		// assumption 1 cup of coffee uses 18g of beans
@@ -227,8 +225,8 @@ public class InventoryPage extends Application implements Initializable {
 	 * loading the sales data file and updating the used quantity of the regular
 	 * milk
 	 * 
-	 * @param regularMilkUsed
-	 * @return quantityLeft
+	 * @param regularMilkUsed quantity of regular milk used
+	 * @return quantityLeft quantity of regular milk used
 	 */
 	public double updateRegularMilk(double regularMilkUsed) {
 		double usedQuantity = milkRegular.getUsedQuantity() + regularMilkUsed;
@@ -266,8 +264,8 @@ public class InventoryPage extends Application implements Initializable {
 	 * Returns quantityLeft for the cream in the inventory items after loading the
 	 * sales data file and updating the used quantity of the cream
 	 * 
-	 * @param creamUsed
-	 * @return quantityLeft
+	 * @param creamUsed quantity of cream used
+	 * @return quantityLeft  quantity of cream left
 	 */
 	public double updateCream(double creamUsed) {
 		// assumption 1 cup of coffee uses 10ml of cream
@@ -303,8 +301,8 @@ public class InventoryPage extends Application implements Initializable {
 	 * Returns quantityLeft for the flavour in the inventory items after loading the
 	 * sales data file and updating the used quantity of the flavour
 	 * 
-	 * @param flavourUsed
-	 * @return quantityLeft
+	 * @param flavourUsed quantity of flavour used
+	 * @return quantityLeft quantity of flavour left
 	 */
 	public double updateFlavour(double flavourUsed) {
 		// assumption 1 cup of coffee uses 10ml of flavorings
@@ -341,7 +339,7 @@ public class InventoryPage extends Application implements Initializable {
 	 * Updates the CoffeeBeans, Cream, Regular Milk and Flavour quantities on the
 	 * InventoryPage UI when the update Inventory Button is clicked
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void updateInventory(Event e) {
@@ -360,14 +358,26 @@ public class InventoryPage extends Application implements Initializable {
 		tableInventory.refresh();
 	}
 
+	/**
+	 * 
+	 * @param coffeeBeans
+	 */
 	public void setCoffeeBeans(InventoryContent coffeeBeans) {
 		this.coffeeBeans = coffeeBeans;
 	}
 
+	/**
+	 * 
+	 * @return get number of cups
+	 */
 	public int getNumberOfCups() {
 		return numberOfCups;
 	}
 
+	/**
+	 * 
+	 * @return coffee flavour list
+	 */
 	public List<String> getCoffeeFlavourList() {
 		return coffeeFlavourList;
 	}
@@ -376,10 +386,18 @@ public class InventoryPage extends Application implements Initializable {
 		return coffeeMilkList;
 	}
 
+	/**
+	 * 
+	 * @return coffee extra list
+	 */
 	public List<String> getCoffeeExtraList() {
 		return coffeeExtraList;
 	}
 
+	/**
+	 * 
+	 * @return coffee size list
+	 */
 	public List<String> getCoffeeSizeList() {
 		return coffeeSizeList;
 	}

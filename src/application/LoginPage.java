@@ -26,7 +26,13 @@ public class LoginPage extends Application {
 	@FXML
 	private TextField password;
 
+	/**
+	 * add a new manager
+	 */
 	Manager manager = new Manager("admin", "123");
+	/**
+	 * add a new cashier
+	 */
 	Cashier cashier = new Cashier("cashier", "456");
 
 	/**
@@ -51,7 +57,7 @@ public class LoginPage extends Application {
 	 * Displays salesPage UI when user clicks the salesPage icon
 	 * 
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void salesPage(Event e) {
@@ -76,7 +82,9 @@ public class LoginPage extends Application {
 	 * Checks if username and password is equal to the values initialized by the
 	 * Manager and Cashier object
 	 * 
-	 * @return boolean
+	 * @return boolean if it is the right name and password
+	 * @param name name
+	 * @param pass password
 	 */
 	public boolean loginAuthentication(String name, String pass) {
 
@@ -91,10 +99,10 @@ public class LoginPage extends Application {
 	/**
 	 * alert on UI page if password and username is empty or not correct
 	 *
-	 * @param alertType
-	 * @param owner
-	 * @param message
-	 * @param title
+	 * @param alertType alertype
+	 * @param owner owner
+	 * @param message message
+	 * @param title title
 	 */
 	public void showAlert(Alert.AlertType alertType, Window owner, String message, String title) {
 		Alert alert = new Alert(alertType);

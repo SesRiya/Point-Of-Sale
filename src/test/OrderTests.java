@@ -16,6 +16,13 @@ import application.Order;
 
 class OrderTest {
 
+	/**
+	 * test order page
+	 * @param orderID id of order
+	 * @param coffeeOrder coffee order
+	 * @param newOrderID id of new order 
+	 * @param newCoffeeOrder new coffee order
+	 */
 	@ParameterizedTest
 	@MethodSource("orderDataProvider")
 	public void orderTest(int orderID, List<Coffee> coffeeOrder, int newOrderID, List<Coffee> newCoffeeOrder) {
@@ -29,6 +36,10 @@ class OrderTest {
 		assertArrayEquals(order.getCoffeeOrder().toArray(), newCoffeeOrder.toArray());
 	}
 
+	/**
+	 * 
+	 * @return test data
+	 */
 	public static Stream<Arguments> orderDataProvider() {
 		return Stream.of(Arguments.of(1,
 				Arrays.asList(new Coffee(2, "caramel"), new Coffee(4, "chocolate"), new Coffee(7, "hazlenut")), 2,

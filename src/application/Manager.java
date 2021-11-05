@@ -7,12 +7,14 @@ package application;
  */
 public class Manager extends Employee {
 
+	/**
+	 * 
+	 * @param userName user name
+	 * @param password password
+	 */
 	public Manager(String userName, String password) {
 		super(userName, password);
 		
 	}
 
-	public void updateInventory() {
-		
-	}
 }

@@ -7,14 +7,28 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
+/**
+ * test login page
+ * @author liuziyu
+ *
+ */
 class LoginPageTests {
 	private static LoginPage loginPage;
 
+	/**
+	 * 
+	 * @throws Exception set log in page as the test page
+	 */
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		loginPage = new LoginPage();
 	}
 
+	/**
+	 * test method for loginauthentication
+	 * @param name name
+	 * @param pwd password
+	 */
 	@ParameterizedTest
 	@MethodSource("test.LoginTestDataProvider#loginAuthenticationTestDataProvider")
 	public void loginAuthenticationPositiveTest(String name, String pwd) {

@@ -30,14 +30,25 @@ import javafx.collections.ObservableList;
 
 
 public class SalesPageTest {
-
+	/**
+	 * set the test page
+	 */
 	private static SalesPage salesPage;
 
 	@BeforeAll
+	/**
+	 * set test page
+	 * @throws Exception 
+	 */
 	static void setUpBeforeClass() throws Exception {
 		salesPage = new SalesPage();
 	}
 
+	/**
+	 * test total price
+	 * @param coffees coffee list
+	 * @param totalPrice total price
+	 */
 	@ParameterizedTest(name = "{index}:totalPriceTest(0,1)")
 	@MethodSource("coffeProvider")
 	public void totalPriceTest(List<Coffee> coffees, double totalPrice) {
@@ -48,6 +59,10 @@ public class SalesPageTest {
 		assertEquals(totalPrice, salesPage.totalPrice(coffeesOL));
 	}
 
+	/**
+	 * 
+	 * @return test data provider
+	 */
 	public static Collection coffeProvider() {
 		return Arrays.asList(new Object[][] {
 				{ Arrays.asList(new Coffee(1, "Americano", "S", "Regular", "None", 5.50),
@@ -66,25 +81,42 @@ public class SalesPageTest {
 		assertEquals(salesPage.priceCoffeeFlavour(coffee), price);
 	}
 
+	/**
+	 * 
+	 * @return test data
+	 */
 	public static Stream<Arguments> coffeeFlavourProvider() {
 		return Stream.of(Arguments.of("Cappuccino", 4.50), Arguments.of("Espresso", 3.00), Arguments.of("", 5.50),
 				Arguments.of("Double Espresso", 3.00), Arguments.of("Espresso Macchiato", 4.50));
 	}
 
+	/**
+	 * test the price of milk
+	 * @param milk milk which coffee used
+	 * @param price price of coffee
+	 */
 	@ParameterizedTest
 	@MethodSource("coffeeMilkProvider")
 	public void priceCoffeeMilkTest(String milk, double price) {
 		Coffee coffee = new Coffee(1, milk);
 		coffee.setCoffeeMilk(milk);
-
 		assertEquals(salesPage.priceCoffeeMilk(coffee), price);
 	}
 
+	/**
+	 * 
+	 * @return test data
+	 */
 	public static Stream<Arguments> coffeeMilkProvider() {
 		return Stream.of(Arguments.of("Regular", 0.00), Arguments.of("Soy", 0.50), Arguments.of("Almond", 0.50),
 				Arguments.of(" ", 0.20));
 	}
 
+	/**
+	 * test total price
+	 * @param size size of coffee
+	 * @param price price of coffee
+	 */
 	@ParameterizedTest
 	@MethodSource("coffeeSizeProvider")
 	public void priceCoffeeSizeTest(String size, double price) {
@@ -94,6 +126,10 @@ public class SalesPageTest {
 		assertEquals(salesPage.priceCoffeeSize(coffee), price);
 	}
 
+	/**
+	 * 
+	 * @return test data
+	 */
 	public static Stream<Arguments> coffeeSizeProvider() {
 		return Stream.of(Arguments.of("S", 0.00), Arguments.of("M", 0.30)
 		);
@@ -108,10 +144,19 @@ public class SalesPageTest {
 		assertEquals(salesPage.priceCoffeeExtra(coffee), price);
 	}
 
+	/**
+	 * 
+	 * @return test data
+	 */
 	public static Stream<Arguments> coffeeExtraProvider() {
 		return Stream.of(Arguments.of("Cream", 0.80), Arguments.of("Espresso", 0.80), Arguments.of("Flavour", 0.30));
 	}
 
+	/**
+	 * test gst method
+	 * @param totalPrice price in total
+	 * @param gst gst
+	 */
 	@ParameterizedTest
 	@MethodSource("gstProvider")
 	public void gstTest(double totalPrice, double gst) {

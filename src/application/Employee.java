@@ -3,8 +3,6 @@ package application;
 /**
  * Class for People who will directly use the POS application
  * 
- * @param userName
- * @param password
  * @author POS group
  *
  */
@@ -12,6 +10,11 @@ public class Employee extends Person {
 	private String userName;
 	private String password;
 
+	/**
+	 * 
+	 * @param userName username 
+	 * @param password password
+	 */
 	public Employee(String userName, String password) {
 		super();
 		this.userName = userName;
@@ -26,10 +29,18 @@ public class Employee extends Person {
 		this.userName = userName;
 	}
 
+	/**
+	 * 
+	 * @return password
+	 */
 	public String getPassword() {
 		return password;
 	}
 
+	/**
+	 * 
+	 * @param password password
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}

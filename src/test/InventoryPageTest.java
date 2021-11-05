@@ -16,15 +16,29 @@ import application.SalesPage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * test inventory page
+ * @author liuziyu
+ *
+ */
 class InventoryPageTest {
 
 	private static InventoryPage inventorypage;
 
+	/*
+	 * set inventory page as a test page
+	 */
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		inventorypage = new InventoryPage();
 	}
 
+	/**
+	 * test method for update coffee beans
+	 * @param ic inventory data
+	 * @param cups numbers of cups
+	 * @param quantity quantity of coffee beans left
+	 */
 	@ParameterizedTest
 	@MethodSource("updateCoffeeBeansTestDataProvider")
 	public void updateCoffeeBeansTest(InventoryContent ic, int cups, double quantity) {

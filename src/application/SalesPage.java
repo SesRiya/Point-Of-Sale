@@ -113,7 +113,7 @@ public class SalesPage extends Application implements Initializable {
 	/**
 	 * Displays reportPage UI when user clicks the reportPage icon
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void reportPage(Event e) {
@@ -128,7 +128,7 @@ public class SalesPage extends Application implements Initializable {
 	/**
 	 * Displays homePage Ui when user clicks on the homePage icon
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void homePage(Event e) {
@@ -144,7 +144,7 @@ public class SalesPage extends Application implements Initializable {
 	/**
 	 * display inventoryPage UI when user clicks on the inventoryPage icon
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void inventoryPage(Event e) {
@@ -160,7 +160,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addAmericano(Event e) {
@@ -172,7 +172,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addCappuccino(Event e) {
@@ -184,7 +184,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addLatte(Event e) {
@@ -196,7 +196,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addEspresso(Event e) {
@@ -208,7 +208,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addDoubleEspresso(Event e) {
@@ -220,7 +220,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addEspressoMacchiato(Event e) {
@@ -232,7 +232,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addRistreto(Event e) {
@@ -244,7 +244,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addLatteMacchiato(Event e) {
@@ -256,7 +256,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addCafeMocha(Event e) {
@@ -268,7 +268,7 @@ public class SalesPage extends Application implements Initializable {
 	 * adds Coffee Object to observable list and displays it on tableView on UI when
 	 * user clicks on the coffee icon images
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void addIrishCoffee(Event e) {
@@ -292,7 +292,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeSize from initial value when user clicks on the menu button and
 	 * refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void small(Event e) {
@@ -310,7 +310,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeSize from initial value when user clicks on the menu button and
 	 * refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void medium(Event e) {
@@ -328,7 +328,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeSize from initial value when user clicks on the menu button and
 	 * refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void large(Event e) {
@@ -364,7 +364,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeMilk from initial value when user clicks on the menu button and
 	 * refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void onSkimmed(Event e) {
@@ -382,7 +382,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeMilk from initial value when user clicks on the menu button and
 	 * refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void onSoy(Event e) {
@@ -400,7 +400,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeMilk from initial value when user clicks on the menu button and
 	 * refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void onAlmond(Event e) {
@@ -418,7 +418,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeExtra from initial value when user clicks on the menu button
 	 * and refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void onEspressoShot(Event e) {
@@ -436,7 +436,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeExtra from initial value when user clicks on the menu button
 	 * and refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void onExtraFlavour(Event e) {
@@ -454,7 +454,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Changes coffeeExtra from initial value when user clicks on the menu button
 	 * and refreshes tableview on the UI to reflect the change
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void onWhippedCream(Event e) {
@@ -491,7 +491,7 @@ public class SalesPage extends Application implements Initializable {
 	 * button/parameters clicked or added by the user and refreshes tableview to
 	 * reflect new coffeePrice
 	 * 
-	 * @param e
+	 * @param e event
 	 */
 	@FXML
 	public void pricePerCoffee(Event e) {
@@ -510,7 +510,7 @@ public class SalesPage extends Application implements Initializable {
 	 * Computes and returns price based on user preferred coffee flavour selected
 	 * from the menu button
 	 * 
-	 * @return
+	 * @return price of each cup of coffee
 	 */
 	public double priceCoffeeFlavour(Coffee selectedCoffee) {
 		double priceFlavour = 0;
@@ -589,7 +589,6 @@ public class SalesPage extends Application implements Initializable {
 	 * Clears tableview and removes all the elements in the Observable List of
 	 * coffee
 	 * 
-	 * @return
 	 */
 	public void cancelOrder() {
 		totalPrice = 0;

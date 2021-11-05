@@ -22,6 +22,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
 
+/**
+ * report Page for show the sales.
+ * @author liuziyu
+ *
+ */
 public class ReportPage extends Application implements Initializable {
 	private static Stage stage;
 	@FXML
@@ -48,11 +53,9 @@ public class ReportPage extends Application implements Initializable {
 	@FXML
 	private ToggleButton weekButton;
 
-	
 	/**
 	 * switch toggle button
-	 * 
-	 * @param event
+	 * @param event event
 	 */
 	@FXML
 	void ToggleButton(ActionEvent event) {
@@ -142,10 +145,12 @@ public class ReportPage extends Application implements Initializable {
 	}
 	
 	
+
 	/**
+	 * 	
 	 * Displays SalesPage UI when user clicks the SalesPage icon
 	 * 
-	 * @param event
+	 * @param e event
 	 */
 	@FXML
 	public void salesPage(Event e) {
@@ -157,6 +162,10 @@ public class ReportPage extends Application implements Initializable {
 		}
 	}
 
+	/**
+	 * Displays homePage Ui when user clicks on the homePage icon
+	 * @param e event
+	 */
 	@FXML
 	public void homePage(Event e) {
 
@@ -167,7 +176,11 @@ public class ReportPage extends Application implements Initializable {
 			e1.printStackTrace();
 		}
 	}
-
+     
+	/**
+	 * display inventoryPage UI when user clicks on the inventoryPage icon
+	 * @param e event
+	 */
 	@FXML
 	public void inventoryPage(Event e) {
 		InventoryPage fourthScreen = new InventoryPage();
