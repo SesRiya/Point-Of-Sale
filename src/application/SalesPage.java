@@ -628,7 +628,7 @@ public class SalesPage extends Application implements Initializable {
 
 	/**
 	 * Sets the label for TotalPay by reflecting the computed total Price from the
-	 * method totalPrice {@link totalPrice()}
+	 * method totalPrice
 	 * 
 	 * @param e
 	 */
@@ -642,7 +642,6 @@ public class SalesPage extends Application implements Initializable {
 	/**
 	 * Returns the value of the gst based on the total Price percentage
 	 * 
-	 * {@link totalPrice()}
 	 * 
 	 * @return gst
 	 */
@@ -654,7 +653,7 @@ public class SalesPage extends Application implements Initializable {
 	/**
 	 * Saves or writes the Observable list Coffee on a text file. When user clicks
 	 * the UI button Transaction Complete it calls the method savaDataToFile
-	 * {@link saveDataToFile()}
+	 * 
 	 * 
 	 * @param e
 	 * @throws IOException

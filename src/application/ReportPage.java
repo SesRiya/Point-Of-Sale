@@ -48,7 +48,12 @@ public class ReportPage extends Application implements Initializable {
 	@FXML
 	private ToggleButton weekButton;
 
-	// switch toggle button
+	
+	/**
+	 * switch toggle button
+	 * 
+	 * @param event
+	 */
 	@FXML
 	void ToggleButton(ActionEvent event) {
 		if (event.getSource() == dayButton) {
@@ -103,6 +108,12 @@ public class ReportPage extends Application implements Initializable {
 		lineChart.getData().addAll(income, cost, profit);
 	}
 
+	
+	/**
+	 * load the sales data from local file and count the total number of coffee cups
+	 * 
+	 * @return number of coffee beans left
+	 */
 	public double loadData() {
 		double sum = 0;
 		try {
@@ -129,7 +140,13 @@ public class ReportPage extends Application implements Initializable {
 		stage = primaryStage;
 
 	}
-
+	
+	
+	/**
+	 * Displays SalesPage UI when user clicks the SalesPage icon
+	 * 
+	 * @param event
+	 */
 	@FXML
 	public void salesPage(Event e) {
 		SalesPage secondScreen = new SalesPage();
